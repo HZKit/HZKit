@@ -15,6 +15,7 @@
 		DB20A88D20CE627400D7432A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB20A88520CE627300D7432A /* Assets.xcassets */; };
 		DB20A88E20CE627400D7432A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB20A88720CE627400D7432A /* Info.plist */; };
 		DB20A8AA20CF8CBF00D7432A /* HZVersionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8A820CF8CBE00D7432A /* HZVersionManager.m */; };
+		DB20A8B020CFA5C800D7432A /* UIView+HZKitCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8AF20CFA5C800D7432A /* UIView+HZKitCommon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,9 @@
 		DB20A8A920CF8CBE00D7432A /* HZVersionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HZVersionManager.h; path = Source/Version/HZVersionManager.h; sourceTree = "<group>"; };
 		DB20A8AB20CF8CE100D7432A /* HZKitVersion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZKitVersion.h; sourceTree = "<group>"; };
 		DB20A8AC20CF8D0500D7432A /* HZKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HZKit.h; path = Source/HZKit.h; sourceTree = "<group>"; };
+		DB20A8AE20CFA5C800D7432A /* UIView+HZKitCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIView+HZKitCommon.h"; path = "Source/View/UIView+HZKitCommon.h"; sourceTree = "<group>"; };
+		DB20A8AF20CFA5C800D7432A /* UIView+HZKitCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIView+HZKitCommon.m"; path = "Source/View/UIView+HZKitCommon.m"; sourceTree = "<group>"; };
+		DB20A8B120CFA6EB00D7432A /* HZKitView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HZKitView.h; path = Source/View/HZKitView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 		DB20A89A20CE656500D7432A /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DB20A8AD20CFA57900D7432A /* View */,
 				DB20A8A120CF8BF400D7432A /* Macro */,
 				DB20A8A720CF8C8D00D7432A /* Version */,
 				DB20A8AC20CF8D0500D7432A /* HZKit.h */,
@@ -149,6 +154,16 @@
 				DB20A8AB20CF8CE100D7432A /* HZKitVersion.h */,
 			);
 			name = Version;
+			sourceTree = "<group>";
+		};
+		DB20A8AD20CFA57900D7432A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DB20A8AE20CFA5C800D7432A /* UIView+HZKitCommon.h */,
+				DB20A8AF20CFA5C800D7432A /* UIView+HZKitCommon.m */,
+				DB20A8B120CFA6EB00D7432A /* HZKitView.h */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +301,7 @@
 				DB20A8AA20CF8CBF00D7432A /* HZVersionManager.m in Sources */,
 				DB20A88B20CE627400D7432A /* AppDelegate.m in Sources */,
 				DB20A88A20CE627400D7432A /* main.m in Sources */,
+				DB20A8B020CFA5C800D7432A /* UIView+HZKitCommon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

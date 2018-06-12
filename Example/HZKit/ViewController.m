@@ -28,6 +28,12 @@
             }
         }
     }];
+    
+#if DEBUG
+    NSLog(@"%@", self.view);
+    UIView *copyView = [self.view hzCopy];
+    NSLog(@"copy:%@", copyView);
+#endif
 }
 
 
