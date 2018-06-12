@@ -19,6 +19,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    
     // 检查应用更新
     [HZVersionManager checkAppUpdateWithAppId:@"414478124" complete:^(BOOL isFindNew, id info) {
         if (isFindNew) {
@@ -34,6 +36,7 @@
     UIView *copyView = [self.view hzCopy];
     NSLog(@"copy:%@", copyView);
 #endif
+
 }
 
 
