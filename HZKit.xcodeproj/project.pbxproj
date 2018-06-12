@@ -7,15 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DB20A88820CE627400D7432A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB20A87D20CE627300D7432A /* LaunchScreen.storyboard */; };
-		DB20A88920CE627400D7432A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB20A87F20CE627300D7432A /* Main.storyboard */; };
-		DB20A88A20CE627400D7432A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A88220CE627300D7432A /* main.m */; };
-		DB20A88B20CE627400D7432A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A88320CE627300D7432A /* AppDelegate.m */; };
-		DB20A88C20CE627400D7432A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A88420CE627300D7432A /* ViewController.m */; };
-		DB20A88D20CE627400D7432A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB20A88520CE627300D7432A /* Assets.xcassets */; };
-		DB20A88E20CE627400D7432A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB20A88720CE627400D7432A /* Info.plist */; };
-		DB20A8AA20CF8CBF00D7432A /* HZVersionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8A820CF8CBE00D7432A /* HZVersionManager.m */; };
-		DB20A8B020CFA5C800D7432A /* UIView+HZKitCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8AF20CFA5C800D7432A /* UIView+HZKitCommon.m */; };
+		DB20A8DB20CFCF8700D7432A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB20A8D120CFCF8700D7432A /* Assets.xcassets */; };
+		DB20A8DC20CFCF8700D7432A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8D220CFCF8700D7432A /* ViewController.m */; };
+		DB20A8DF20CFCF8700D7432A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8D720CFCF8700D7432A /* main.m */; };
+		DB20A8E020CFCF8700D7432A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8D820CFCF8700D7432A /* AppDelegate.m */; };
+		DB20A8E120CFCF8700D7432A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB20A8D920CFCF8700D7432A /* Info.plist */; };
+		DB20A8ED20CFCF9E00D7432A /* HZVersionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8E720CFCF9D00D7432A /* HZVersionManager.m */; };
+		DB20A8EE20CFCF9E00D7432A /* UIView+HZKitCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8EB20CFCF9D00D7432A /* UIView+HZKitCommon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,23 +37,21 @@
 		DB20A82D20CE614B00D7432A /* HZKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HZKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB20A84520CE614F00D7432A /* HZKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HZKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB20A85020CE614F00D7432A /* HZKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HZKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB20A87E20CE627300D7432A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DB20A88020CE627300D7432A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
-		DB20A88120CE627300D7432A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Example/HZKit/ViewController.h; sourceTree = "<group>"; };
-		DB20A88220CE627300D7432A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Example/HZKit/main.m; sourceTree = "<group>"; };
-		DB20A88320CE627300D7432A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Example/HZKit/AppDelegate.m; sourceTree = "<group>"; };
-		DB20A88420CE627300D7432A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Example/HZKit/ViewController.m; sourceTree = "<group>"; };
-		DB20A88520CE627300D7432A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Example/HZKit/Assets.xcassets; sourceTree = "<group>"; };
-		DB20A88620CE627400D7432A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Example/HZKit/AppDelegate.h; sourceTree = "<group>"; };
-		DB20A88720CE627400D7432A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Example/HZKit/Info.plist; sourceTree = "<group>"; };
-		DB20A8A620CF8C5300D7432A /* HZKitMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HZKitMacro.h; path = Source/Macro/HZKitMacro.h; sourceTree = "<group>"; };
-		DB20A8A820CF8CBE00D7432A /* HZVersionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HZVersionManager.m; path = Source/Version/HZVersionManager.m; sourceTree = "<group>"; };
-		DB20A8A920CF8CBE00D7432A /* HZVersionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HZVersionManager.h; path = Source/Version/HZVersionManager.h; sourceTree = "<group>"; };
-		DB20A8AB20CF8CE100D7432A /* HZKitVersion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZKitVersion.h; sourceTree = "<group>"; };
-		DB20A8AC20CF8D0500D7432A /* HZKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HZKit.h; path = Source/HZKit.h; sourceTree = "<group>"; };
-		DB20A8AE20CFA5C800D7432A /* UIView+HZKitCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIView+HZKitCommon.h"; path = "Source/View/UIView+HZKitCommon.h"; sourceTree = "<group>"; };
-		DB20A8AF20CFA5C800D7432A /* UIView+HZKitCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIView+HZKitCommon.m"; path = "Source/View/UIView+HZKitCommon.m"; sourceTree = "<group>"; };
-		DB20A8B120CFA6EB00D7432A /* HZKitView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HZKitView.h; path = Source/View/HZKitView.h; sourceTree = "<group>"; };
+		DB20A8D020CFCF8700D7432A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DB20A8D120CFCF8700D7432A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB20A8D220CFCF8700D7432A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DB20A8D720CFCF8700D7432A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DB20A8D820CFCF8700D7432A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DB20A8D920CFCF8700D7432A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB20A8DA20CFCF8700D7432A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DB20A8E420CFCF9D00D7432A /* HZKitMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZKitMacro.h; sourceTree = "<group>"; };
+		DB20A8E520CFCF9D00D7432A /* HZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZKit.h; sourceTree = "<group>"; };
+		DB20A8E720CFCF9D00D7432A /* HZVersionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZVersionManager.m; sourceTree = "<group>"; };
+		DB20A8E820CFCF9D00D7432A /* HZVersionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZVersionManager.h; sourceTree = "<group>"; };
+		DB20A8EA20CFCF9D00D7432A /* HZKitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZKitView.h; sourceTree = "<group>"; };
+		DB20A8EB20CFCF9D00D7432A /* UIView+HZKitCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HZKitCommon.m"; sourceTree = "<group>"; };
+		DB20A8EC20CFCF9D00D7432A /* UIView+HZKitCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HZKitCommon.h"; sourceTree = "<group>"; };
+		DB20A8EF20CFCFE000D7432A /* HZKitVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZKitVersion.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +82,7 @@
 		DB20A82420CE614B00D7432A = {
 			isa = PBXGroup;
 			children = (
-				DB20A86820CE624A00D7432A /* HZKit */,
+				DB20A8CF20CFCF8700D7432A /* HZKit */,
 				DB20A82E20CE614B00D7432A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,69 +97,58 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DB20A86820CE624A00D7432A /* HZKit */ = {
+		DB20A8CF20CFCF8700D7432A /* HZKit */ = {
 			isa = PBXGroup;
 			children = (
-				DB20A89A20CE656500D7432A /* Source */,
-				DB20A88620CE627400D7432A /* AppDelegate.h */,
-				DB20A88320CE627300D7432A /* AppDelegate.m */,
-				DB20A88520CE627300D7432A /* Assets.xcassets */,
-				DB20A87C20CE627300D7432A /* Base.lproj */,
-				DB20A88720CE627400D7432A /* Info.plist */,
-				DB20A88220CE627300D7432A /* main.m */,
-				DB20A88120CE627300D7432A /* ViewController.h */,
-				DB20A88420CE627300D7432A /* ViewController.m */,
+				DB20A8E220CFCF9D00D7432A /* Source */,
+				DB20A8D020CFCF8700D7432A /* AppDelegate.h */,
+				DB20A8D820CFCF8700D7432A /* AppDelegate.m */,
+				DB20A8D120CFCF8700D7432A /* Assets.xcassets */,
+				DB20A8D920CFCF8700D7432A /* Info.plist */,
+				DB20A8D720CFCF8700D7432A /* main.m */,
+				DB20A8DA20CFCF8700D7432A /* ViewController.h */,
+				DB20A8D220CFCF8700D7432A /* ViewController.m */,
 			);
-			name = HZKit;
+			path = HZKit;
 			sourceTree = "<group>";
 		};
-		DB20A87C20CE627300D7432A /* Base.lproj */ = {
+		DB20A8E220CFCF9D00D7432A /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				DB20A87D20CE627300D7432A /* LaunchScreen.storyboard */,
-				DB20A87F20CE627300D7432A /* Main.storyboard */,
+				DB20A8E520CFCF9D00D7432A /* HZKit.h */,
+				DB20A8E320CFCF9D00D7432A /* Macro */,
+				DB20A8E620CFCF9D00D7432A /* Version */,
+				DB20A8E920CFCF9D00D7432A /* View */,
 			);
-			name = Base.lproj;
-			path = Example/HZKit/Base.lproj;
+			path = Source;
+			sourceTree = SOURCE_ROOT;
+		};
+		DB20A8E320CFCF9D00D7432A /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				DB20A8E420CFCF9D00D7432A /* HZKitMacro.h */,
+			);
+			path = Macro;
 			sourceTree = "<group>";
 		};
-		DB20A89A20CE656500D7432A /* Source */ = {
+		DB20A8E620CFCF9D00D7432A /* Version */ = {
 			isa = PBXGroup;
 			children = (
-				DB20A8AD20CFA57900D7432A /* View */,
-				DB20A8A120CF8BF400D7432A /* Macro */,
-				DB20A8A720CF8C8D00D7432A /* Version */,
-				DB20A8AC20CF8D0500D7432A /* HZKit.h */,
+				DB20A8EF20CFCFE000D7432A /* HZKitVersion.h */,
+				DB20A8E720CFCF9D00D7432A /* HZVersionManager.m */,
+				DB20A8E820CFCF9D00D7432A /* HZVersionManager.h */,
 			);
-			name = Source;
+			path = Version;
 			sourceTree = "<group>";
 		};
-		DB20A8A120CF8BF400D7432A /* Macro */ = {
+		DB20A8E920CFCF9D00D7432A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DB20A8A620CF8C5300D7432A /* HZKitMacro.h */,
+				DB20A8EA20CFCF9D00D7432A /* HZKitView.h */,
+				DB20A8EB20CFCF9D00D7432A /* UIView+HZKitCommon.m */,
+				DB20A8EC20CFCF9D00D7432A /* UIView+HZKitCommon.h */,
 			);
-			name = Macro;
-			sourceTree = "<group>";
-		};
-		DB20A8A720CF8C8D00D7432A /* Version */ = {
-			isa = PBXGroup;
-			children = (
-				DB20A8A920CF8CBE00D7432A /* HZVersionManager.h */,
-				DB20A8A820CF8CBE00D7432A /* HZVersionManager.m */,
-				DB20A8AB20CF8CE100D7432A /* HZKitVersion.h */,
-			);
-			name = Version;
-			sourceTree = "<group>";
-		};
-		DB20A8AD20CFA57900D7432A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				DB20A8AE20CFA5C800D7432A /* UIView+HZKitCommon.h */,
-				DB20A8AF20CFA5C800D7432A /* UIView+HZKitCommon.m */,
-				DB20A8B120CFA6EB00D7432A /* HZKitView.h */,
-			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,10 +254,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB20A88E20CE627400D7432A /* Info.plist in Resources */,
-				DB20A88820CE627400D7432A /* LaunchScreen.storyboard in Resources */,
-				DB20A88D20CE627400D7432A /* Assets.xcassets in Resources */,
-				DB20A88920CE627400D7432A /* Main.storyboard in Resources */,
+				DB20A8E120CFCF8700D7432A /* Info.plist in Resources */,
+				DB20A8DB20CFCF8700D7432A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,11 +280,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB20A88C20CE627400D7432A /* ViewController.m in Sources */,
-				DB20A8AA20CF8CBF00D7432A /* HZVersionManager.m in Sources */,
-				DB20A88B20CE627400D7432A /* AppDelegate.m in Sources */,
-				DB20A88A20CE627400D7432A /* main.m in Sources */,
-				DB20A8B020CFA5C800D7432A /* UIView+HZKitCommon.m in Sources */,
+				DB20A8ED20CFCF9E00D7432A /* HZVersionManager.m in Sources */,
+				DB20A8DF20CFCF8700D7432A /* main.m in Sources */,
+				DB20A8DC20CFCF8700D7432A /* ViewController.m in Sources */,
+				DB20A8E020CFCF8700D7432A /* AppDelegate.m in Sources */,
+				DB20A8EE20CFCF9E00D7432A /* UIView+HZKitCommon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,25 +316,6 @@
 			targetProxy = DB20A85120CE614F00D7432A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		DB20A87D20CE627300D7432A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB20A87E20CE627300D7432A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		DB20A87F20CE627300D7432A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB20A88020CE627300D7432A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DB20A85720CE614F00D7432A /* Debug */ = {
@@ -468,8 +432,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Example/HZKit/Info.plist;
+				INFOPLIST_FILE = HZKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -485,8 +450,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Example/HZKit/Info.plist;
+				INFOPLIST_FILE = HZKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
