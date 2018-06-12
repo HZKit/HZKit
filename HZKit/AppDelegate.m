@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "HZBaseModule.h"
+#import "HZBaseViewController.h"
+#import "HZBaseNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -23,7 +26,7 @@
         _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     }
     
-    _window.rootViewController = [ViewController new];
+    _window.rootViewController = [self rootViewControllerWithModuleNames:@[@""]];
     [_window makeKeyAndVisible];
     
     return YES;
@@ -56,5 +59,47 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - Private
+- (UIViewController *)rootViewControllerWithModuleNames:(NSArray *)moduleNames {
+    // 生成module
+    NSMutableArray *modules = [NSMutableArray arrayWithCapacity:moduleNames.count];
+    for (NSString *moduleName in moduleNames) {
+        HZBaseModule *module = (HZBaseModule *)[NSClassFromString(moduleName) new];
+        [modules addObject:module];
+    }
+    
+    //
+    NSMutableArray *viewControllers = [NSMutableArray array];
+    
+    for (HZBaseModule *module in modules) {
+        NSString *tabBarClassName = module.tabBarControllerClassName;
+        if (tabBarClassName) {
+            Class tabBarClass = NSClassFromString(tabBarClassName);
+            if (tabBarClass) {
+                id viewController = nil;
+                HZBaseViewController *baseViewController = [(HZBaseViewController *)[tabBarClass alloc] init];
+                if (module.hasNavigationBar) {
+                    HZBaseNavigationController *baseNavigationController = [[HZBaseNavigationController alloc] initWithRootViewController:baseViewController];
+                    baseNavigationController.navigationBarHidden = module.navigationBarHidden;
+                    
+                    viewController = baseNavigationController;
+                } else {
+                    viewController = baseViewController;
+                }
+                
+                // TODO: 排序
+                NSInteger index = module.tabBarIndex;
+                if (viewControllers.count > 0) {
+                    int i = 0;
+                    
+                } else {
+                    [viewControllers addObject:viewController];
+                }
+            }
+        }
+    }
+    
+    return [ViewController new];
+}
 
 @end
