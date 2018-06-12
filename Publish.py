@@ -39,11 +39,10 @@ def pod_spec_lint():
     return (passed_validation in exec_cmd(cmd))
 
 def main():
-    # Check
     if pod_spec_lint():
         cmd = 'pod trunk push %s' % spec_name
         print(exec_cmd(cmd))
-        print('发布完成')
+        print('执行结束')
     else:
         # // TODO: 精准提示
         print('未建tag')
