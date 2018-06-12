@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "HZVersionManager.h"
+#import "HZKit.h"
 
 @interface ViewController ()
 
@@ -19,6 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    // 检查应用更新
     [HZVersionManager checkAppUpdateWithAppId:@"414478124" complete:^(BOOL isFindNew, id info) {
         if (isFindNew) {
             // TODO: 提示升级
