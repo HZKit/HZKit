@@ -12,5 +12,6 @@
 #import "HZKitMacro.h"
 #import "HZKitVersion.h"
 #import "HZKitView.h"
+#import "HZKitDevice.h"
 
 #endif /* HZKit_h */

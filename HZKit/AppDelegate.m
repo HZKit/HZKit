@@ -22,12 +22,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    if (!_window) {
-        _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    }
-    
-    _window.rootViewController = [self rootViewControllerWithModuleNames:@[@""]];
-    [_window makeKeyAndVisible];
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
@@ -70,36 +65,59 @@
     
     //
     NSMutableArray *viewControllers = [NSMutableArray array];
+    NSMutableArray *indexes = [NSMutableArray array];
     
     for (HZBaseModule *module in modules) {
         NSString *tabBarClassName = module.tabBarControllerClassName;
         if (tabBarClassName) {
             Class tabBarClass = NSClassFromString(tabBarClassName);
             if (tabBarClass) {
-                id viewController = nil;
                 HZBaseViewController *baseViewController = [(HZBaseViewController *)[tabBarClass alloc] init];
+                id viewController = baseViewController;
                 if (module.hasNavigationBar) {
                     HZBaseNavigationController *baseNavigationController = [[HZBaseNavigationController alloc] initWithRootViewController:baseViewController];
                     baseNavigationController.navigationBarHidden = module.navigationBarHidden;
                     
                     viewController = baseNavigationController;
-                } else {
-                    viewController = baseViewController;
                 }
                 
-                // TODO: 排序
-                NSInteger index = module.tabBarIndex;
-                if (viewControllers.count > 0) {
-                    int i = 0;
-                    
-                } else {
+                BOOL isInserted = NO;
+                NSInteger currindex = module.tabBarIndex;
+                for (int i = 0; i < indexes.count; i++) {
+                    NSInteger index = [indexes[i] integerValue];
+                    if (currindex < index) {
+                        isInserted = YES;
+                        [indexes insertObject:@(currindex) atIndex:i];
+                        [viewControllers insertObject:viewController atIndex:i];
+                    }
+                }
+                
+                if (isInserted == NO) {
+                    [indexes addObject:@(currindex)];
                     [viewControllers addObject:viewController];
                 }
             }
         }
     }
     
+    // TODO: UITabBarControllr
+    
     return [ViewController new];
+}
+
+#pragma mark - Lazy load
+- (UIWindow *)window {
+    if (!_window) {
+        CGRect frame = [UIScreen mainScreen].bounds;
+        UIWindow *keyWindow = [[UIWindow alloc] initWithFrame:frame];
+        
+        ViewController *rootViewController = [ViewController new];
+        keyWindow.rootViewController = rootViewController;
+        
+        _window = keyWindow;
+    }
+    
+    return _window;
 }
 
 @end

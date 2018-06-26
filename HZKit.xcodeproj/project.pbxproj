@@ -18,6 +18,7 @@
 		DB20A8F820CFD33200D7432A /* HZBaseRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8F720CFD33200D7432A /* HZBaseRouter.m */; };
 		DB20A8FD20CFDA6500D7432A /* HZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8FC20CFDA6500D7432A /* HZBaseViewController.m */; };
 		DB20A90020CFDB1600D7432A /* HZBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8FF20CFDB1600D7432A /* HZBaseNavigationController.m */; };
+		DB2D5AE420E27319005893ED /* UIDevice+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2D5AE320E27319005893ED /* UIDevice+Common.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,9 @@
 		DB20A8FC20CFDA6500D7432A /* HZBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZBaseViewController.m; sourceTree = "<group>"; };
 		DB20A8FE20CFDB1600D7432A /* HZBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZBaseNavigationController.h; sourceTree = "<group>"; };
 		DB20A8FF20CFDB1600D7432A /* HZBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZBaseNavigationController.m; sourceTree = "<group>"; };
+		DB2D5AE120E272BE005893ED /* HZKitDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZKitDevice.h; sourceTree = "<group>"; };
+		DB2D5AE220E27319005893ED /* UIDevice+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Common.h"; sourceTree = "<group>"; };
+		DB2D5AE320E27319005893ED /* UIDevice+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Common.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,13 +116,13 @@
 		DB20A8CF20CFCF8700D7432A /* HZKit */ = {
 			isa = PBXGroup;
 			children = (
-				DB20A8F120CFD0D100D7432A /* Common */,
-				DB20A8E220CFCF9D00D7432A /* Source */,
 				DB20A8D020CFCF8700D7432A /* AppDelegate.h */,
 				DB20A8D820CFCF8700D7432A /* AppDelegate.m */,
 				DB20A8D120CFCF8700D7432A /* Assets.xcassets */,
+				DB20A8F120CFD0D100D7432A /* Common */,
 				DB20A8D920CFCF8700D7432A /* Info.plist */,
 				DB20A8D720CFCF8700D7432A /* main.m */,
+				DB20A8E220CFCF9D00D7432A /* Source */,
 				DB20A8DA20CFCF8700D7432A /* ViewController.h */,
 				DB20A8D220CFCF8700D7432A /* ViewController.m */,
 			);
@@ -128,6 +132,7 @@
 		DB20A8E220CFCF9D00D7432A /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DB2D5AE020E27292005893ED /* Device */,
 				DB20A8E520CFCF9D00D7432A /* HZKit.h */,
 				DB20A8E320CFCF9D00D7432A /* Macro */,
 				DB20A8E620CFCF9D00D7432A /* Version */,
@@ -201,6 +206,16 @@
 				DB20A8FF20CFDB1600D7432A /* HZBaseNavigationController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DB2D5AE020E27292005893ED /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				DB2D5AE120E272BE005893ED /* HZKitDevice.h */,
+				DB2D5AE220E27319005893ED /* UIDevice+Common.h */,
+				DB2D5AE320E27319005893ED /* UIDevice+Common.m */,
+			);
+			path = Device;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB2D5AE420E27319005893ED /* UIDevice+Common.m in Sources */,
 				DB20A90020CFDB1600D7432A /* HZBaseNavigationController.m in Sources */,
 				DB20A8ED20CFCF9E00D7432A /* HZVersionManager.m in Sources */,
 				DB20A8DF20CFCF8700D7432A /* main.m in Sources */,
