@@ -116,12 +116,10 @@
 		DB20A8CF20CFCF8700D7432A /* HZKit */ = {
 			isa = PBXGroup;
 			children = (
+				DBE03A0020E3D88D0012C824 /* Supporting Files */,
 				DB20A8D020CFCF8700D7432A /* AppDelegate.h */,
 				DB20A8D820CFCF8700D7432A /* AppDelegate.m */,
-				DB20A8D120CFCF8700D7432A /* Assets.xcassets */,
 				DB20A8F120CFD0D100D7432A /* Common */,
-				DB20A8D920CFCF8700D7432A /* Info.plist */,
-				DB20A8D720CFCF8700D7432A /* main.m */,
 				DB20A8E220CFCF9D00D7432A /* Source */,
 				DB20A8DA20CFCF8700D7432A /* ViewController.h */,
 				DB20A8D220CFCF8700D7432A /* ViewController.m */,
@@ -216,6 +214,16 @@
 				DB2D5AE320E27319005893ED /* UIDevice+Common.m */,
 			);
 			path = Device;
+			sourceTree = "<group>";
+		};
+		DBE03A0020E3D88D0012C824 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB20A8D120CFCF8700D7432A /* Assets.xcassets */,
+				DB20A8D920CFCF8700D7432A /* Info.plist */,
+				DB20A8D720CFCF8700D7432A /* main.m */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -506,6 +514,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 64Z9QAXW9D;
 				INFOPLIST_FILE = HZKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -524,6 +533,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 64Z9QAXW9D;
 				INFOPLIST_FILE = HZKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -35,6 +35,9 @@
     NSLog(@"%@", self.view);
     UIView *copyView = [self.view hzCopy];
     NSLog(@"copy:%@", copyView);
+    
+    NSString *deviceId = [[UIDevice currentDevice] hz_deviceIdentifier];
+    NSLog(@"device id:%@", deviceId);
 #endif
 
 }
