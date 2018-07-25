@@ -7,14 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DB20A88820CE627400D7432A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB20A87D20CE627300D7432A /* LaunchScreen.storyboard */; };
-		DB20A88920CE627400D7432A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB20A87F20CE627300D7432A /* Main.storyboard */; };
-		DB20A88A20CE627400D7432A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A88220CE627300D7432A /* main.m */; };
-		DB20A88B20CE627400D7432A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A88320CE627300D7432A /* AppDelegate.m */; };
-		DB20A88C20CE627400D7432A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A88420CE627300D7432A /* ViewController.m */; };
-		DB20A88D20CE627400D7432A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB20A88520CE627300D7432A /* Assets.xcassets */; };
-		DB20A88E20CE627400D7432A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB20A88720CE627400D7432A /* Info.plist */; };
-		DB20A8A020CE66C400D7432A /* HZVersionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A89E20CE66C400D7432A /* HZVersionManager.m */; };
+		DB20A8DB20CFCF8700D7432A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB20A8D120CFCF8700D7432A /* Assets.xcassets */; };
+		DB20A8DC20CFCF8700D7432A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8D220CFCF8700D7432A /* ViewController.m */; };
+		DB20A8DF20CFCF8700D7432A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8D720CFCF8700D7432A /* main.m */; };
+		DB20A8E020CFCF8700D7432A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8D820CFCF8700D7432A /* AppDelegate.m */; };
+		DB20A8E120CFCF8700D7432A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB20A8D920CFCF8700D7432A /* Info.plist */; };
+		DB20A8ED20CFCF9E00D7432A /* HZVersionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8E720CFCF9D00D7432A /* HZVersionManager.m */; };
+		DB20A8EE20CFCF9E00D7432A /* UIView+HZKitCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8EB20CFCF9D00D7432A /* UIView+HZKitCommon.m */; };
+		DB20A8F520CFD11900D7432A /* HZBaseModule.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8F420CFD11900D7432A /* HZBaseModule.m */; };
+		DB20A8F820CFD33200D7432A /* HZBaseRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8F720CFD33200D7432A /* HZBaseRouter.m */; };
+		DB20A8FD20CFDA6500D7432A /* HZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8FC20CFDA6500D7432A /* HZBaseViewController.m */; };
+		DB20A90020CFDB1600D7432A /* HZBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8FF20CFDB1600D7432A /* HZBaseNavigationController.m */; };
+		DB2D5AE420E27319005893ED /* UIDevice+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2D5AE320E27319005893ED /* UIDevice+Common.m */; };
+		DB71B26921085C4100F8DEB3 /* HZBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B26821085C4100F8DEB3 /* HZBaseTabBarController.m */; };
+		DB71B26C21085C5700F8DEB3 /* HZMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B26B21085C5700F8DEB3 /* HZMainViewController.m */; };
+		DB71B27121085D6100F8DEB3 /* HZShowModule.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B27021085D6100F8DEB3 /* HZShowModule.m */; };
+		DB71B27421085D7100F8DEB3 /* HZAboutModule.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B27321085D7100F8DEB3 /* HZAboutModule.m */; };
+		DB71B27821085E7700F8DEB3 /* HZAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B27721085E7700F8DEB3 /* HZAboutViewController.m */; };
+		DB71B27C21085E9D00F8DEB3 /* HZShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B27B21085E9D00F8DEB3 /* HZShowViewController.m */; };
+		DB71B280210866F200F8DEB3 /* HZBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B27F210866F200F8DEB3 /* HZBaseModel.m */; };
+		DB71B2832108673B00F8DEB3 /* HZShowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B2822108673B00F8DEB3 /* HZShowModel.m */; };
+		DB71B28621086F6500F8DEB3 /* HZShowRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B28521086F6500F8DEB3 /* HZShowRouter.m */; };
+		DB71B28B2108737000F8DEB3 /* HZShowDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B28A2108737000F8DEB3 /* HZShowDetailViewController.m */; };
+		DB71B28E2108782F00F8DEB3 /* HZMainRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B28D2108782F00F8DEB3 /* HZMainRouter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,17 +53,55 @@
 		DB20A82D20CE614B00D7432A /* HZKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HZKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB20A84520CE614F00D7432A /* HZKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HZKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB20A85020CE614F00D7432A /* HZKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HZKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB20A87E20CE627300D7432A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DB20A88020CE627300D7432A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
-		DB20A88120CE627300D7432A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Example/HZKit/ViewController.h; sourceTree = "<group>"; };
-		DB20A88220CE627300D7432A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Example/HZKit/main.m; sourceTree = "<group>"; };
-		DB20A88320CE627300D7432A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Example/HZKit/AppDelegate.m; sourceTree = "<group>"; };
-		DB20A88420CE627300D7432A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Example/HZKit/ViewController.m; sourceTree = "<group>"; };
-		DB20A88520CE627300D7432A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Example/HZKit/Assets.xcassets; sourceTree = "<group>"; };
-		DB20A88620CE627400D7432A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Example/HZKit/AppDelegate.h; sourceTree = "<group>"; };
-		DB20A88720CE627400D7432A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Example/HZKit/Info.plist; sourceTree = "<group>"; };
-		DB20A89E20CE66C400D7432A /* HZVersionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HZVersionManager.m; path = Source/HZVersionManager.m; sourceTree = "<group>"; };
-		DB20A89F20CE66C400D7432A /* HZVersionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HZVersionManager.h; path = Source/HZVersionManager.h; sourceTree = "<group>"; };
+		DB20A8D020CFCF8700D7432A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DB20A8D120CFCF8700D7432A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB20A8D220CFCF8700D7432A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DB20A8D720CFCF8700D7432A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DB20A8D820CFCF8700D7432A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DB20A8D920CFCF8700D7432A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB20A8DA20CFCF8700D7432A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DB20A8E420CFCF9D00D7432A /* HZKitMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZKitMacro.h; sourceTree = "<group>"; };
+		DB20A8E520CFCF9D00D7432A /* HZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZKit.h; sourceTree = "<group>"; };
+		DB20A8E720CFCF9D00D7432A /* HZVersionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZVersionManager.m; sourceTree = "<group>"; };
+		DB20A8E820CFCF9D00D7432A /* HZVersionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZVersionManager.h; sourceTree = "<group>"; };
+		DB20A8EA20CFCF9D00D7432A /* HZKitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZKitView.h; sourceTree = "<group>"; };
+		DB20A8EB20CFCF9D00D7432A /* UIView+HZKitCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HZKitCommon.m"; sourceTree = "<group>"; };
+		DB20A8EC20CFCF9D00D7432A /* UIView+HZKitCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HZKitCommon.h"; sourceTree = "<group>"; };
+		DB20A8EF20CFCFE000D7432A /* HZKitVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZKitVersion.h; sourceTree = "<group>"; };
+		DB20A8F320CFD11900D7432A /* HZBaseModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZBaseModule.h; sourceTree = "<group>"; };
+		DB20A8F420CFD11900D7432A /* HZBaseModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZBaseModule.m; sourceTree = "<group>"; };
+		DB20A8F620CFD33200D7432A /* HZBaseRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZBaseRouter.h; sourceTree = "<group>"; };
+		DB20A8F720CFD33200D7432A /* HZBaseRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZBaseRouter.m; sourceTree = "<group>"; };
+		DB20A8FB20CFDA6500D7432A /* HZBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZBaseViewController.h; sourceTree = "<group>"; };
+		DB20A8FC20CFDA6500D7432A /* HZBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZBaseViewController.m; sourceTree = "<group>"; };
+		DB20A8FE20CFDB1600D7432A /* HZBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZBaseNavigationController.h; sourceTree = "<group>"; };
+		DB20A8FF20CFDB1600D7432A /* HZBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZBaseNavigationController.m; sourceTree = "<group>"; };
+		DB2D5AE120E272BE005893ED /* HZKitDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZKitDevice.h; sourceTree = "<group>"; };
+		DB2D5AE220E27319005893ED /* UIDevice+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Common.h"; sourceTree = "<group>"; };
+		DB2D5AE320E27319005893ED /* UIDevice+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Common.m"; sourceTree = "<group>"; };
+		DB71B26721085C4100F8DEB3 /* HZBaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZBaseTabBarController.h; sourceTree = "<group>"; };
+		DB71B26821085C4100F8DEB3 /* HZBaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZBaseTabBarController.m; sourceTree = "<group>"; };
+		DB71B26A21085C5700F8DEB3 /* HZMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZMainViewController.h; sourceTree = "<group>"; };
+		DB71B26B21085C5700F8DEB3 /* HZMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZMainViewController.m; sourceTree = "<group>"; };
+		DB71B26F21085D6100F8DEB3 /* HZShowModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZShowModule.h; sourceTree = "<group>"; };
+		DB71B27021085D6100F8DEB3 /* HZShowModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZShowModule.m; sourceTree = "<group>"; };
+		DB71B27221085D7100F8DEB3 /* HZAboutModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZAboutModule.h; sourceTree = "<group>"; };
+		DB71B27321085D7100F8DEB3 /* HZAboutModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZAboutModule.m; sourceTree = "<group>"; };
+		DB71B27621085E7700F8DEB3 /* HZAboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZAboutViewController.h; sourceTree = "<group>"; };
+		DB71B27721085E7700F8DEB3 /* HZAboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZAboutViewController.m; sourceTree = "<group>"; };
+		DB71B27A21085E9D00F8DEB3 /* HZShowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZShowViewController.h; sourceTree = "<group>"; };
+		DB71B27B21085E9D00F8DEB3 /* HZShowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZShowViewController.m; sourceTree = "<group>"; };
+		DB71B27E210866F200F8DEB3 /* HZBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZBaseModel.h; sourceTree = "<group>"; };
+		DB71B27F210866F200F8DEB3 /* HZBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZBaseModel.m; sourceTree = "<group>"; };
+		DB71B2812108673B00F8DEB3 /* HZShowModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZShowModel.h; sourceTree = "<group>"; };
+		DB71B2822108673B00F8DEB3 /* HZShowModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZShowModel.m; sourceTree = "<group>"; };
+		DB71B28421086F6500F8DEB3 /* HZShowRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZShowRouter.h; sourceTree = "<group>"; };
+		DB71B28521086F6500F8DEB3 /* HZShowRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZShowRouter.m; sourceTree = "<group>"; };
+		DB71B2892108737000F8DEB3 /* HZShowDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZShowDetailViewController.h; sourceTree = "<group>"; };
+		DB71B28A2108737000F8DEB3 /* HZShowDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZShowDetailViewController.m; sourceTree = "<group>"; };
+		DB71B28C2108782F00F8DEB3 /* HZMainRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZMainRouter.h; sourceTree = "<group>"; };
+		DB71B28D2108782F00F8DEB3 /* HZMainRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZMainRouter.m; sourceTree = "<group>"; };
+		DB71B28F2108824200F8DEB3 /* HZPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZPrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +132,7 @@
 		DB20A82420CE614B00D7432A = {
 			isa = PBXGroup;
 			children = (
-				DB20A86820CE624A00D7432A /* HZKit */,
+				DB20A8CF20CFCF8700D7432A /* HZKit */,
 				DB20A82E20CE614B00D7432A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,39 +147,196 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DB20A86820CE624A00D7432A /* HZKit */ = {
+		DB20A8CF20CFCF8700D7432A /* HZKit */ = {
 			isa = PBXGroup;
 			children = (
-				DB20A89A20CE656500D7432A /* Source */,
-				DB20A88620CE627400D7432A /* AppDelegate.h */,
-				DB20A88320CE627300D7432A /* AppDelegate.m */,
-				DB20A88520CE627300D7432A /* Assets.xcassets */,
-				DB20A87C20CE627300D7432A /* Base.lproj */,
-				DB20A88720CE627400D7432A /* Info.plist */,
-				DB20A88220CE627300D7432A /* main.m */,
-				DB20A88120CE627300D7432A /* ViewController.h */,
-				DB20A88420CE627300D7432A /* ViewController.m */,
+				DB71B26E21085D3E00F8DEB3 /* About */,
+				DB71B26D21085D3600F8DEB3 /* Show */,
+				DB71B26621085C1600F8DEB3 /* Main */,
+				DBE03A0020E3D88D0012C824 /* Supporting Files */,
+				DB20A8D020CFCF8700D7432A /* AppDelegate.h */,
+				DB20A8D820CFCF8700D7432A /* AppDelegate.m */,
+				DB20A8F120CFD0D100D7432A /* Common */,
+				DB20A8E220CFCF9D00D7432A /* Source */,
+				DB20A8DA20CFCF8700D7432A /* ViewController.h */,
+				DB20A8D220CFCF8700D7432A /* ViewController.m */,
 			);
-			name = HZKit;
+			path = HZKit;
 			sourceTree = "<group>";
 		};
-		DB20A87C20CE627300D7432A /* Base.lproj */ = {
+		DB20A8E220CFCF9D00D7432A /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				DB20A87D20CE627300D7432A /* LaunchScreen.storyboard */,
-				DB20A87F20CE627300D7432A /* Main.storyboard */,
+				DB2D5AE020E27292005893ED /* Device */,
+				DB20A8E520CFCF9D00D7432A /* HZKit.h */,
+				DB20A8E320CFCF9D00D7432A /* Macro */,
+				DB20A8E620CFCF9D00D7432A /* Version */,
+				DB20A8E920CFCF9D00D7432A /* View */,
 			);
-			name = Base.lproj;
-			path = Example/HZKit/Base.lproj;
+			path = Source;
+			sourceTree = SOURCE_ROOT;
+		};
+		DB20A8E320CFCF9D00D7432A /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				DB20A8E420CFCF9D00D7432A /* HZKitMacro.h */,
+			);
+			path = Macro;
 			sourceTree = "<group>";
 		};
-		DB20A89A20CE656500D7432A /* Source */ = {
+		DB20A8E620CFCF9D00D7432A /* Version */ = {
 			isa = PBXGroup;
 			children = (
-				DB20A89F20CE66C400D7432A /* HZVersionManager.h */,
-				DB20A89E20CE66C400D7432A /* HZVersionManager.m */,
+				DB20A8EF20CFCFE000D7432A /* HZKitVersion.h */,
+				DB20A8E720CFCF9D00D7432A /* HZVersionManager.m */,
+				DB20A8E820CFCF9D00D7432A /* HZVersionManager.h */,
 			);
-			name = Source;
+			path = Version;
+			sourceTree = "<group>";
+		};
+		DB20A8E920CFCF9D00D7432A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DB20A8EA20CFCF9D00D7432A /* HZKitView.h */,
+				DB20A8EB20CFCF9D00D7432A /* UIView+HZKitCommon.m */,
+				DB20A8EC20CFCF9D00D7432A /* UIView+HZKitCommon.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DB20A8F120CFD0D100D7432A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DB20A8F920CFDA3500D7432A /* Classes */,
+				DB20A8F220CFD0EE00D7432A /* Module */,
+				DB71B27E210866F200F8DEB3 /* HZBaseModel.h */,
+				DB71B27F210866F200F8DEB3 /* HZBaseModel.m */,
+				DB71B28C2108782F00F8DEB3 /* HZMainRouter.h */,
+				DB71B28D2108782F00F8DEB3 /* HZMainRouter.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DB20A8F220CFD0EE00D7432A /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				DB20A8F320CFD11900D7432A /* HZBaseModule.h */,
+				DB20A8F420CFD11900D7432A /* HZBaseModule.m */,
+				DB20A8F620CFD33200D7432A /* HZBaseRouter.h */,
+				DB20A8F720CFD33200D7432A /* HZBaseRouter.m */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		DB20A8F920CFDA3500D7432A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DB20A8FA20CFDA4800D7432A /* Controllers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		DB20A8FA20CFDA4800D7432A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DB20A8FB20CFDA6500D7432A /* HZBaseViewController.h */,
+				DB20A8FC20CFDA6500D7432A /* HZBaseViewController.m */,
+				DB20A8FE20CFDB1600D7432A /* HZBaseNavigationController.h */,
+				DB20A8FF20CFDB1600D7432A /* HZBaseNavigationController.m */,
+				DB71B26721085C4100F8DEB3 /* HZBaseTabBarController.h */,
+				DB71B26821085C4100F8DEB3 /* HZBaseTabBarController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DB2D5AE020E27292005893ED /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				DB2D5AE120E272BE005893ED /* HZKitDevice.h */,
+				DB2D5AE220E27319005893ED /* UIDevice+Common.h */,
+				DB2D5AE320E27319005893ED /* UIDevice+Common.m */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		DB71B26621085C1600F8DEB3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DB71B26A21085C5700F8DEB3 /* HZMainViewController.h */,
+				DB71B26B21085C5700F8DEB3 /* HZMainViewController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DB71B26D21085D3600F8DEB3 /* Show */ = {
+			isa = PBXGroup;
+			children = (
+				DB71B27D210866CF00F8DEB3 /* Models */,
+				DB71B27921085E8C00F8DEB3 /* Controllers */,
+				DB71B26F21085D6100F8DEB3 /* HZShowModule.h */,
+				DB71B27021085D6100F8DEB3 /* HZShowModule.m */,
+				DB71B28821086F9200F8DEB3 /* Router */,
+			);
+			path = Show;
+			sourceTree = "<group>";
+		};
+		DB71B26E21085D3E00F8DEB3 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				DB71B27521085E5500F8DEB3 /* Controllers */,
+				DB71B27221085D7100F8DEB3 /* HZAboutModule.h */,
+				DB71B27321085D7100F8DEB3 /* HZAboutModule.m */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		DB71B27521085E5500F8DEB3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DB71B27621085E7700F8DEB3 /* HZAboutViewController.h */,
+				DB71B27721085E7700F8DEB3 /* HZAboutViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DB71B27921085E8C00F8DEB3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DB71B27A21085E9D00F8DEB3 /* HZShowViewController.h */,
+				DB71B27B21085E9D00F8DEB3 /* HZShowViewController.m */,
+				DB71B2892108737000F8DEB3 /* HZShowDetailViewController.h */,
+				DB71B28A2108737000F8DEB3 /* HZShowDetailViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DB71B27D210866CF00F8DEB3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DB71B2812108673B00F8DEB3 /* HZShowModel.h */,
+				DB71B2822108673B00F8DEB3 /* HZShowModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DB71B28821086F9200F8DEB3 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				DB71B28421086F6500F8DEB3 /* HZShowRouter.h */,
+				DB71B28521086F6500F8DEB3 /* HZShowRouter.m */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		DBE03A0020E3D88D0012C824 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB20A8D120CFCF8700D7432A /* Assets.xcassets */,
+				DB20A8D920CFCF8700D7432A /* Info.plist */,
+				DB20A8D720CFCF8700D7432A /* main.m */,
+				DB71B28F2108824200F8DEB3 /* HZPrefixHeader.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,10 +442,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB20A88E20CE627400D7432A /* Info.plist in Resources */,
-				DB20A88820CE627400D7432A /* LaunchScreen.storyboard in Resources */,
-				DB20A88D20CE627400D7432A /* Assets.xcassets in Resources */,
-				DB20A88920CE627400D7432A /* Main.storyboard in Resources */,
+				DB20A8E120CFCF8700D7432A /* Info.plist in Resources */,
+				DB20A8DB20CFCF8700D7432A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,10 +468,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB20A88C20CE627400D7432A /* ViewController.m in Sources */,
-				DB20A8A020CE66C400D7432A /* HZVersionManager.m in Sources */,
-				DB20A88B20CE627400D7432A /* AppDelegate.m in Sources */,
-				DB20A88A20CE627400D7432A /* main.m in Sources */,
+				DB2D5AE420E27319005893ED /* UIDevice+Common.m in Sources */,
+				DB20A90020CFDB1600D7432A /* HZBaseNavigationController.m in Sources */,
+				DB20A8ED20CFCF9E00D7432A /* HZVersionManager.m in Sources */,
+				DB71B27C21085E9D00F8DEB3 /* HZShowViewController.m in Sources */,
+				DB71B28B2108737000F8DEB3 /* HZShowDetailViewController.m in Sources */,
+				DB71B26921085C4100F8DEB3 /* HZBaseTabBarController.m in Sources */,
+				DB20A8DF20CFCF8700D7432A /* main.m in Sources */,
+				DB20A8DC20CFCF8700D7432A /* ViewController.m in Sources */,
+				DB20A8E020CFCF8700D7432A /* AppDelegate.m in Sources */,
+				DB20A8F520CFD11900D7432A /* HZBaseModule.m in Sources */,
+				DB71B27821085E7700F8DEB3 /* HZAboutViewController.m in Sources */,
+				DB71B280210866F200F8DEB3 /* HZBaseModel.m in Sources */,
+				DB71B28E2108782F00F8DEB3 /* HZMainRouter.m in Sources */,
+				DB71B27121085D6100F8DEB3 /* HZShowModule.m in Sources */,
+				DB20A8FD20CFDA6500D7432A /* HZBaseViewController.m in Sources */,
+				DB20A8F820CFD33200D7432A /* HZBaseRouter.m in Sources */,
+				DB71B2832108673B00F8DEB3 /* HZShowModel.m in Sources */,
+				DB20A8EE20CFCF9E00D7432A /* UIView+HZKitCommon.m in Sources */,
+				DB71B26C21085C5700F8DEB3 /* HZMainViewController.m in Sources */,
+				DB71B27421085D7100F8DEB3 /* HZAboutModule.m in Sources */,
+				DB71B28621086F6500F8DEB3 /* HZShowRouter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,25 +520,6 @@
 			targetProxy = DB20A85120CE614F00D7432A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		DB20A87D20CE627300D7432A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB20A87E20CE627300D7432A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		DB20A87F20CE627300D7432A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB20A88020CE627300D7432A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DB20A85720CE614F00D7432A /* Debug */ = {
@@ -430,8 +636,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Example/HZKit/Info.plist;
+				DEVELOPMENT_TEAM = 64Z9QAXW9D;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/HZPrefixHeader.pch";
+				INFOPLIST_FILE = HZKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -447,8 +656,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Example/HZKit/Info.plist;
+				DEVELOPMENT_TEAM = 64Z9QAXW9D;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/HZPrefixHeader.pch";
+				INFOPLIST_FILE = HZKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
