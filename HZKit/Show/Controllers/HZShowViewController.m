@@ -25,6 +25,25 @@
     self.title = @"功能列表";
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self.view addSubview:self.tableView];
+    
+    // 检查应用更新
+    [HZVersionManager checkAppUpdateWithAppId:@"414478124" complete:^(BOOL isFindNew, id info) {
+        if (isFindNew) {
+            // TODO: 提示升级
+            if (DEBUG) {
+                NSLog(@"INFO:\n%@", info);
+            }
+        }
+    }];
+    
+#if DEBUG
+    NSLog(@"%@", self.view);
+    UIView *copyView = [self.view hzCopy];
+    NSLog(@"copy:%@", copyView);
+    
+    NSString *deviceId = [[UIDevice currentDevice] hz_deviceIdentifier];
+    NSLog(@"device id:%@", deviceId);
+#endif
 }
 
 - (void)didReceiveMemoryWarning {

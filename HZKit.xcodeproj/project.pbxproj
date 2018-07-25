@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DB20A8DB20CFCF8700D7432A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB20A8D120CFCF8700D7432A /* Assets.xcassets */; };
-		DB20A8DC20CFCF8700D7432A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8D220CFCF8700D7432A /* ViewController.m */; };
 		DB20A8DF20CFCF8700D7432A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8D720CFCF8700D7432A /* main.m */; };
 		DB20A8E020CFCF8700D7432A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8D820CFCF8700D7432A /* AppDelegate.m */; };
 		DB20A8E120CFCF8700D7432A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB20A8D920CFCF8700D7432A /* Info.plist */; };
@@ -55,11 +54,9 @@
 		DB20A85020CE614F00D7432A /* HZKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HZKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB20A8D020CFCF8700D7432A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DB20A8D120CFCF8700D7432A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DB20A8D220CFCF8700D7432A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DB20A8D720CFCF8700D7432A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DB20A8D820CFCF8700D7432A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DB20A8D920CFCF8700D7432A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB20A8DA20CFCF8700D7432A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		DB20A8E420CFCF9D00D7432A /* HZKitMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZKitMacro.h; sourceTree = "<group>"; };
 		DB20A8E520CFCF9D00D7432A /* HZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZKit.h; sourceTree = "<group>"; };
 		DB20A8E720CFCF9D00D7432A /* HZVersionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZVersionManager.m; sourceTree = "<group>"; };
@@ -158,8 +155,6 @@
 				DB20A8D820CFCF8700D7432A /* AppDelegate.m */,
 				DB20A8F120CFD0D100D7432A /* Common */,
 				DB20A8E220CFCF9D00D7432A /* Source */,
-				DB20A8DA20CFCF8700D7432A /* ViewController.h */,
-				DB20A8D220CFCF8700D7432A /* ViewController.m */,
 			);
 			path = HZKit;
 			sourceTree = "<group>";
@@ -475,7 +470,6 @@
 				DB71B28B2108737000F8DEB3 /* HZShowDetailViewController.m in Sources */,
 				DB71B26921085C4100F8DEB3 /* HZBaseTabBarController.m in Sources */,
 				DB20A8DF20CFCF8700D7432A /* main.m in Sources */,
-				DB20A8DC20CFCF8700D7432A /* ViewController.m in Sources */,
 				DB20A8E020CFCF8700D7432A /* AppDelegate.m in Sources */,
 				DB20A8F520CFD11900D7432A /* HZBaseModule.m in Sources */,
 				DB71B27821085E7700F8DEB3 /* HZAboutViewController.m in Sources */,
