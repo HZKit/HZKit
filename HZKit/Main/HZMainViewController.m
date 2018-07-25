@@ -1,29 +1,18 @@
 //
-//  HZBaseViewController.m
+//  HZMainViewController.m
 //  HZKit
 //
-//  Created by HertzWang on 2018/6/12.
+//  Created by HertzWang on 2018/7/25.
 //  Copyright © 2018年 Hertz Wang. All rights reserved.
 //
 
-#import "HZBaseViewController.h"
+#import "HZMainViewController.h"
 
-const NSString *HZ_HIDDEN_TABBAR_KEY = @"hiddenTabBar";
-
-@interface HZBaseViewController ()
+@interface HZMainViewController ()
 
 @end
 
-@implementation HZBaseViewController
-
-- (instancetype)initWithArgs:(NSDictionary *)args {
-    self = [super init];
-    if (self) {
-        _hiddenTabBar = [args[HZ_HIDDEN_TABBAR_KEY] boolValue];
-    }
-    
-    return self;
-}
+@implementation HZMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

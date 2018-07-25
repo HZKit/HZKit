@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString *HZ_HIDDEN_TABBAR_KEY;
+
 @interface HZBaseViewController : UIViewController
+
+@property (nonatomic, assign) BOOL hiddenTabBar;
+
+- (instancetype)initWithArgs:(NSDictionary *)args;
 
 @end

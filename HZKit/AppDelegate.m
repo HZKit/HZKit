@@ -11,8 +11,14 @@
 #import "HZBaseModule.h"
 #import "HZBaseViewController.h"
 #import "HZBaseNavigationController.h"
+#import "HZMainViewController.h"
+#import "HZShowModule.h"
+#import "HZAboutModule.h"
+#import "HZMainRouter.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) HZMainViewController *mainViewController;
 
 @end
 
@@ -55,17 +61,12 @@
 }
 
 #pragma mark - Private
-- (UIViewController *)rootViewControllerWithModuleNames:(NSArray *)moduleNames {
-    // 生成module
-    NSMutableArray *modules = [NSMutableArray arrayWithCapacity:moduleNames.count];
-    for (NSString *moduleName in moduleNames) {
-        HZBaseModule *module = (HZBaseModule *)[NSClassFromString(moduleName) new];
-        [modules addObject:module];
-    }
+- (UIViewController *)rootViewControllerWithModules:(NSArray<HZBaseModule *> *)modules {
     
-    //
     NSMutableArray *viewControllers = [NSMutableArray array];
     NSMutableArray *indexes = [NSMutableArray array];
+    NSMutableDictionary *moduleMapping = [NSMutableDictionary dictionaryWithCapacity:modules.count];
+    NSMutableDictionary *moduleRouterMapping = [NSMutableDictionary dictionaryWithCapacity:modules.count];
     
     for (HZBaseModule *module in modules) {
         NSString *tabBarClassName = module.tabBarControllerClassName;
@@ -73,10 +74,16 @@
             Class tabBarClass = NSClassFromString(tabBarClassName);
             if (tabBarClass) {
                 HZBaseViewController *baseViewController = [(HZBaseViewController *)[tabBarClass alloc] init];
+                UITabBarItem *tabBarItem = [module tabBarItem];
+                if (tabBarItem) {
+                    baseViewController.tabBarItem = tabBarItem;
+                }
+                
                 id viewController = baseViewController;
                 if (module.hasNavigationBar) {
                     HZBaseNavigationController *baseNavigationController = [[HZBaseNavigationController alloc] initWithRootViewController:baseViewController];
                     baseNavigationController.navigationBarHidden = module.navigationBarHidden;
+                    [moduleMapping setObject:baseNavigationController forKey:module.name];
                     
                     viewController = baseNavigationController;
                 }
@@ -98,11 +105,34 @@
                 }
             }
         }
+        
+        HZBaseRouter *router = [module router];
+        if (router) {
+            [moduleRouterMapping setObject:router forKey:module.name];
+        }
     }
     
-    // TODO: UITabBarControllr
+    _mainViewController = [[HZMainViewController alloc] init];
+    _mainViewController.viewControllers = viewControllers;
     
-    return [ViewController new];
+    // 添加非 TabBar 上的模块
+    for (HZBaseModule *module in modules) {
+        NSString *groupName = module.groupName;
+        if (groupName && [module tabBarControllerClassName] == nil) {
+            id navigationController = [moduleMapping objectForKey:groupName];
+            if (navigationController) {
+                [moduleMapping setObject:navigationController forKey:module.name];
+            }
+        }
+    }
+    
+    // 设置 MainRouter
+    HZMainRouter *router = [HZMainRouter shared];
+    router.mainViewController = _mainViewController;
+    router.moduleMapping = moduleMapping;
+    router.moduleRouterMapping = moduleRouterMapping;
+    
+    return _mainViewController;
 }
 
 #pragma mark - Lazy load
@@ -111,8 +141,10 @@
         CGRect frame = [UIScreen mainScreen].bounds;
         UIWindow *keyWindow = [[UIWindow alloc] initWithFrame:frame];
         
-        ViewController *rootViewController = [ViewController new];
-        keyWindow.rootViewController = rootViewController;
+//        ViewController *rootViewController = [ViewController new];
+        NSArray *modules = @[[HZShowModule new],
+                             [HZAboutModule new]];
+        keyWindow.rootViewController = [self rootViewControllerWithModules:modules];
         
         _window = keyWindow;
     }

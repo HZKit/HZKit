@@ -9,11 +9,13 @@
 #import "HZBaseModule.h"
 
 NSString *const kHZDefaultGroupName = @"common";
+NSString *const HZModuleNameShow = @"HZShowModule";
+NSString *const HZModuleNameAbout = @"HZModuleAbout";
 
 @implementation HZBaseModule
 
 - (NSString *)name {
-    return self.description;
+    return NSStringFromClass([self class]);
 }
 
 - (NSString *)groupName {
@@ -24,8 +26,12 @@ NSString *const kHZDefaultGroupName = @"common";
     return nil;
 }
 
+- (UITabBarItem *)tabBarItem {
+    return nil;
+}
+
 - (BOOL)hasNavigationBar {
-    return YES;
+    return NO;
 }
 
 - (BOOL)navigationBarHidden {
