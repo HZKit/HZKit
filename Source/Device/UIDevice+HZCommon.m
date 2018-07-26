@@ -1,16 +1,17 @@
 //
-//  UIDevice+Common.m
+//  UIDevice+HZCommon.m
 //  HZKit
 //
-//  Created by Hertz Wang on 2018/6/26.
-//  Copyright © 2018 Hertz Wang. All rights reserved.
+//  Created by HertzWang on 2018/7/26.
+//  Copyright © 2018年 Hertz Wang. All rights reserved.
 //
 
-#import "UIDevice+Common.h"
+#import "UIDevice+HZCommon.h"
 #import <Security/Security.h>
 
-@implementation UIDevice (Common)
+@implementation UIDevice (HZCommon)
 
+#pragma mark 设备标识符
 - (NSString *)hz_deviceIdentifier {
     static NSString *deviceIdentifier = nil;
     static dispatch_once_t onceToken;
@@ -46,18 +47,6 @@
     });
     
     return deviceIdentifier;
-}
-
-+ (NSMutableDictionary *)_queryForService:(NSString *)service account:(NSString *)account {
-    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithCapacity:3];
-    
-    if (service) {
-    }
-    
-    if (account) {
-    }
-    
-    return dictionary;
 }
 
 @end

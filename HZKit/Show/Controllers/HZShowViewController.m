@@ -32,9 +32,6 @@
     NSLog(@"%@", self.view);
     UIView *copyView = [self.view hzCopy];
     NSLog(@"copy:%@", copyView);
-    
-    NSString *deviceId = [[UIDevice currentDevice] hz_deviceIdentifier];
-    NSLog(@"device id:%@", deviceId);
 #endif
 }
 
@@ -111,6 +108,19 @@
             [self presentViewController:alert animated:YES completion:nil];
         }
     }];
+}
+
+/**
+ 显示设备唯一标识符
+ */
+- (void)showDeviceIdentifierAction {
+    NSString *deviceId = [[UIDevice currentDevice] hz_deviceIdentifier];
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"设备标识" message:deviceId preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:cancelAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - Table
@@ -201,8 +211,16 @@
     if (!_dataArray) {
         _dataArray = [NSMutableArray array];
         // Category、常用工具、自定义控件
-        HZShowModel *checkUpdate = [HZShowModel modelWithGroupName:@"常用工具" title:@"校验应用版本" subtitle:@"使用时需要修改App id" action:@"checkUpdateAction"];
-        NSArray *toolArray = @[checkUpdate];
+        HZShowModel *checkUpdate = [HZShowModel modelWithGroupName:@"常用工具"
+                                                             title:@"校验应用版本"
+                                                          subtitle:@"使用时需要修改App id"
+                                                            action:@"checkUpdateAction"];
+        HZShowModel *deviceIdentifier = [HZShowModel modelWithGroupName:@"常用工具"
+                                                             title:@"设备唯一标识符"
+                                                          subtitle:@"使用 KeyChain 保证唯一"
+                                                            action:@"showDeviceIdentifierAction"];
+        NSArray *toolArray = @[checkUpdate,
+                               deviceIdentifier];
         [_dataArray addObject:toolArray];
     }
     

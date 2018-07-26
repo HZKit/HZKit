@@ -9,6 +9,6 @@
 #ifndef HZKitDevice_h
 #define HZKitDevice_h
 
-#import "UIDevice+Common.h"
+#import "UIDevice+HZCommon.h"
 
 #endif /* HZKitDevice_h */

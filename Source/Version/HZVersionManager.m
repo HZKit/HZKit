@@ -19,7 +19,7 @@ NSString *(^HZVersionManagerFilePath)(NSString *appId) = ^(NSString *appId) {
 
 + (void)checkAppUpdateWithAppId:(NSString *)appId complete:(HZVersionManagerBlock)block {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSString *localVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:kVersionKey];
+        NSString *localVersion = [[[[NSBundle mainBundle] infoDictionary] objectForKey:kVersionKey] mutableCopy];
         NSString *publishVersion = nil;
         NSDictionary *info = nil;
         
