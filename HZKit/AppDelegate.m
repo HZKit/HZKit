@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
 #import "HZBaseModule.h"
 #import "HZBaseViewController.h"
 #import "HZBaseNavigationController.h"
@@ -62,6 +61,8 @@
 
 #pragma mark - Private
 - (UIViewController *)rootViewControllerWithModules:(NSArray<HZBaseModule *> *)modules {
+    
+    _modules = [NSArray arrayWithArray:modules];
     
     NSMutableArray *viewControllers = [NSMutableArray array];
     NSMutableArray *indexes = [NSMutableArray array];
@@ -141,7 +142,6 @@
         CGRect frame = [UIScreen mainScreen].bounds;
         UIWindow *keyWindow = [[UIWindow alloc] initWithFrame:frame];
         
-//        ViewController *rootViewController = [ViewController new];
         NSArray *modules = @[[HZShowModule new],
                              [HZAboutModule new]];
         keyWindow.rootViewController = [self rootViewControllerWithModules:modules];

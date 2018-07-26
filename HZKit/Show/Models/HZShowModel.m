@@ -12,12 +12,14 @@
 
 + (instancetype)modelWithGroupName:(NSString *)groupName
                              title:(NSString *)title
-                          subtitle:(NSString *)subtitle {
+                          subtitle:(NSString *)subtitle
+                            action:(NSString *)action {
     
     HZShowModel *model = [[HZShowModel alloc] init];
     model.groupName = groupName;
     model.title = title;
     model.subtitle = subtitle;
+    model.action = action;
     
     return model;
 }
