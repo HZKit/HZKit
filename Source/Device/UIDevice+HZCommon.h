@@ -11,10 +11,24 @@
 @interface UIDevice (HZCommon)
 
 /**
- 设备标识符
- 
- @return 标识符
+ Device Identifier: iPhone7,2, iPhone6,1
+
+ @return Identifier
  */
-- (NSString *)hz_deviceIdentifier;
++ (NSString *)hz_deviceIdentifier;
+
+/**
+ Device Generation: iPhone 8、iPhone X
+
+ @return Generation
+ */
++ (NSString *)hz_deviceGeneration;
+
+/**
+ UDID
+ 
+ @return UDID
+ */
+- (NSString *)hz_deviceUDID;
 
 @end

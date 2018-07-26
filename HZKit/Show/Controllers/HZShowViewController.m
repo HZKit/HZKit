@@ -40,6 +40,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Common
+- (void)alertTitle:(NSString *)title message:(NSString *)message {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:cancelAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 #pragma mark - Action
 
 /**
@@ -114,13 +123,18 @@
  显示设备唯一标识符
  */
 - (void)showDeviceIdentifierAction {
-    NSString *deviceId = [[UIDevice currentDevice] hz_deviceIdentifier];
+    NSString *deviceId = [[UIDevice currentDevice] hz_deviceUDID];
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"设备标识" message:deviceId preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:nil];
-    [alert addAction:cancelAction];
+    [self alertTitle:@"设备标识" message:deviceId];
+}
+
+/**
+ 显示设备名称
+ */
+- (void)showDeviceNameAction {
+    NSString *deviceName = [UIDevice hz_deviceGeneration];
     
-    [self presentViewController:alert animated:YES completion:nil];
+    [self alertTitle:@"设备名称" message:deviceName];
 }
 
 #pragma mark - Table
@@ -216,11 +230,15 @@
                                                           subtitle:@"使用时需要修改App id"
                                                             action:@"checkUpdateAction"];
         HZShowModel *deviceIdentifier = [HZShowModel modelWithGroupName:@"常用工具"
-                                                             title:@"设备唯一标识符"
-                                                          subtitle:@"使用 KeyChain 保证唯一"
-                                                            action:@"showDeviceIdentifierAction"];
+                                                                  title:@"设备唯一标识符"
+                                                               subtitle:@"使用 KeyChain，需要 import <Security/Security.h>"
+                                                                 action:@"showDeviceIdentifierAction"];
+        HZShowModel *deviceName = [HZShowModel modelWithGroupName:@"常用工具"
+                                                            title:@"设备名称"
+                                                         subtitle:@"需要 import <sys/utsname.h>"
+                                                           action:@"showDeviceNameAction"];
         NSArray *toolArray = @[checkUpdate,
-                               deviceIdentifier];
+                               deviceIdentifier, deviceName];
         [_dataArray addObject:toolArray];
     }
     
