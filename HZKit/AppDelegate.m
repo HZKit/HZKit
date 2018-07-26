@@ -62,6 +62,8 @@
 #pragma mark - Private
 - (UIViewController *)rootViewControllerWithModules:(NSArray<HZBaseModule *> *)modules {
     
+    _modules = [NSArray arrayWithArray:modules];
+    
     NSMutableArray *viewControllers = [NSMutableArray array];
     NSMutableArray *indexes = [NSMutableArray array];
     NSMutableDictionary *moduleMapping = [NSMutableDictionary dictionaryWithCapacity:modules.count];

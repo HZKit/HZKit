@@ -8,8 +8,10 @@
 
 #import "HZShowViewController.h"
 #import "HZShowModel.h"
+#import <StoreKit/StoreKit.h>
+#import <objc/message.h>
 
-@interface HZShowViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface HZShowViewController ()<UITableViewDataSource, UITableViewDelegate, SKStoreProductViewControllerDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray<NSArray<HZShowModel *> *> *dataArray;
@@ -26,16 +28,6 @@
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self.view addSubview:self.tableView];
     
-    // 检查应用更新
-    [HZVersionManager checkAppUpdateWithAppId:@"414478124" complete:^(BOOL isFindNew, id info) {
-        if (isFindNew) {
-            // TODO: 提示升级
-            if (DEBUG) {
-                NSLog(@"INFO:\n%@", info);
-            }
-        }
-    }];
-    
 #if DEBUG
     NSLog(@"%@", self.view);
     UIView *copyView = [self.view hzCopy];
@@ -51,6 +43,75 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Action
+
+/**
+ 校验应用版本：使用 HZKit 的 HZVersionManager
+ */
+- (void)checkUpdateAction {
+    
+    NSString *appId = @"414478124"; // 使用时修改App Id
+    [HZVersionManager checkAppUpdateWithAppId:appId complete:^(BOOL isFindNew, id info) {
+        if (isFindNew) {
+            if (DEBUG) {
+                NSLog(@"info:\n%@", info);
+            }
+            // 发现新版本处理
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"发现新版本"
+                                                                           message:nil
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消"
+                                                                   style:UIAlertActionStyleCancel
+                                                                 handler:nil];
+            UIAlertAction *updateAction = [UIAlertAction actionWithTitle:@"更新"
+                                                                   style:UIAlertActionStyleDefault
+                                                                 handler:^(UIAlertAction * _Nonnull action) {
+                                                                     
+                                                                     // 方式一
+                                                                     NSURL *itmsAppsURL = [NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@",appId]];
+                                                                     
+                                                                     if ([[UIApplication sharedApplication] canOpenURL:itmsAppsURL]) {
+                                                                         if (@available(iOS 10.0, *)) {
+                                                                             [[UIApplication sharedApplication] openURL:itmsAppsURL
+                                                                                                                options:@{}
+                                                                                                      completionHandler:nil];
+                                                                         } else {
+                                                                             // Fallback on earlier versions
+                                                                             [[UIApplication sharedApplication] openURL:itmsAppsURL];
+                                                                         }
+                                                                         
+                                                                         return;
+                                                                     }
+                                                                     
+                                                                     // 方式二
+                                                                     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/in/app/id%@",appId]];
+                                                                     
+                                                                     if ([[UIApplication sharedApplication] canOpenURL:url]) {
+                                                                         if (@available(iOS 10.0, *)) {
+                                                                             [[UIApplication sharedApplication] openURL:url
+                                                                                                                options:@{}
+                                                                                                      completionHandler:nil];
+                                                                         } else {
+                                                                             // Fallback on earlier versions
+                                                                             [[UIApplication sharedApplication] openURL:url];
+                                                                         }
+                                                                         
+                                                                         return;
+                                                                     }
+                                                                     
+                                                                     // 方式三：需要 import SKStore，并遵守 SKStoreProductViewControllerDelegate
+//                                                                     SKStoreProductViewController
+
+
+            }];
+            
+            [alert addAction:cancelAction];
+            [alert addAction:updateAction];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }];
+}
 
 #pragma mark - Table
 
@@ -100,7 +161,27 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    [[HZMainRouter shared] pushWith:HZShowRouterDetail fromModule:HZModuleNameShow args:nil hideTabBar:YES];
+    HZShowModel *model = self.dataArray[indexPath.section][indexPath.row];
+    if (model.action) {
+        
+        SEL selector = NSSelectorFromString(model.action);
+        // 方式一：warn PerformSelector may cause a leak because its selector is unknown
+//        if ([self respondsToSelector:selector]) {
+//            [self performSelector:selector];
+//        }
+        
+        // 方式二
+        if ([self respondsToSelector:selector]) {
+            objc_msgSend(self, selector);
+        }
+        
+        // 方式三
+//        IMP imp = [self methodForSelector:selector];
+//        void (*func)(id, SEL) = (void *)imp;
+//        func(self, selector);
+    }
+    
+//    [[HZMainRouter shared] pushWith:HZShowRouterDetail fromModule:HZModuleNameShow args:nil hideTabBar:YES];
 }
 
 #pragma mark - Navigation
@@ -119,13 +200,10 @@
 - (NSMutableArray<NSArray<HZShowModel *> *> *)dataArray {
     if (!_dataArray) {
         _dataArray = [NSMutableArray array];
-        
-        for (int i = 0; i < 3; i++) {
-            NSArray *array = @[[HZShowModel modelWithGroupName:[NSString stringWithFormat:@"第%d组", (i + 1)]
-                                                         title:[NSString stringWithFormat:@"标题%d", (i + 1)]
-                                                      subtitle:@"描述"]];
-            [_dataArray addObject:array];
-        }
+        // Category、常用工具、自定义控件
+        HZShowModel *checkUpdate = [HZShowModel modelWithGroupName:@"常用工具" title:@"校验应用版本" subtitle:@"使用时需要修改App id" action:@"checkUpdateAction"];
+        NSArray *toolArray = @[checkUpdate];
+        [_dataArray addObject:toolArray];
     }
     
     return _dataArray;
