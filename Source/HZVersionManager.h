@@ -12,6 +12,20 @@ typedef void(^HZVersionManagerBlock)(BOOL isFindNew, id info);
 
 @interface HZVersionManager : NSObject
 
+/**
+ App version,use CFBundleShortVersionString
+
+ @return version
+ */
++ (NSString *)appVersion;
+
+
+/**
+ Check app update
+
+ @param appId app id
+ @param block has new version
+ */
 + (void)checkAppUpdateWithAppId:(NSString *)appId complete:(HZVersionManagerBlock)block;
 
 @end

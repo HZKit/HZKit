@@ -18,22 +18,37 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self initView];
+}
+
+- (void)initView {
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    
+    CGFloat screenWidth = self.view.bounds.size.width;
+    CGFloat screenHeight = self.view.bounds.size.height;
+    
+    // icon
+    NSDictionary *infoPlist = [[NSBundle mainBundle] infoDictionary];
+    NSString *iconName = [[infoPlist valueForKeyPath:@"CFBundleIcons.CFBundlePrimaryIcon.CFBundleIconFiles"] lastObject];
+    
+    UIImageView *icon = [[UIImageView alloc] init];
+    icon.image = [UIImage imageNamed:iconName];
+    CGFloat iconWidth = icon.image.size.width;
+    CGFloat iconHeight = icon.image.size.height;
+    icon.frame = CGRectMake((screenWidth - iconWidth) * 0.5,
+                            (screenHeight - iconHeight) * 0.5 - iconHeight,
+                            iconWidth, iconHeight);
+    icon.layer.cornerRadius = iconHeight * 0.5;
+    icon.layer.masksToBounds = YES;
+    [self.view addSubview:icon];
+    
+    // Version
+    UILabel *version = [[UILabel alloc] init];
+    version.frame = CGRectMake(0, CGRectGetMaxY(icon.frame), screenWidth, iconHeight);
+    version.text = [NSString stringWithFormat:@"Version %@", [HZVersionManager appVersion]];
+    version.textAlignment = NSTextAlignmentCenter;
+    version.textColor = [UIColor grayColor];
+    [self.view addSubview:version];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
