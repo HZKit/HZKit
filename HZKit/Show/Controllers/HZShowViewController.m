@@ -123,7 +123,7 @@
  显示设备唯一标识符
  */
 - (void)showDeviceIdentifierAction {
-    NSString *deviceId = [[UIDevice currentDevice] hz_deviceUDID];
+    NSString *deviceId = [UIDevice hz_deviceUDID];
     
     [self alertTitle:@"设备标识" message:deviceId];
 }

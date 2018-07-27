@@ -29,6 +29,6 @@
  
  @return UDID
  */
-- (NSString *)hz_deviceUDID;
++ (NSString *)hz_deviceUDID;
 
 @end

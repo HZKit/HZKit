@@ -75,7 +75,7 @@
 }
 
 #pragma mark UDID
-- (NSString *)hz_deviceUDID {
++ (NSString *)hz_deviceUDID {
     static NSString *deviceIdentifier = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
