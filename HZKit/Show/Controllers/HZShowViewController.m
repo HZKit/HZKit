@@ -119,6 +119,13 @@
                          hideTabBar:YES];
 }
 
+- (void)pushDetailAction {
+    [[HZMainRouter shared] pushWith:HZShowRouterDetail
+                         fromModule:HZModuleNameShow
+                               args:nil
+                         hideTabBar:YES];
+}
+
 #pragma mark - Table
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -218,8 +225,15 @@
                                                        action:@"pushDeviceAction"];
 
         NSArray *toolArray = @[checkUpdate, device];
-        
         [_dataArray addObject:toolArray];
+        
+        // ViewController
+        HZShowModel *viewController = [HZShowModel modelWithGroupName:@"ViewController"
+                                                                title:@"ViewController 相关"
+                                                             subtitle:@"ViewController category"
+                                                               action:@"pushDetailAction"];
+        NSArray *viewControllerArray = @[viewController];
+        [_dataArray addObject:viewControllerArray];
     }
     
     return _dataArray;

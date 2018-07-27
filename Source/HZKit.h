@@ -13,5 +13,6 @@
 #import "HZKitVersion.h"
 #import "HZKitView.h"
 #import "HZKitDevice.h"
+#import "HZKitViewController.h"
 
 #endif /* HZKit_h */
