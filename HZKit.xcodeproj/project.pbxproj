@@ -163,42 +163,14 @@
 		DB20A8E220CFCF9D00D7432A /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				DB2D5AE020E27292005893ED /* Device */,
+				DB463AD6210AB3280018BCC5 /* Macro */,
+				DB463AD4210AB3100018BCC5 /* Version */,
+				DB463AD2210AB2E90018BCC5 /* Device */,
+				DB463AD1210AB2D40018BCC5 /* View */,
 				DB20A8E520CFCF9D00D7432A /* HZKit.h */,
-				DB20A8E320CFCF9D00D7432A /* Macro */,
-				DB20A8E620CFCF9D00D7432A /* Version */,
-				DB20A8E920CFCF9D00D7432A /* View */,
 			);
 			path = Source;
 			sourceTree = SOURCE_ROOT;
-		};
-		DB20A8E320CFCF9D00D7432A /* Macro */ = {
-			isa = PBXGroup;
-			children = (
-				DB20A8E420CFCF9D00D7432A /* HZKitMacro.h */,
-			);
-			path = Macro;
-			sourceTree = "<group>";
-		};
-		DB20A8E620CFCF9D00D7432A /* Version */ = {
-			isa = PBXGroup;
-			children = (
-				DB20A8EF20CFCFE000D7432A /* HZKitVersion.h */,
-				DB20A8E720CFCF9D00D7432A /* HZVersionManager.m */,
-				DB20A8E820CFCF9D00D7432A /* HZVersionManager.h */,
-			);
-			path = Version;
-			sourceTree = "<group>";
-		};
-		DB20A8E920CFCF9D00D7432A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				DB20A8EA20CFCF9D00D7432A /* HZKitView.h */,
-				DB20A8EB20CFCF9D00D7432A /* UIView+HZKitCommon.m */,
-				DB20A8EC20CFCF9D00D7432A /* UIView+HZKitCommon.h */,
-			);
-			path = View;
-			sourceTree = "<group>";
 		};
 		DB20A8F120CFD0D100D7432A /* Common */ = {
 			isa = PBXGroup;
@@ -245,14 +217,42 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		DB2D5AE020E27292005893ED /* Device */ = {
+		DB463AD1210AB2D40018BCC5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DB20A8EA20CFCF9D00D7432A /* HZKitView.h */,
+				DB20A8EB20CFCF9D00D7432A /* UIView+HZKitCommon.m */,
+				DB20A8EC20CFCF9D00D7432A /* UIView+HZKitCommon.h */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		DB463AD2210AB2E90018BCC5 /* Device */ = {
 			isa = PBXGroup;
 			children = (
 				DB2D5AE120E272BE005893ED /* HZKitDevice.h */,
 				DB7B6F3F2109A1B5004F233C /* UIDevice+HZCommon.h */,
 				DB7B6F402109A1B5004F233C /* UIDevice+HZCommon.m */,
 			);
-			path = Device;
+			name = Device;
+			sourceTree = "<group>";
+		};
+		DB463AD4210AB3100018BCC5 /* Version */ = {
+			isa = PBXGroup;
+			children = (
+				DB20A8EF20CFCFE000D7432A /* HZKitVersion.h */,
+				DB20A8E720CFCF9D00D7432A /* HZVersionManager.m */,
+				DB20A8E820CFCF9D00D7432A /* HZVersionManager.h */,
+			);
+			name = Version;
+			sourceTree = "<group>";
+		};
+		DB463AD6210AB3280018BCC5 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				DB20A8E420CFCF9D00D7432A /* HZKitMacro.h */,
+			);
+			name = Macro;
 			sourceTree = "<group>";
 		};
 		DB71B26621085C1600F8DEB3 /* Main */ = {
