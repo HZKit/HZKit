@@ -9,9 +9,9 @@
 #ifndef HZKit_h
 #define HZKit_h
 
-#import "Macro/HZKitMacro.h"
-#import "Version/HZKitVersion.h"
-#import "View/HZKitView.h"
-#import "Device/HZKitDevice.h"
+#import "HZKitMacro.h"
+#import "HZKitVersion.h"
+#import "HZKitView.h"
+#import "HZKitDevice.h"
 
 #endif /* HZKit_h */
