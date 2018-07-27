@@ -15,5 +15,6 @@ extern NSString *HZ_HIDDEN_TABBAR_KEY;
 @property (nonatomic, assign) BOOL hiddenTabBar;
 
 - (instancetype)initWithArgs:(NSDictionary *)args;
+- (void)alertTitle:(NSString *)title message:(NSString *)message;
 
 @end

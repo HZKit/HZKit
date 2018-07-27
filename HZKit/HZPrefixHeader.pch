@@ -17,5 +17,6 @@
 #import "HZMainRouter.h"
 #import "HZShowModule.h"
 #import "HZAboutModule.h"
+#import "HZDeviceModule.h"
 
 #endif /* HZPrefixHeader_pch */

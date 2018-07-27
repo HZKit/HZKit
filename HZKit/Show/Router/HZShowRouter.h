@@ -16,6 +16,4 @@ typedef NS_ENUM(NSUInteger, HZShowRouterId) {
 
 @interface HZShowRouter : HZBaseRouter
 
-+ (instancetype)shared;
-
 @end

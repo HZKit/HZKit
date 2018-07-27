@@ -11,6 +11,7 @@
 NSString *const kHZDefaultGroupName = @"common";
 NSString *const HZModuleNameShow = @"HZShowModule";
 NSString *const HZModuleNameAbout = @"HZModuleAbout";
+NSString *const HZModuleNameDevice = @"HZModuleDevice";
 
 @implementation HZBaseModule
 

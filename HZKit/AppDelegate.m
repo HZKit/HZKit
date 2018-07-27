@@ -14,6 +14,7 @@
 #import "HZShowModule.h"
 #import "HZAboutModule.h"
 #import "HZMainRouter.h"
+#import "HZDeviceModule.h"
 
 @interface AppDelegate ()
 
@@ -143,7 +144,8 @@
         UIWindow *keyWindow = [[UIWindow alloc] initWithFrame:frame];
         
         NSArray *modules = @[[HZShowModule new],
-                             [HZAboutModule new]];
+                             [HZAboutModule new],
+                             [HZDeviceModule new]];
         keyWindow.rootViewController = [self rootViewControllerWithModules:modules];
         
         _window = keyWindow;

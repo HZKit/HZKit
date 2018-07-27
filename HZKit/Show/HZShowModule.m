@@ -11,6 +11,10 @@
 
 @implementation HZShowModule
 
+- (NSString *)groupName {
+    return HZModuleNameShow;
+}
+
 - (NSString *)name {
     return HZModuleNameShow;
 }

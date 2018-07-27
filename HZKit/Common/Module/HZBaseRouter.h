@@ -15,6 +15,7 @@
 typedef NS_ENUM(NSUInteger, HZRouterType) {
     HZRouterShow = 1000,
     HZRouterAbout = 2000,
+    HZRouterDevice = 3000,
     // next router
 };
 
@@ -24,6 +25,8 @@ typedef NS_ENUM(NSUInteger, HZRouterType) {
 @property (nonatomic, strong) UINavigationController *navigationController;
 @property (nonatomic, strong) NSString *moduleName;
 @property (nonatomic, assign) BOOL shouldPush;
+
++ (instancetype)shared;
 
 - (void)show:(NSUInteger)controllerId
       fromModule:(NSString *)moduleName

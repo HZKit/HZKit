@@ -25,7 +25,6 @@
     // Do any additional setup after loading the view.
     
     self.title = @"功能列表";
-    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self.view addSubview:self.tableView];
     
 #if DEBUG
@@ -38,15 +37,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Common
-- (void)alertTitle:(NSString *)title message:(NSString *)message {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:nil];
-    [alert addAction:cancelAction];
-    
-    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - Action
@@ -120,21 +110,13 @@
 }
 
 /**
- 显示设备唯一标识符
+ 进入设备模块界面
  */
-- (void)showDeviceIdentifierAction {
-    NSString *deviceId = [UIDevice hz_deviceUDID];
-    
-    [self alertTitle:@"设备标识" message:deviceId];
-}
-
-/**
- 显示设备名称
- */
-- (void)showDeviceNameAction {
-    NSString *deviceName = [UIDevice hz_deviceGeneration];
-    
-    [self alertTitle:@"设备名称" message:deviceName];
+- (void)pushDeviceAction {
+    [[HZMainRouter shared] pushWith:HZDeviceRouterMain
+                         fromModule:HZModuleNameDevice
+                               args:nil
+                         hideTabBar:YES];
 }
 
 #pragma mark - Table
@@ -208,7 +190,7 @@
 //    [[HZMainRouter shared] pushWith:HZShowRouterDetail fromModule:HZModuleNameShow args:nil hideTabBar:YES];
 }
 
-#pragma mark - Navigation
+#pragma mark - Lazy load
 - (UITableView *)tableView {
     if (!_tableView) {
         UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
@@ -229,16 +211,14 @@
                                                              title:@"校验应用版本"
                                                           subtitle:@"使用时需要修改App id"
                                                             action:@"checkUpdateAction"];
-        HZShowModel *deviceIdentifier = [HZShowModel modelWithGroupName:@"常用工具"
-                                                                  title:@"设备唯一标识符"
-                                                               subtitle:@"使用 KeyChain，需要 import <Security/Security.h>"
-                                                                 action:@"showDeviceIdentifierAction"];
-        HZShowModel *deviceName = [HZShowModel modelWithGroupName:@"常用工具"
-                                                            title:@"设备名称"
-                                                         subtitle:@"需要 import <sys/utsname.h>"
-                                                           action:@"showDeviceNameAction"];
-        NSArray *toolArray = @[checkUpdate,
-                               deviceIdentifier, deviceName];
+        
+        HZShowModel *device = [HZShowModel modelWithGroupName:nil
+                                                        title:@"设备相关"
+                                                     subtitle:@"UIDevice category"
+                                                       action:@"pushDeviceAction"];
+
+        NSArray *toolArray = @[checkUpdate, device];
+        
         [_dataArray addObject:toolArray];
     }
     
