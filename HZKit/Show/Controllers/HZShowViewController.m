@@ -9,7 +9,6 @@
 #import "HZShowViewController.h"
 #import "HZShowModel.h"
 #import <StoreKit/StoreKit.h>
-#import <objc/message.h>
 
 @interface HZShowViewController ()<UITableViewDataSource, UITableViewDelegate, SKStoreProductViewControllerDelegate>
 

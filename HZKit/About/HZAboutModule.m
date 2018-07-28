@@ -22,7 +22,7 @@
 
 // TabBar显示位置
 - (NSInteger)tabBarIndex {
-    return 2;
+    return 30;
 }
 
 // TabBarItem

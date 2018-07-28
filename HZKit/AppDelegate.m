@@ -11,10 +11,6 @@
 #import "HZBaseViewController.h"
 #import "HZBaseNavigationController.h"
 #import "HZMainViewController.h"
-#import "HZShowModule.h"
-#import "HZAboutModule.h"
-#import "HZMainRouter.h"
-#import "HZDeviceModule.h"
 
 @interface AppDelegate ()
 
@@ -98,6 +94,8 @@
                         isInserted = YES;
                         [indexes insertObject:@(currindex) atIndex:i];
                         [viewControllers insertObject:viewController atIndex:i];
+                        
+                        break;
                     }
                 }
                 
@@ -143,9 +141,12 @@
         CGRect frame = [UIScreen mainScreen].bounds;
         UIWindow *keyWindow = [[UIWindow alloc] initWithFrame:frame];
         
-        NSArray *modules = @[[HZShowModule new],
+        NSArray *modules = @[
+                             [HZShowModule new],
                              [HZAboutModule new],
-                             [HZDeviceModule new]];
+                             [HZDeviceModule new],
+                             [HZCustomControlModule new]
+                             ];
         keyWindow.rootViewController = [self rootViewControllerWithModules:modules];
         
         _window = keyWindow;

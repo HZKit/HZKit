@@ -8,7 +8,6 @@
 
 #import "HZDeviceViewController.h"
 #import "HZShowModel.h"
-#import <objc/message.h>
 
 @interface HZDeviceViewController ()<UITableViewDataSource, UITableViewDelegate>
 

@@ -14,6 +14,7 @@
 extern NSString *const HZModuleNameShow;
 extern NSString *const HZModuleNameAbout;
 extern NSString *const HZModuleNameDevice;
+extern NSString *const HZModuleNameCustomControl;
 
 @interface HZBaseModule : NSObject
 

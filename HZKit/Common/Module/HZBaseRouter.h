@@ -16,6 +16,7 @@ typedef NS_ENUM(NSUInteger, HZRouterType) {
     HZRouterShow = 1000,
     HZRouterAbout = 2000,
     HZRouterDevice = 3000,
+    HZRouterCustomControl = 4000,
     // next router
 };
 

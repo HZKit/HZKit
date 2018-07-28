@@ -14,9 +14,12 @@
 
 #import "HZKit.h"
 
+#import <objc/message.h>
+
 #import "HZMainRouter.h"
 #import "HZShowModule.h"
 #import "HZAboutModule.h"
 #import "HZDeviceModule.h"
+#import "HZCustomControlModule.h"
 
 #endif /* HZPrefixHeader_pch */

@@ -20,6 +20,12 @@
 		DB463B00210ABA5F0018BCC5 /* HZDeviceRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB463AFF210ABA5F0018BCC5 /* HZDeviceRouter.m */; };
 		DB463B04210ABAA70018BCC5 /* HZDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB463B03210ABAA70018BCC5 /* HZDeviceViewController.m */; };
 		DB463B08210AE3980018BCC5 /* UIViewController+HZCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = DB463B07210AE3980018BCC5 /* UIViewController+HZCommon.m */; };
+		DB4AF296210BF649005ECF23 /* HZCustomControlModule.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4AF295210BF649005ECF23 /* HZCustomControlModule.m */; };
+		DB4AF29A210BF74B005ECF23 /* HZCustomControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4AF299210BF74B005ECF23 /* HZCustomControlViewController.m */; };
+		DB4AF29F210BFF07005ECF23 /* HZCustomControlRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4AF29E210BFF07005ECF23 /* HZCustomControlRouter.m */; };
+		DB4AF2A4210C001E005ECF23 /* HZCustomControlModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4AF2A3210C001E005ECF23 /* HZCustomControlModel.m */; };
+		DB4AF2A8210C084D005ECF23 /* HZCustomControlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4AF2A7210C084D005ECF23 /* HZCustomControlCell.m */; };
+		DB4AF2AC210C091F005ECF23 /* HZBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4AF2AB210C091F005ECF23 /* HZBaseCollectionViewCell.m */; };
 		DB71B26921085C4100F8DEB3 /* HZBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B26821085C4100F8DEB3 /* HZBaseTabBarController.m */; };
 		DB71B26C21085C5700F8DEB3 /* HZMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B26B21085C5700F8DEB3 /* HZMainViewController.m */; };
 		DB71B27121085D6100F8DEB3 /* HZShowModule.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B27021085D6100F8DEB3 /* HZShowModule.m */; };
@@ -87,6 +93,18 @@
 		DB463B06210AE3980018BCC5 /* UIViewController+HZCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HZCommon.h"; sourceTree = "<group>"; };
 		DB463B07210AE3980018BCC5 /* UIViewController+HZCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HZCommon.m"; sourceTree = "<group>"; };
 		DB463B09210AE3D20018BCC5 /* HZKitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZKitViewController.h; sourceTree = "<group>"; };
+		DB4AF294210BF649005ECF23 /* HZCustomControlModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZCustomControlModule.h; sourceTree = "<group>"; };
+		DB4AF295210BF649005ECF23 /* HZCustomControlModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZCustomControlModule.m; sourceTree = "<group>"; };
+		DB4AF298210BF74B005ECF23 /* HZCustomControlViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZCustomControlViewController.h; sourceTree = "<group>"; };
+		DB4AF299210BF74B005ECF23 /* HZCustomControlViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZCustomControlViewController.m; sourceTree = "<group>"; };
+		DB4AF29D210BFF07005ECF23 /* HZCustomControlRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZCustomControlRouter.h; sourceTree = "<group>"; };
+		DB4AF29E210BFF07005ECF23 /* HZCustomControlRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZCustomControlRouter.m; sourceTree = "<group>"; };
+		DB4AF2A2210C001E005ECF23 /* HZCustomControlModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZCustomControlModel.h; sourceTree = "<group>"; };
+		DB4AF2A3210C001E005ECF23 /* HZCustomControlModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZCustomControlModel.m; sourceTree = "<group>"; };
+		DB4AF2A6210C084D005ECF23 /* HZCustomControlCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZCustomControlCell.h; sourceTree = "<group>"; };
+		DB4AF2A7210C084D005ECF23 /* HZCustomControlCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZCustomControlCell.m; sourceTree = "<group>"; };
+		DB4AF2AA210C091F005ECF23 /* HZBaseCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZBaseCollectionViewCell.h; sourceTree = "<group>"; };
+		DB4AF2AB210C091F005ECF23 /* HZBaseCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZBaseCollectionViewCell.m; sourceTree = "<group>"; };
 		DB71B26721085C4100F8DEB3 /* HZBaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZBaseTabBarController.h; sourceTree = "<group>"; };
 		DB71B26821085C4100F8DEB3 /* HZBaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZBaseTabBarController.m; sourceTree = "<group>"; };
 		DB71B26A21085C5700F8DEB3 /* HZMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZMainViewController.h; sourceTree = "<group>"; };
@@ -161,6 +179,7 @@
 		DB20A8CF20CFCF8700D7432A /* HZKit */ = {
 			isa = PBXGroup;
 			children = (
+				DB4AF293210BF5DA005ECF23 /* CustomControl */,
 				DB71B26E21085D3E00F8DEB3 /* About */,
 				DB20A8D020CFCF8700D7432A /* AppDelegate.h */,
 				DB20A8D820CFCF8700D7432A /* AppDelegate.m */,
@@ -214,6 +233,7 @@
 		DB20A8F920CFDA3500D7432A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DB4AF2A9210C0905005ECF23 /* Views */,
 				DB20A8FA20CFDA4800D7432A /* Controllers */,
 			);
 			path = Classes;
@@ -307,6 +327,64 @@
 				DB463B09210AE3D20018BCC5 /* HZKitViewController.h */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		DB4AF293210BF5DA005ECF23 /* CustomControl */ = {
+			isa = PBXGroup;
+			children = (
+				DB4AF2A5210C0813005ECF23 /* Views */,
+				DB4AF2A1210BFFFE005ECF23 /* Models */,
+				DB4AF29C210BFEBD005ECF23 /* Router */,
+				DB4AF297210BF728005ECF23 /* Controllers */,
+				DB4AF294210BF649005ECF23 /* HZCustomControlModule.h */,
+				DB4AF295210BF649005ECF23 /* HZCustomControlModule.m */,
+			);
+			path = CustomControl;
+			sourceTree = "<group>";
+		};
+		DB4AF297210BF728005ECF23 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DB4AF298210BF74B005ECF23 /* HZCustomControlViewController.h */,
+				DB4AF299210BF74B005ECF23 /* HZCustomControlViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DB4AF29C210BFEBD005ECF23 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				DB4AF29D210BFF07005ECF23 /* HZCustomControlRouter.h */,
+				DB4AF29E210BFF07005ECF23 /* HZCustomControlRouter.m */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		DB4AF2A1210BFFFE005ECF23 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DB4AF2A2210C001E005ECF23 /* HZCustomControlModel.h */,
+				DB4AF2A3210C001E005ECF23 /* HZCustomControlModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DB4AF2A5210C0813005ECF23 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DB4AF2A6210C084D005ECF23 /* HZCustomControlCell.h */,
+				DB4AF2A7210C084D005ECF23 /* HZCustomControlCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DB4AF2A9210C0905005ECF23 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DB4AF2AA210C091F005ECF23 /* HZBaseCollectionViewCell.h */,
+				DB4AF2AB210C091F005ECF23 /* HZBaseCollectionViewCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		DB71B26621085C1600F8DEB3 /* Main */ = {
@@ -522,16 +600,21 @@
 				DB20A90020CFDB1600D7432A /* HZBaseNavigationController.m in Sources */,
 				DB20A8ED20CFCF9E00D7432A /* HZVersionManager.m in Sources */,
 				DB71B27C21085E9D00F8DEB3 /* HZShowViewController.m in Sources */,
+				DB4AF29F210BFF07005ECF23 /* HZCustomControlRouter.m in Sources */,
+				DB4AF29A210BF74B005ECF23 /* HZCustomControlViewController.m in Sources */,
 				DB71B28B2108737000F8DEB3 /* HZShowDetailViewController.m in Sources */,
 				DB463B00210ABA5F0018BCC5 /* HZDeviceRouter.m in Sources */,
 				DB7B6F412109A1B5004F233C /* UIDevice+HZCommon.m in Sources */,
+				DB4AF2A4210C001E005ECF23 /* HZCustomControlModel.m in Sources */,
 				DB71B26921085C4100F8DEB3 /* HZBaseTabBarController.m in Sources */,
 				DB20A8DF20CFCF8700D7432A /* main.m in Sources */,
 				DB20A8E020CFCF8700D7432A /* AppDelegate.m in Sources */,
 				DB20A8F520CFD11900D7432A /* HZBaseModule.m in Sources */,
 				DB71B27821085E7700F8DEB3 /* HZAboutViewController.m in Sources */,
+				DB4AF2A8210C084D005ECF23 /* HZCustomControlCell.m in Sources */,
 				DB463AFC210ABA3A0018BCC5 /* HZDeviceModule.m in Sources */,
 				DB71B280210866F200F8DEB3 /* HZBaseModel.m in Sources */,
+				DB4AF2AC210C091F005ECF23 /* HZBaseCollectionViewCell.m in Sources */,
 				DB71B28E2108782F00F8DEB3 /* HZMainRouter.m in Sources */,
 				DB71B27121085D6100F8DEB3 /* HZShowModule.m in Sources */,
 				DB20A8FD20CFDA6500D7432A /* HZBaseViewController.m in Sources */,
@@ -541,6 +624,7 @@
 				DB71B2832108673B00F8DEB3 /* HZShowModel.m in Sources */,
 				DB20A8EE20CFCF9E00D7432A /* UIView+HZKitCommon.m in Sources */,
 				DB71B26C21085C5700F8DEB3 /* HZMainViewController.m in Sources */,
+				DB4AF296210BF649005ECF23 /* HZCustomControlModule.m in Sources */,
 				DB71B27421085D7100F8DEB3 /* HZAboutModule.m in Sources */,
 				DB71B28621086F6500F8DEB3 /* HZShowRouter.m in Sources */,
 			);
