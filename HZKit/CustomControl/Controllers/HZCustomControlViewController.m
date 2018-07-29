@@ -36,13 +36,6 @@ NSString *cellIdentifier = @"HZCustomControlCell";
 
 #pragma mark - Action
 
-/**
- 滑尺
- */
-- (void)showScrollRulerAction {
-    // TODO: 尺子显示，使用 Window
-    
-}
 
 #pragma mark - Collection
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -62,13 +55,20 @@ NSString *cellIdentifier = @"HZCustomControlCell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     
-    HZCustomControlModel *model = self.dataArray[indexPath.row];
-    if (model.action) {
-        SEL selector = NSSelectorFromString(model.action);
-        if ([self respondsToSelector:selector]) {
-            objc_msgSend(self, selector);
-        }
-    }
+//    HZCustomControlModel *model = self.dataArray[indexPath.row];
+//    if (model.action) {
+//        SEL selector = NSSelectorFromString(model.action);
+//        if ([self respondsToSelector:selector]) {
+//            objc_msgSend(self, selector);
+//        }
+//    }
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    view.backgroundColor = [UIColor blueColor];
+    
+    HZAlertView *alert = [HZAlertView alertWithView:view];
+    alert.tapDismiss = YES;
+    [alert show];
 }
 
 #pragma mark - Lazy load
@@ -99,7 +99,7 @@ NSString *cellIdentifier = @"HZCustomControlCell";
 - (NSMutableArray *)dataArray {
     if (!_dataArray) {
         _dataArray = [NSMutableArray arrayWithObjects:
-                      [HZCustomControlModel modelWithIcon:@"Scroll Ruler" action:@"showScrollRulerAction"],
+                      [HZCustomControlModel modelWithIcon:@"Placeholder" action:nil],
                       [HZCustomControlModel modelWithIcon:@"Placeholder" action:nil],
                       [HZCustomControlModel modelWithIcon:@"Placeholder" action:nil],
                       [HZCustomControlModel modelWithIcon:@"Placeholder" action:nil],

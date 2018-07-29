@@ -258,11 +258,10 @@
 		DB463AD1210AB2D40018BCC5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DB4AF2BF210DD5AA005ECF23 /* AlertView */,
 				DB20A8EA20CFCF9D00D7432A /* HZKitView.h */,
 				DB20A8EB20CFCF9D00D7432A /* UIView+HZKitCommon.m */,
 				DB20A8EC20CFCF9D00D7432A /* UIView+HZKitCommon.h */,
-				DB4AF2BB210DC66A005ECF23 /* HZAlertView.h */,
-				DB4AF2BC210DC66A005ECF23 /* HZAlertView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -390,6 +389,15 @@
 				DB4AF2AB210C091F005ECF23 /* HZBaseCollectionViewCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DB4AF2BF210DD5AA005ECF23 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				DB4AF2BB210DC66A005ECF23 /* HZAlertView.h */,
+				DB4AF2BC210DC66A005ECF23 /* HZAlertView.m */,
+			);
+			name = AlertView;
 			sourceTree = "<group>";
 		};
 		DB71B26621085C1600F8DEB3 /* Main */ = {

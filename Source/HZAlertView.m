@@ -41,9 +41,11 @@
 - (void)dismiss {
     [self.alertWindow resignKeyWindow];
     
-    for (UIView *view in self.alertWindow.subviews) {
-        [view removeFromSuperview];
+    for (UIView *subview in self.subviews) {
+        [subview removeFromSuperview];
     }
+    
+    [self removeFromSuperview];
     
     _alertWindow = nil;
 }
@@ -84,7 +86,11 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     if (_tapDismiss && event) {
         for (UIView *subview in self.subviews) {
-            [subview removeFromSuperview];
+            if ([subview isKindOfClass:[HZAlertView class]]) {
+                HZAlertView *alertView = (HZAlertView *)subview;
+                [alertView dismiss];
+                break;
+            }
         }
     } else {
         [self endEditing:YES];
