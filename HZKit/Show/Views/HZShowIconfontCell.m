@@ -21,17 +21,22 @@
     _iconLabel = [[UILabel alloc] init];
     _iconLabel.textAlignment = NSTextAlignmentCenter;
     _iconLabel.textColor = [UIColor grayColor];
-    _iconLabel.font = [UIFont hz_iconfontOfSize:46];
     
     [self.contentView addSubview:_iconLabel];
 }
 
 - (void)layoutSubviews {
     self.iconLabel.frame = self.bounds;
+    _iconLabel.font = [UIFont hz_iconfontOfSize:(CGRectGetHeight(self.bounds) * 3 / 5)];
 }
 
 - (void)setModel:(HZFontelloGlyphModel *)model {
     self.iconLabel.text = model.iconString;
+}
+
+- (void)updateIconColor:(UIColor *)color {
+    self.iconLabel.textColor = color;
+    [self setNeedsDisplay];
 }
 
 @end

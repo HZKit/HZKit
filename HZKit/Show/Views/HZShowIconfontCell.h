@@ -11,5 +11,6 @@
 @interface HZShowIconfontCell : HZBaseCollectionViewCell
 
 - (void)setModel:(HZFontelloGlyphModel *)model;
+- (void)updateIconColor:(UIColor *)color;
 
 @end

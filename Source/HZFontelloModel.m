@@ -51,12 +51,9 @@ NSString *kSrcKey = @"src";
 @implementation HZFontelloGlyphModel
 
 - (NSString *)iconString {
-    NSString *hexCode = [NSString stringWithFormat:@"%@", [NSString stringWithFormat:@"%1lx", (unsigned long)self.code]];
-    
-    NSString *iconStr = [NSString stringWithFormat:@"0x%@",hexCode];
-    unichar icon = strtoul([iconStr UTF8String],0, 16);
-    
-    NSString *iconString = [NSString stringWithCharacters:&icon length:1];
+    NSString *hexString = [NSString stringWithFormat:@"0x%1lx", (unsigned long)self.code];
+    unichar iconChar = strtoul([hexString UTF8String], 0, 16);
+    NSString *iconString = [NSString stringWithCharacters:&iconChar length:1];
     
     return iconString;
 }
