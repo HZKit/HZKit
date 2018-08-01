@@ -9,6 +9,7 @@
 
 #import "HZShowRouter.h"
 #import "HZShowViewController.h"
+#import "HZShowIconfontViewController.h"
 #import "HZShowDetailViewController.h"
 
 @implementation HZShowRouter
@@ -29,6 +30,7 @@
     if (self) {
         self.mapping = @{
                          HZ_NUM(HZShowRouterMain): NSStringFromClass([HZShowViewController class]),
+                         HZ_NUM(HZShowRouterIconfont): NSStringFromClass([HZShowIconfontViewController class]),
                          HZ_NUM(HZShowRouterDetail): NSStringFromClass([HZShowDetailViewController class])
                          };
     }

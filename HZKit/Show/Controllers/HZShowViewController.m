@@ -118,6 +118,16 @@
                          hideTabBar:YES];
 }
 
+/**
+ 显示使用 Iconfont 效果
+ */
+- (void)pushIconfontAction {
+    [[HZMainRouter shared] pushWith:HZShowRouterIconfont
+                         fromModule:HZModuleNameShow
+                               args:nil
+                         hideTabBar:YES];
+}
+
 - (void)pushDetailAction {
     [[HZMainRouter shared] pushWith:HZShowRouterDetail
                          fromModule:HZModuleNameShow
@@ -233,6 +243,13 @@
                                                                action:@"pushDetailAction"];
         NSArray *viewControllerArray = @[viewController];
         [_dataArray addObject:viewControllerArray];
+        
+        // Iconfont
+        HZShowModel *iconfont = [HZShowModel modelWithGroupName:@"Iconfont"
+                                                          title:@"Iconfont"
+                                                       subtitle:@"The use of the icon font"
+                                                         action:@"pushIconfontAction"];
+        [_dataArray addObject:@[iconfont]];
     }
     
     return _dataArray;

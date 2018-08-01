@@ -11,6 +11,7 @@
 
 @interface HZBaseCollectionViewCell : UICollectionViewCell
 
+- (void)initView;
 - (void)setModel:(HZBaseModel *)model;
 
 @end

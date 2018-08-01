@@ -17,15 +17,6 @@
 
 @implementation HZCustomControlCell
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self initView];
-    }
-    return self;
-}
-
 - (void)initView {
     self.backgroundColor = nil;
     self.layer.borderColor = [UIColor blackColor].CGColor;

@@ -11,6 +11,19 @@
 
 @implementation HZBaseCollectionViewCell
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self initView];
+    }
+    return self;
+}
+
+- (void)initView {
+    
+}
+
 - (void)setModel:(HZBaseModel *)model {
     
 }
