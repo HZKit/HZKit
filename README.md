@@ -37,3 +37,13 @@ import `HZKitDevice.h`
 * `hz_deviceGeneration` - Device Generation: iPhone 8、iPhone X
 * `hz_deviceGeneration` - Device Generation: iPhone 8、iPhone X
 * `hz_deviceUDID` - UDID
+
+# HZKit/Iconfont
+
+### Use
+
+1. import `HZKitIconfont.h`
+2. Download [Iconfont](http://fontello.com/)
+2. Add `fontello.tff` and `config.json` to project
+3. Add `UIAppFonts` in `Info.plist`
+

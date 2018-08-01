@@ -10,12 +10,11 @@
 
 typedef NS_ENUM(NSUInteger, HZShowRouterId) {
     HZShowRouterMain = HZRouterShow,
+    HZShowRouterIconfont,
     HZShowRouterDetail,
     // next controller
 };
 
 @interface HZShowRouter : HZBaseRouter
-
-+ (instancetype)shared;
 
 @end

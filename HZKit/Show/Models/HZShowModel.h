@@ -11,7 +11,6 @@
 @interface HZShowModel : HZBaseModel
 
 @property (nonatomic, copy) NSString *groupName;
-@property (nonatomic, copy) NSString *action;
 
 + (instancetype)modelWithGroupName:(NSString *)groupName
                              title:(NSString *)title

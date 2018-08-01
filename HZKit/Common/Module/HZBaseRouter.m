@@ -20,6 +20,16 @@
     return self;
 }
 
++ (instancetype)shared {
+    static HZBaseRouter *instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [(HZBaseRouter *)[[self class] alloc] init];
+    });
+    
+    return instance;
+}
+
 - (void)show:(NSUInteger)controllerId
       fromModule:(NSString *)moduleName
         withArgs:(NSDictionary *)args
