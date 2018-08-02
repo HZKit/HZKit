@@ -21,6 +21,7 @@
 @interface HZFontelloGlyphModel : NSObject
 
 @property (nonatomic, copy, readonly) NSString *iconString;
+@property (nonatomic, strong) UIColor *textColor;
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *uid;

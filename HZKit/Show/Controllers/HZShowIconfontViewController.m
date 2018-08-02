@@ -47,8 +47,10 @@ NSString *kHZShowIconfontCellId = @"HZShowIconfontCell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     
-    HZShowIconfontCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kHZShowIconfontCellId forIndexPath:indexPath];
-    [cell updateIconColor:self.radomColors[arc4random_uniform((uint32_t)(self.radomColors.count - 1))]];
+    HZFontelloGlyphModel *model = self.glyphs[indexPath.row];
+    model.textColor = self.radomColors[arc4random_uniform((uint32_t)(self.radomColors.count - 1))];
+
+    [collectionView reloadItemsAtIndexPaths:@[indexPath]];
 }
 
 #pragma mark - Lazy load
@@ -86,14 +88,14 @@ NSString *kHZShowIconfontCellId = @"HZShowIconfontCell";
 
 - (NSArray<UIColor *> *)radomColors {
     if (!_radomColors) {
-        _radomColors = @[
-                         [UIColor blackColor],
-                         [UIColor redColor],
-                         [UIColor greenColor],
-                         [UIColor blueColor],
-                         [UIColor orangeColor],
-                         [UIColor yellowColor]
-                         ];
+        _radomColors = [NSArray arrayWithObjects:
+                        [UIColor blackColor],
+                        [UIColor redColor],
+                        [UIColor brownColor],
+                        [UIColor blueColor],
+                        [UIColor orangeColor],
+                        [UIColor yellowColor],
+                        nil];
     }
     
     return _radomColors;

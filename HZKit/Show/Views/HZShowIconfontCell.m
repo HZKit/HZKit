@@ -32,11 +32,9 @@
 
 - (void)setModel:(HZFontelloGlyphModel *)model {
     self.iconLabel.text = model.iconString;
-}
-
-- (void)updateIconColor:(UIColor *)color {
-    self.iconLabel.textColor = color;
-    [self setNeedsDisplay];
+    if (model.textColor) {
+        self.iconLabel.textColor = model.textColor;
+    }
 }
 
 @end
