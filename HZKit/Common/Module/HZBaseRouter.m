@@ -9,6 +9,12 @@
 #import "HZBaseRouter.h"
 #import "HZBaseViewController.h"
 
+@interface HZBaseRouter ()
+
+@property (nonatomic, strong) NSMutableDictionary<NSString *, HZBaseRouter *> *sharedMapping;
+
+@end
+
 @implementation HZBaseRouter
 
 - (instancetype)init
@@ -21,11 +27,23 @@
 }
 
 + (instancetype)shared {
-    static HZBaseRouter *instance = nil;
+    static HZBaseRouter *baseRouter = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        instance = [(HZBaseRouter *)[[self class] alloc] init];
+        baseRouter = [[HZBaseRouter alloc] init];
+        baseRouter.sharedMapping = [NSMutableDictionary dictionary];
     });
+    
+    NSString *className = NSStringFromClass([self class]);
+    
+    if ([className isEqualToString:NSStringFromClass([HZBaseRouter class])]) {
+        return baseRouter;
+    } else if (baseRouter.sharedMapping[className]) {
+        return baseRouter.sharedMapping[className];
+    }
+    
+    HZBaseRouter *instance = [[NSClassFromString(className) alloc] init];
+    [baseRouter.sharedMapping setObject:instance forKey:className];
     
     return instance;
 }

@@ -10,17 +10,6 @@
 
 @implementation HZMainRouter
 
-+ (instancetype)shared {
-    
-    static HZMainRouter *instance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        instance = [[HZMainRouter alloc] init];
-    });
-    
-    return instance;
-}
-
 - (void)pushWith:(NSUInteger)controllerId
       fromModule:(NSString *)moduleName
             args:(NSDictionary *)args

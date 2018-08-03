@@ -8,8 +8,13 @@
 
 #import "HZAboutModule.h"
 #import "HZAboutViewController.h"
+#import "HZAboutRouter.h"
 
 @implementation HZAboutModule
+
+- (NSString *)groupName {
+    return HZModuleNameAbout;
+}
 
 - (NSString *)name {
     return HZModuleNameAbout;
@@ -30,6 +35,14 @@
     return [[UITabBarItem alloc] initWithTitle:@"关于"
                                          image:[UIImage imageNamed:@"TabBarAbout"]
                                  selectedImage:[UIImage imageNamed:@"TabBarAboutSelected"]];
+}
+
+- (BOOL)hasNavigationBar {
+    return YES;
+}
+
+- (HZBaseRouter *)router {
+    return [HZAboutRouter shared];
 }
 
 @end

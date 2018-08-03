@@ -14,16 +14,6 @@
 
 @implementation HZShowRouter
 
-+ (instancetype)shared {
-    static HZShowRouter *instance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        instance = [[HZShowRouter alloc] init];
-    });
-    
-    return instance;
-}
-
 - (instancetype)init
 {
     self = [super init];

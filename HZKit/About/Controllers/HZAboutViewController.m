@@ -22,6 +22,7 @@
 }
 
 - (void)initView {
+    self.title = @"关于";
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
     CGFloat screenWidth = self.view.bounds.size.width;
@@ -49,6 +50,18 @@
     version.textAlignment = NSTextAlignmentCenter;
     version.textColor = [UIColor grayColor];
     [self.view addSubview:version];
+    
+    // Setting item bar
+    UIBarButtonItem *settingBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(settingAction)];
+    self.navigationItem.rightBarButtonItem = settingBarButtonItem;
+}
+
+#pragma mark - Action
+- (void)settingAction {
+    [[HZMainRouter shared] pushWith:HZAboutRouterSetting
+                         fromModule:HZModuleNameAbout
+                               args:nil
+                         hideTabBar:YES];
 }
 
 @end

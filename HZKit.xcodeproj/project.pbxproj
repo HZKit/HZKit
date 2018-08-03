@@ -38,8 +38,10 @@
 		DB71B28621086F6500F8DEB3 /* HZShowRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B28521086F6500F8DEB3 /* HZShowRouter.m */; };
 		DB71B28B2108737000F8DEB3 /* HZShowDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B28A2108737000F8DEB3 /* HZShowDetailViewController.m */; };
 		DB71B28E2108782F00F8DEB3 /* HZMainRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B28D2108782F00F8DEB3 /* HZMainRouter.m */; };
-		DB7B6F3E21099C76004F233C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB7B6F3D21099C76004F233C /* LaunchScreen.storyboard */; };
 		DB7B6F412109A1B5004F233C /* UIDevice+HZCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7B6F402109A1B5004F233C /* UIDevice+HZCommon.m */; };
+		DBB17BFB2114001F00F9054F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBB17BFD2114001F00F9054F /* InfoPlist.strings */; };
+		DBB17C01211401B200F9054F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBB17C00211401B200F9054F /* Info.plist */; };
+		DBB17C0B21142ADC00F9054F /* HZShow.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBB17C0D21142ADC00F9054F /* HZShow.strings */; };
 		DBE04B892111815C00F94150 /* HZIconfont.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE04B882111815C00F94150 /* HZIconfont.m */; };
 		DBE04B8C2111829200F94150 /* fontello.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBE04B8B2111829200F94150 /* fontello.ttf */; };
 		DBE04B8F211183A400F94150 /* UILabel+HZIconfont.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE04B8E211183A400F94150 /* UILabel+HZIconfont.m */; };
@@ -49,6 +51,9 @@
 		DBE04B9C2111875700F94150 /* HZShowIconfontCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE04B9B2111875700F94150 /* HZShowIconfontCell.m */; };
 		DBE04B9F21118DBA00F94150 /* HZFontelloModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE04B9E21118DBA00F94150 /* HZFontelloModel.m */; };
 		DBE04BA22111998300F94150 /* UIFont+HZIconfont.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE04BA12111998300F94150 /* UIFont+HZIconfont.m */; };
+		DBE04BCE2113F57300F94150 /* HZSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE04BCD2113F57300F94150 /* HZSettingViewController.m */; };
+		DBE04BD22113F68200F94150 /* HZAboutRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE04BD12113F68200F94150 /* HZAboutRouter.m */; };
+		DBE04BD52113FB5200F94150 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBE04BD72113FB5200F94150 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +81,6 @@
 		DB20A8D120CFCF8700D7432A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB20A8D720CFCF8700D7432A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DB20A8D820CFCF8700D7432A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DB20A8D920CFCF8700D7432A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB20A8E420CFCF9D00D7432A /* HZKitMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZKitMacro.h; sourceTree = "<group>"; };
 		DB20A8E520CFCF9D00D7432A /* HZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZKit.h; sourceTree = "<group>"; };
 		DB20A8E720CFCF9D00D7432A /* HZVersionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZVersionManager.m; sourceTree = "<group>"; };
@@ -140,9 +144,15 @@
 		DB71B28C2108782F00F8DEB3 /* HZMainRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZMainRouter.h; sourceTree = "<group>"; };
 		DB71B28D2108782F00F8DEB3 /* HZMainRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZMainRouter.m; sourceTree = "<group>"; };
 		DB71B28F2108824200F8DEB3 /* HZPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZPrefixHeader.pch; sourceTree = "<group>"; };
-		DB7B6F3D21099C76004F233C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB7B6F3F2109A1B5004F233C /* UIDevice+HZCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+HZCommon.h"; sourceTree = "<group>"; };
 		DB7B6F402109A1B5004F233C /* UIDevice+HZCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+HZCommon.m"; sourceTree = "<group>"; };
+		DBB17BFC2114001F00F9054F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DBB17BFE2114002100F9054F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		DBB17BFF2114006300F9054F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DBB17C00211401B200F9054F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBB17C0C21142ADC00F9054F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HZShow.strings; sourceTree = "<group>"; };
+		DBB17C0E21142ADD00F9054F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/HZShow.strings"; sourceTree = "<group>"; };
+		DBB17C0F21142AE600F9054F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/HZShow.strings; sourceTree = "<group>"; };
 		DBE04B872111815C00F94150 /* HZIconfont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZIconfont.h; sourceTree = "<group>"; };
 		DBE04B882111815C00F94150 /* HZIconfont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZIconfont.m; sourceTree = "<group>"; };
 		DBE04B8B2111829200F94150 /* fontello.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fontello.ttf; sourceTree = "<group>"; };
@@ -160,6 +170,13 @@
 		DBE04B9E21118DBA00F94150 /* HZFontelloModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZFontelloModel.m; sourceTree = "<group>"; };
 		DBE04BA02111998300F94150 /* UIFont+HZIconfont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+HZIconfont.h"; sourceTree = "<group>"; };
 		DBE04BA12111998300F94150 /* UIFont+HZIconfont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+HZIconfont.m"; sourceTree = "<group>"; };
+		DBE04BCC2113F57300F94150 /* HZSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZSettingViewController.h; sourceTree = "<group>"; };
+		DBE04BCD2113F57300F94150 /* HZSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZSettingViewController.m; sourceTree = "<group>"; };
+		DBE04BD02113F68200F94150 /* HZAboutRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZAboutRouter.h; sourceTree = "<group>"; };
+		DBE04BD12113F68200F94150 /* HZAboutRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZAboutRouter.m; sourceTree = "<group>"; };
+		DBE04BD62113FB5200F94150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DBE04BD92113FB5D00F94150 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		DBE04BDA2113FC7B00F94150 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +242,7 @@
 		DB20A8E220CFCF9D00D7432A /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DBE04BD42113F92700F94150 /* Gload */,
 				DBE04B862111812500F94150 /* Iconfont */,
 				DB463B05210AE3560018BCC5 /* ViewController */,
 				DB463AD6210AB3280018BCC5 /* Macro */,
@@ -452,6 +470,7 @@
 		DB71B26E21085D3E00F8DEB3 /* About */ = {
 			isa = PBXGroup;
 			children = (
+				DBE04BCF2113F66B00F94150 /* Router */,
 				DB71B27521085E5500F8DEB3 /* Controllers */,
 				DB71B27221085D7100F8DEB3 /* HZAboutModule.h */,
 				DB71B27321085D7100F8DEB3 /* HZAboutModule.m */,
@@ -464,6 +483,8 @@
 			children = (
 				DB71B27621085E7700F8DEB3 /* HZAboutViewController.h */,
 				DB71B27721085E7700F8DEB3 /* HZAboutViewController.m */,
+				DBE04BCC2113F57300F94150 /* HZSettingViewController.h */,
+				DBE04BCD2113F57300F94150 /* HZSettingViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -502,12 +523,14 @@
 		DBE03A0020E3D88D0012C824 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DBE04B8A2111827200F94150 /* Font */,
+				DBE04BE02113FD5400F94150 /* Strings */,
+				DBE04BCB2113F44500F94150 /* Files */,
+				DBE04B8A2111827200F94150 /* Fonts */,
 				DB20A8D120CFCF8700D7432A /* Assets.xcassets */,
-				DB20A8D920CFCF8700D7432A /* Info.plist */,
+				DBB17C00211401B200F9054F /* Info.plist */,
 				DB20A8D720CFCF8700D7432A /* main.m */,
 				DB71B28F2108824200F8DEB3 /* HZPrefixHeader.pch */,
-				DB7B6F3D21099C76004F233C /* LaunchScreen.storyboard */,
+				DBE04BD72113FB5200F94150 /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -530,13 +553,13 @@
 			name = Iconfont;
 			sourceTree = "<group>";
 		};
-		DBE04B8A2111827200F94150 /* Font */ = {
+		DBE04B8A2111827200F94150 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				DBE04B94211184BF00F94150 /* fontelloConfig.json */,
 				DBE04B8B2111829200F94150 /* fontello.ttf */,
 			);
-			path = Font;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		DBE04B99211186ED00F94150 /* Views */ = {
@@ -546,6 +569,38 @@
 				DBE04B9B2111875700F94150 /* HZShowIconfontCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DBE04BCB2113F44500F94150 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		DBE04BCF2113F66B00F94150 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				DBE04BD02113F68200F94150 /* HZAboutRouter.h */,
+				DBE04BD12113F68200F94150 /* HZAboutRouter.m */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		DBE04BD42113F92700F94150 /* Gload */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Gload;
+			sourceTree = "<group>";
+		};
+		DBE04BE02113FD5400F94150 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				DBB17BFD2114001F00F9054F /* InfoPlist.strings */,
+				DBB17C0D21142ADC00F9054F /* HZShow.strings */,
+			);
+			path = Strings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -633,6 +688,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = DB20A82420CE614B00D7432A;
 			productRefGroup = DB20A82E20CE614B00D7432A /* Products */;
@@ -651,10 +707,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB7B6F3E21099C76004F233C /* LaunchScreen.storyboard in Resources */,
+				DBE04BD52113FB5200F94150 /* LaunchScreen.storyboard in Resources */,
 				DBE04B95211184BF00F94150 /* fontelloConfig.json in Resources */,
+				DBB17C01211401B200F9054F /* Info.plist in Resources */,
+				DBB17C0B21142ADC00F9054F /* HZShow.strings in Resources */,
 				DBE04B8C2111829200F94150 /* fontello.ttf in Resources */,
 				DB20A8DB20CFCF8700D7432A /* Assets.xcassets in Resources */,
+				DBB17BFB2114001F00F9054F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,6 +744,7 @@
 				DB71B27C21085E9D00F8DEB3 /* HZShowViewController.m in Sources */,
 				DB4AF29F210BFF07005ECF23 /* HZCustomControlRouter.m in Sources */,
 				DB4AF29A210BF74B005ECF23 /* HZCustomControlViewController.m in Sources */,
+				DBE04BCE2113F57300F94150 /* HZSettingViewController.m in Sources */,
 				DBE04B9C2111875700F94150 /* HZShowIconfontCell.m in Sources */,
 				DBE04B8F211183A400F94150 /* UILabel+HZIconfont.m in Sources */,
 				DB71B28B2108737000F8DEB3 /* HZShowDetailViewController.m in Sources */,
@@ -710,6 +770,7 @@
 				DBE04B932111841C00F94150 /* HZIconfont+HZFontello.m in Sources */,
 				DB463B08210AE3980018BCC5 /* UIViewController+HZCommon.m in Sources */,
 				DB463B04210ABAA70018BCC5 /* HZDeviceViewController.m in Sources */,
+				DBE04BD22113F68200F94150 /* HZAboutRouter.m in Sources */,
 				DB71B2832108673B00F8DEB3 /* HZShowModel.m in Sources */,
 				DB20A8EE20CFCF9E00D7432A /* UIView+HZKitCommon.m in Sources */,
 				DB71B26C21085C5700F8DEB3 /* HZMainViewController.m in Sources */,
@@ -749,11 +810,45 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		DBB17BFD2114001F00F9054F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBB17BFC2114001F00F9054F /* en */,
+				DBB17BFE2114002100F9054F /* zh-Hans */,
+				DBB17BFF2114006300F9054F /* Base */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DBB17C0D21142ADC00F9054F /* HZShow.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBB17C0C21142ADC00F9054F /* en */,
+				DBB17C0E21142ADD00F9054F /* zh-Hans */,
+				DBB17C0F21142AE600F9054F /* Base */,
+			);
+			name = HZShow.strings;
+			sourceTree = "<group>";
+		};
+		DBE04BD72113FB5200F94150 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBE04BD62113FB5200F94150 /* Base */,
+				DBE04BD92113FB5D00F94150 /* en */,
+				DBE04BDA2113FC7B00F94150 /* zh-Hans */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		DB20A85720CE614F00D7432A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -812,6 +907,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
