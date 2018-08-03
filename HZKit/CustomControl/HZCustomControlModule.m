@@ -28,7 +28,7 @@
 }
 
 - (UITabBarItem *)tabBarItem {
-    return [[UITabBarItem alloc] initWithTitle:@"轮子"
+    return [[UITabBarItem alloc] initWithTitle:HZCCLocalizedString("tabBarTitle")
                                          image:[UIImage imageNamed:@"TabBarCustomControl"]
                                  selectedImage:[UIImage imageNamed:@"TabBarCustomControlSelected"]];
 }

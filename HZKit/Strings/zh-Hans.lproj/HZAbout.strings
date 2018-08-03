@@ -1,0 +1,13 @@
+/* 
+  HZAbout.strings
+  HZKit
+
+  Created by HertzWang on 2018/8/3.
+  Copyright © 2018年 Hertz Wang. All rights reserved.
+*/
+
+title = "关于";
+tabBarTitle = "关于";
+
+settings = "设置";
+version = "当前版本 %@";

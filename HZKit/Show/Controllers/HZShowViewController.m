@@ -22,10 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.title = @"功能列表";
+
+    self.title = HZShowLocalizedString("title");
     [self.view addSubview:self.tableView];
-    
+
 #if DEBUG
     NSLog(@"%@", self.view);
     UIView *copyView = [self.view hzCopy];
@@ -223,31 +223,31 @@
     if (!_dataArray) {
         _dataArray = [NSMutableArray array];
         // Category、常用工具、自定义控件
-        HZShowModel *checkUpdate = [HZShowModel modelWithGroupName:@"常用工具"
-                                                             title:@"校验应用版本"
-                                                          subtitle:@"使用时需要修改App id"
+        HZShowModel *checkUpdate = [HZShowModel modelWithGroupName:HZShowLocalizedString("toolsSectionTitle")
+                                                             title:HZShowLocalizedString("checkAppUpdateTitle")
+                                                          subtitle:HZShowLocalizedString("checkAppUpdateDesc")
                                                             action:@"checkUpdateAction"];
         
         HZShowModel *device = [HZShowModel modelWithGroupName:nil
-                                                        title:@"设备相关"
-                                                     subtitle:@"UIDevice category"
+                                                        title:HZShowLocalizedString("deviceTitle")
+                                                     subtitle:HZShowLocalizedString("deviceDesc")
                                                        action:@"pushDeviceAction"];
 
         NSArray *toolArray = @[checkUpdate, device];
         [_dataArray addObject:toolArray];
         
         // ViewController
-        HZShowModel *viewController = [HZShowModel modelWithGroupName:@"ViewController"
-                                                                title:@"ViewController 相关"
-                                                             subtitle:@"ViewController category"
+        HZShowModel *viewController = [HZShowModel modelWithGroupName:HZShowLocalizedString("viewControllerSectionTitle")
+                                                                title:HZShowLocalizedString("viewControllerTitle")
+                                                             subtitle:HZShowLocalizedString("viewControllerDesc")
                                                                action:@"pushDetailAction"];
         NSArray *viewControllerArray = @[viewController];
         [_dataArray addObject:viewControllerArray];
         
         // Iconfont
-        HZShowModel *iconfont = [HZShowModel modelWithGroupName:@"Iconfont"
-                                                          title:@"Iconfont"
-                                                       subtitle:@"The use of the icon font"
+        HZShowModel *iconfont = [HZShowModel modelWithGroupName:HZShowLocalizedString("iconfontSectionTitle")
+                                                          title:HZShowLocalizedString("iconfontTitle")
+                                                       subtitle:HZShowLocalizedString("iconfontDesc")
                                                          action:@"pushIconfontAction"];
         [_dataArray addObject:@[iconfont]];
     }

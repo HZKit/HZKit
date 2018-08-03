@@ -22,7 +22,7 @@
 }
 
 - (void)initView {
-    self.title = @"关于";
+    self.title = HZAboutLocalizedString("title");
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
     CGFloat screenWidth = self.view.bounds.size.width;
@@ -46,13 +46,18 @@
     // Version
     UILabel *version = [[UILabel alloc] init];
     version.frame = CGRectMake(0, CGRectGetMaxY(icon.frame), screenWidth, iconHeight);
-    version.text = [NSString stringWithFormat:@"Version %@", [HZVersionManager appVersion]];
+    version.text = [NSString stringWithFormat:HZAboutLocalizedString("version"), [HZVersionManager appVersion]];
     version.textAlignment = NSTextAlignmentCenter;
     version.textColor = [UIColor grayColor];
     [self.view addSubview:version];
     
     // Setting item bar
-    UIBarButtonItem *settingBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(settingAction)];
+    UIBarButtonItem *settingBarButtonItem = [[UIBarButtonItem alloc]
+                                             initWithTitle:HZAboutLocalizedString("settings")
+                                             style:UIBarButtonItemStylePlain
+                                             target:self
+                                             action:@selector(settingAction)];
+    
     self.navigationItem.rightBarButtonItem = settingBarButtonItem;
 }
 

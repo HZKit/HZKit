@@ -32,7 +32,7 @@
 
 // TabBarItem
 - (UITabBarItem *)tabBarItem {
-    return [[UITabBarItem alloc] initWithTitle:@"关于"
+    return [[UITabBarItem alloc] initWithTitle:HZAboutLocalizedString("tabBarTitle")
                                          image:[UIImage imageNamed:@"TabBarAbout"]
                                  selectedImage:[UIImage imageNamed:@"TabBarAboutSelected"]];
 }

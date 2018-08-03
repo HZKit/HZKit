@@ -42,6 +42,8 @@
 		DBB17BFB2114001F00F9054F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBB17BFD2114001F00F9054F /* InfoPlist.strings */; };
 		DBB17C01211401B200F9054F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBB17C00211401B200F9054F /* Info.plist */; };
 		DBB17C0B21142ADC00F9054F /* HZShow.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBB17C0D21142ADC00F9054F /* HZShow.strings */; };
+		DBB17C2721144CE500F9054F /* HZCustomControl.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBB17C2921144CE500F9054F /* HZCustomControl.strings */; };
+		DBB17C2E21144E0400F9054F /* HZAbout.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBB17C3021144E0400F9054F /* HZAbout.strings */; };
 		DBE04B892111815C00F94150 /* HZIconfont.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE04B882111815C00F94150 /* HZIconfont.m */; };
 		DBE04B8C2111829200F94150 /* fontello.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBE04B8B2111829200F94150 /* fontello.ttf */; };
 		DBE04B8F211183A400F94150 /* UILabel+HZIconfont.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE04B8E211183A400F94150 /* UILabel+HZIconfont.m */; };
@@ -153,6 +155,12 @@
 		DBB17C0C21142ADC00F9054F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HZShow.strings; sourceTree = "<group>"; };
 		DBB17C0E21142ADD00F9054F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/HZShow.strings"; sourceTree = "<group>"; };
 		DBB17C0F21142AE600F9054F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/HZShow.strings; sourceTree = "<group>"; };
+		DBB17C2821144CE500F9054F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HZCustomControl.strings; sourceTree = "<group>"; };
+		DBB17C2A21144CEB00F9054F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/HZCustomControl.strings"; sourceTree = "<group>"; };
+		DBB17C2B21144CF100F9054F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/HZCustomControl.strings; sourceTree = "<group>"; };
+		DBB17C2F21144E0400F9054F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HZAbout.strings; sourceTree = "<group>"; };
+		DBB17C3121144E0700F9054F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/HZAbout.strings"; sourceTree = "<group>"; };
+		DBB17C3221144E0B00F9054F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/HZAbout.strings; sourceTree = "<group>"; };
 		DBE04B872111815C00F94150 /* HZIconfont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZIconfont.h; sourceTree = "<group>"; };
 		DBE04B882111815C00F94150 /* HZIconfont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZIconfont.m; sourceTree = "<group>"; };
 		DBE04B8B2111829200F94150 /* fontello.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fontello.ttf; sourceTree = "<group>"; };
@@ -599,6 +607,8 @@
 			children = (
 				DBB17BFD2114001F00F9054F /* InfoPlist.strings */,
 				DBB17C0D21142ADC00F9054F /* HZShow.strings */,
+				DBB17C2921144CE500F9054F /* HZCustomControl.strings */,
+				DBB17C3021144E0400F9054F /* HZAbout.strings */,
 			);
 			path = Strings;
 			sourceTree = "<group>";
@@ -710,8 +720,10 @@
 				DBE04BD52113FB5200F94150 /* LaunchScreen.storyboard in Resources */,
 				DBE04B95211184BF00F94150 /* fontelloConfig.json in Resources */,
 				DBB17C01211401B200F9054F /* Info.plist in Resources */,
+				DBB17C2E21144E0400F9054F /* HZAbout.strings in Resources */,
 				DBB17C0B21142ADC00F9054F /* HZShow.strings in Resources */,
 				DBE04B8C2111829200F94150 /* fontello.ttf in Resources */,
+				DBB17C2721144CE500F9054F /* HZCustomControl.strings in Resources */,
 				DB20A8DB20CFCF8700D7432A /* Assets.xcassets in Resources */,
 				DBB17BFB2114001F00F9054F /* InfoPlist.strings in Resources */,
 			);
@@ -829,6 +841,26 @@
 				DBB17C0F21142AE600F9054F /* Base */,
 			);
 			name = HZShow.strings;
+			sourceTree = "<group>";
+		};
+		DBB17C2921144CE500F9054F /* HZCustomControl.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBB17C2821144CE500F9054F /* en */,
+				DBB17C2A21144CEB00F9054F /* zh-Hans */,
+				DBB17C2B21144CF100F9054F /* Base */,
+			);
+			name = HZCustomControl.strings;
+			sourceTree = "<group>";
+		};
+		DBB17C3021144E0400F9054F /* HZAbout.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBB17C2F21144E0400F9054F /* en */,
+				DBB17C3121144E0700F9054F /* zh-Hans */,
+				DBB17C3221144E0B00F9054F /* Base */,
+			);
+			name = HZAbout.strings;
 			sourceTree = "<group>";
 		};
 		DBE04BD72113FB5200F94150 /* LaunchScreen.storyboard */ = {

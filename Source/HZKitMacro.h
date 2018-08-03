@@ -11,6 +11,14 @@
 
 // TODO: 待完善
 
-
+#pragma mark NLocalized
+#define HZLocalizedString(key, tbl) \
+        [NSBundle.mainBundle localizedStringForKey:(@"" key) value:@"" table:(@"" tbl)]
+#define HZShowLocalizedString(key) \
+        [NSBundle.mainBundle localizedStringForKey:(@"" key) value:@"" table:@"HZShow"]
+#define HZCCLocalizedString(key) \
+        [NSBundle.mainBundle localizedStringForKey:(@"" key) value:@"" table:@"HZCustomControl"]
+#define HZAboutLocalizedString(key) \
+        [NSBundle.mainBundle localizedStringForKey:(@"" key) value:@"" table:@"HZAbout"]
 
 #endif /* HZKitMacro_h */
