@@ -22,7 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = @"功能列表";
+    self.title = HZShowLocalizedString("deviceTitle");
     [self.view addSubview:self.tableView];
 }
 
@@ -75,6 +75,22 @@
     return cell;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    static NSString *headerIdentifier = @"HZShowHeaderIdenfitier";
+    UITableViewHeaderFooterView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerIdentifier];
+    
+    if (!headerView) {
+        headerView = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:headerIdentifier];
+    }
+    
+    HZShowModel *model = self.dataArray.firstObject;
+    if (model.groupName) {
+        headerView.textLabel.text = model.groupName;
+    }
+    
+    return headerView;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
@@ -105,13 +121,13 @@
 - (NSMutableArray<HZShowModel *> *)dataArray {
     if (!_dataArray) {
         
-        HZShowModel *deviceIdentifier = [HZShowModel modelWithGroupName:@"常用工具"
-                                                                  title:@"设备唯一标识符"
-                                                               subtitle:@"使用 KeyChain，需要 import <Security/Security.h>"
+        HZShowModel *deviceIdentifier = [HZShowModel modelWithGroupName:HZShowLocalizedString("deviceCommonSectionTitle")
+                                                                  title:HZShowLocalizedString("deviceIdentifierTitle")
+                                                               subtitle:HZShowLocalizedString("deviceIdentifierDesc")
                                                                  action:@"showDeviceIdentifierAction"];
-        HZShowModel *deviceName = [HZShowModel modelWithGroupName:@"常用工具"
-                                                            title:@"设备名称"
-                                                         subtitle:@"需要 import <sys/utsname.h>"
+        HZShowModel *deviceName = [HZShowModel modelWithGroupName:@""
+                                                            title:HZShowLocalizedString("deviceNameTitle")
+                                                         subtitle:HZShowLocalizedString("deviceNameDesc")
                                                            action:@"showDeviceNameAction"];
         
         

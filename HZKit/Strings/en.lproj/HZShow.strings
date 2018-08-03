@@ -6,8 +6,10 @@
   Copyright © 2018年 Hertz Wang. All rights reserved.
 */
 
-showViewTitle = "List";
 tabBarTitle = "List";
+
+// Show view
+title = "List";
 
 toolsSectionTitle = "Tools";
 checkAppUpdateTitle = "App update";
@@ -22,3 +24,11 @@ viewControllerDesc = "ViewController category";
 iconfontSectionTitle = "Iconfont";
 iconfontTitle = "Iconfont";
 iconfontDesc = "Use iconfont";
+
+// Device view
+deviceTitle = "Device";
+deviceCommonSectionTitle = "Common";
+deviceIdentifierTitle = "Device Identifier";
+deviceIdentifierDesc = "Use KeyChain, import <Security/Security.h>";
+deviceNameTitle = "Device name";
+deviceNameDesc = "import <sys/utsname.h>";

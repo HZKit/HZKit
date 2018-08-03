@@ -52,13 +52,13 @@
                 NSLog(@"info:\n%@", info);
             }
             // 发现新版本处理
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"发现新版本"
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:HZAlertLocalizedString("findNewVersion")
                                                                            message:nil
                                                                     preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消"
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:HZAlertLocalizedString("cancel")
                                                                    style:UIAlertActionStyleCancel
                                                                  handler:nil];
-            UIAlertAction *updateAction = [UIAlertAction actionWithTitle:@"更新"
+            UIAlertAction *updateAction = [UIAlertAction actionWithTitle:HZAlertLocalizedString("upgrade")
                                                                    style:UIAlertActionStyleDefault
                                                                  handler:^(UIAlertAction * _Nonnull action) {
                                                                      

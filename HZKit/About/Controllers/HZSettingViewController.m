@@ -22,7 +22,7 @@
 }
 
 - (void)initView {
-    self.title = @"设置";
+    self.title = HZAboutLocalizedString("settingsTitle");
 }
 
 @end
