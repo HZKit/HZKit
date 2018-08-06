@@ -7,6 +7,7 @@
 //
 
 #import "HZFontelloModel.h"
+#import "HZIconfont.h"
 
 NSString *kNameKey = @"name";
 NSString *kPrefixTextKey = @"css_prefix_text";
