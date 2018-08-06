@@ -1,0 +1,34 @@
+/* 
+  HZShow.strings
+  HZKit
+
+  Created by HertzWang on 2018/8/3.
+  Copyright © 2018年 Hertz Wang. All rights reserved.
+*/
+
+tabBarTitle = "功能列表";
+
+// 功能列表界面
+title = "功能列表";
+
+toolsSectionTitle = "常用工具";
+checkAppUpdateTitle = "校验应用版本";
+checkAppUpdateDesc = "使用时需要修改 App id";
+deviceTitle = "设备相关";
+deviceDesc = "更多设备信息";
+
+viewControllerSectionTitle = "ViewController";
+viewControllerTitle = "ViewController 相关";
+viewControllerDesc = "ViewController 类别使用";
+
+iconfontSectionTitle = "Iconfont";
+iconfontTitle = "Iconfont";
+iconfontDesc = "Iconfont 的使用";
+
+// 设备界面
+deviceTitle = "设备";
+deviceCommonSectionTitle = "通用";
+deviceIdentifierTitle = "设备唯一标识符";
+deviceIdentifierDesc = "使用 KeyChain, import <Security/Security.h>";
+deviceNameTitle = "设备名称";
+deviceNameDesc = "需要 import <sys/utsname.h>";

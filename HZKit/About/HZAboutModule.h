@@ -7,6 +7,7 @@
 //
 
 #import "HZBaseModule.h"
+#import "HZAboutRouter.h"
 
 @interface HZAboutModule : HZBaseModule
 

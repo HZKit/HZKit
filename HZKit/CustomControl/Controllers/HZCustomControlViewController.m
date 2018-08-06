@@ -25,7 +25,7 @@ NSString *cellIdentifier = @"HZCustomControlCell";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = @"自定义控件";
+    self.title = HZCCLocalizedString("title");
     [self.view addSubview:self.collectionView];
 }
 

@@ -33,7 +33,7 @@
 
 // TabBarItem
 - (UITabBarItem *)tabBarItem {
-    return [[UITabBarItem alloc] initWithTitle:@"展示"
+    return [[UITabBarItem alloc] initWithTitle:HZShowLocalizedString("tabBarTitle")
                                          image:[UIImage imageNamed:@"TabBarShow"]
                                  selectedImage:[UIImage imageNamed:@"TabBarShowSelected"]];
 }
