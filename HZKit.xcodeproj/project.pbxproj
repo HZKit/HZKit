@@ -254,13 +254,12 @@
 		DB20A8E220CFCF9D00D7432A /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				DBE04BD42113F92700F94150 /* Gload */,
-				DBE04B862111812500F94150 /* Iconfont */,
-				DB463B05210AE3560018BCC5 /* ViewController */,
-				DB463AD6210AB3280018BCC5 /* Macro */,
-				DB463AD4210AB3100018BCC5 /* Version */,
-				DB463AD2210AB2E90018BCC5 /* Device */,
-				DB463AD1210AB2D40018BCC5 /* View */,
+				DBB17C3E2117E85C00F9054F /* Iconfont */,
+				DBB17C3F2117E87E00F9054F /* ViewController */,
+				DBB17C452117E91D00F9054F /* Marco */,
+				DBB17C422117E8BF00F9054F /* Version */,
+				DBB17C432117E8D400F9054F /* Device */,
+				DBB17C442117E8F900F9054F /* View */,
 				DB20A8E520CFCF9D00D7432A /* HZKit.h */,
 			);
 			path = Source;
@@ -312,45 +311,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		DB463AD1210AB2D40018BCC5 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				DB4AF2BF210DD5AA005ECF23 /* AlertView */,
-				DB20A8EA20CFCF9D00D7432A /* HZKitView.h */,
-				DB20A8EB20CFCF9D00D7432A /* UIView+HZKitCommon.m */,
-				DB20A8EC20CFCF9D00D7432A /* UIView+HZKitCommon.h */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		DB463AD2210AB2E90018BCC5 /* Device */ = {
-			isa = PBXGroup;
-			children = (
-				DB2D5AE120E272BE005893ED /* HZKitDevice.h */,
-				DB7B6F3F2109A1B5004F233C /* UIDevice+HZCommon.h */,
-				DB7B6F402109A1B5004F233C /* UIDevice+HZCommon.m */,
-			);
-			name = Device;
-			sourceTree = "<group>";
-		};
-		DB463AD4210AB3100018BCC5 /* Version */ = {
-			isa = PBXGroup;
-			children = (
-				DB20A8EF20CFCFE000D7432A /* HZKitVersion.h */,
-				DB20A8E720CFCF9D00D7432A /* HZVersionManager.m */,
-				DB20A8E820CFCF9D00D7432A /* HZVersionManager.h */,
-			);
-			name = Version;
-			sourceTree = "<group>";
-		};
-		DB463AD6210AB3280018BCC5 /* Macro */ = {
-			isa = PBXGroup;
-			children = (
-				DB20A8E420CFCF9D00D7432A /* HZKitMacro.h */,
-			);
-			name = Macro;
-			sourceTree = "<group>";
-		};
 		DB463AF9210ABA0C0018BCC5 /* Device */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,16 +338,6 @@
 				DB463B03210ABAA70018BCC5 /* HZDeviceViewController.m */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		DB463B05210AE3560018BCC5 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				DB463B06210AE3980018BCC5 /* UIViewController+HZCommon.h */,
-				DB463B07210AE3980018BCC5 /* UIViewController+HZCommon.m */,
-				DB463B09210AE3D20018BCC5 /* HZKitViewController.h */,
-			);
-			name = ViewController;
 			sourceTree = "<group>";
 		};
 		DB4AF293210BF5DA005ECF23 /* CustomControl */ = {
@@ -455,6 +405,7 @@
 				DB4AF2BC210DC66A005ECF23 /* HZAlertView.m */,
 			);
 			name = AlertView;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		DB71B26621085C1600F8DEB3 /* Main */ = {
@@ -532,22 +483,7 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
-		DBE03A0020E3D88D0012C824 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				DBE04BE02113FD5400F94150 /* Strings */,
-				DBE04BCB2113F44500F94150 /* Files */,
-				DBE04B8A2111827200F94150 /* Fonts */,
-				DB20A8D120CFCF8700D7432A /* Assets.xcassets */,
-				DBB17C00211401B200F9054F /* Info.plist */,
-				DB20A8D720CFCF8700D7432A /* main.m */,
-				DB71B28F2108824200F8DEB3 /* HZPrefixHeader.pch */,
-				DBE04BD72113FB5200F94150 /* LaunchScreen.storyboard */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		DBE04B862111812500F94150 /* Iconfont */ = {
+		DBB17C3E2117E85C00F9054F /* Iconfont */ = {
 			isa = PBXGroup;
 			children = (
 				DBE04B872111815C00F94150 /* HZIconfont.h */,
@@ -562,7 +498,71 @@
 				DBE04BA02111998300F94150 /* UIFont+HZIconfont.h */,
 				DBE04BA12111998300F94150 /* UIFont+HZIconfont.m */,
 			);
-			name = Iconfont;
+			path = Iconfont;
+			sourceTree = "<group>";
+		};
+		DBB17C3F2117E87E00F9054F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DB463B06210AE3980018BCC5 /* UIViewController+HZCommon.h */,
+				DB463B07210AE3980018BCC5 /* UIViewController+HZCommon.m */,
+				DB463B09210AE3D20018BCC5 /* HZKitViewController.h */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DBB17C422117E8BF00F9054F /* Version */ = {
+			isa = PBXGroup;
+			children = (
+				DB20A8EF20CFCFE000D7432A /* HZKitVersion.h */,
+				DB20A8E720CFCF9D00D7432A /* HZVersionManager.m */,
+				DB20A8E820CFCF9D00D7432A /* HZVersionManager.h */,
+			);
+			path = Version;
+			sourceTree = "<group>";
+		};
+		DBB17C432117E8D400F9054F /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				DB2D5AE120E272BE005893ED /* HZKitDevice.h */,
+				DB7B6F3F2109A1B5004F233C /* UIDevice+HZCommon.h */,
+				DB7B6F402109A1B5004F233C /* UIDevice+HZCommon.m */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		DBB17C442117E8F900F9054F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DB4AF2BF210DD5AA005ECF23 /* AlertView */,
+				DB20A8EA20CFCF9D00D7432A /* HZKitView.h */,
+				DB20A8EB20CFCF9D00D7432A /* UIView+HZKitCommon.m */,
+				DB20A8EC20CFCF9D00D7432A /* UIView+HZKitCommon.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DBB17C452117E91D00F9054F /* Marco */ = {
+			isa = PBXGroup;
+			children = (
+				DB20A8E420CFCF9D00D7432A /* HZKitMacro.h */,
+			);
+			path = Marco;
+			sourceTree = "<group>";
+		};
+		DBE03A0020E3D88D0012C824 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DBE04BE02113FD5400F94150 /* Strings */,
+				DBE04BCB2113F44500F94150 /* Files */,
+				DBE04B8A2111827200F94150 /* Fonts */,
+				DB20A8D120CFCF8700D7432A /* Assets.xcassets */,
+				DBB17C00211401B200F9054F /* Info.plist */,
+				DB20A8D720CFCF8700D7432A /* main.m */,
+				DB71B28F2108824200F8DEB3 /* HZPrefixHeader.pch */,
+				DBE04BD72113FB5200F94150 /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		DBE04B8A2111827200F94150 /* Fonts */ = {
@@ -597,13 +597,6 @@
 				DBE04BD12113F68200F94150 /* HZAboutRouter.m */,
 			);
 			path = Router;
-			sourceTree = "<group>";
-		};
-		DBE04BD42113F92700F94150 /* Gload */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Gload;
 			sourceTree = "<group>";
 		};
 		DBE04BE02113FD5400F94150 /* Strings */ = {
