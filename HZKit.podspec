@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "HZKit"
-  s.version      = "0.1.4"
+  s.version      = "0.1.4.1"
   s.summary      = "Universal code package for rapid development."
   s.homepage     = "https://github.com/HZKit/HZKit"
   s.license      = "MIT"
