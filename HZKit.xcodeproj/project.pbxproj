@@ -39,6 +39,9 @@
 		DB71B28B2108737000F8DEB3 /* HZShowDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B28A2108737000F8DEB3 /* HZShowDetailViewController.m */; };
 		DB71B28E2108782F00F8DEB3 /* HZMainRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B28D2108782F00F8DEB3 /* HZMainRouter.m */; };
 		DB7B6F412109A1B5004F233C /* UIDevice+HZCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7B6F402109A1B5004F233C /* UIDevice+HZCommon.m */; };
+		DBACB648211994F1004FD994 /* HZAauthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB647211994F1004FD994 /* HZAauthorizationViewController.m */; };
+		DBACB64B2119A026004FD994 /* HZAuthorizationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB64A2119A026004FD994 /* HZAuthorizationModel.m */; };
+		DBACB6502119A78C004FD994 /* HZAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB64F2119A78C004FD994 /* HZAuthorization.m */; };
 		DBB17BFB2114001F00F9054F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBB17BFD2114001F00F9054F /* InfoPlist.strings */; };
 		DBB17C01211401B200F9054F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBB17C00211401B200F9054F /* Info.plist */; };
 		DBB17C0B21142ADC00F9054F /* HZShow.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBB17C0D21142ADC00F9054F /* HZShow.strings */; };
@@ -149,6 +152,13 @@
 		DB71B28F2108824200F8DEB3 /* HZPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZPrefixHeader.pch; sourceTree = "<group>"; };
 		DB7B6F3F2109A1B5004F233C /* UIDevice+HZCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+HZCommon.h"; sourceTree = "<group>"; };
 		DB7B6F402109A1B5004F233C /* UIDevice+HZCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+HZCommon.m"; sourceTree = "<group>"; };
+		DBACB646211994F1004FD994 /* HZAauthorizationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZAauthorizationViewController.h; sourceTree = "<group>"; };
+		DBACB647211994F1004FD994 /* HZAauthorizationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZAauthorizationViewController.m; sourceTree = "<group>"; };
+		DBACB6492119A026004FD994 /* HZAuthorizationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZAuthorizationModel.h; sourceTree = "<group>"; };
+		DBACB64A2119A026004FD994 /* HZAuthorizationModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZAuthorizationModel.m; sourceTree = "<group>"; };
+		DBACB64D2119A767004FD994 /* HZKitAuthorization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZKitAuthorization.h; sourceTree = "<group>"; };
+		DBACB64E2119A78C004FD994 /* HZAuthorization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZAuthorization.h; sourceTree = "<group>"; };
+		DBACB64F2119A78C004FD994 /* HZAuthorization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZAuthorization.m; sourceTree = "<group>"; };
 		DBB17BFC2114001F00F9054F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DBB17BFE2114002100F9054F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		DBB17BFF2114006300F9054F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -254,6 +264,7 @@
 		DB20A8E220CFCF9D00D7432A /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DBACB64C2119A745004FD994 /* Authorization */,
 				DBB17C3E2117E85C00F9054F /* Iconfont */,
 				DBB17C3F2117E87E00F9054F /* ViewController */,
 				DBB17C452117E91D00F9054F /* Marco */,
@@ -461,6 +472,8 @@
 				DB71B28A2108737000F8DEB3 /* HZShowDetailViewController.m */,
 				DBE04B962111864E00F94150 /* HZShowIconfontViewController.h */,
 				DBE04B972111864E00F94150 /* HZShowIconfontViewController.m */,
+				DBACB646211994F1004FD994 /* HZAauthorizationViewController.h */,
+				DBACB647211994F1004FD994 /* HZAauthorizationViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -470,6 +483,8 @@
 			children = (
 				DB71B2812108673B00F8DEB3 /* HZShowModel.h */,
 				DB71B2822108673B00F8DEB3 /* HZShowModel.m */,
+				DBACB6492119A026004FD994 /* HZAuthorizationModel.h */,
+				DBACB64A2119A026004FD994 /* HZAuthorizationModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -481,6 +496,16 @@
 				DB71B28521086F6500F8DEB3 /* HZShowRouter.m */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		DBACB64C2119A745004FD994 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				DBACB64D2119A767004FD994 /* HZKitAuthorization.h */,
+				DBACB64E2119A78C004FD994 /* HZAuthorization.h */,
+				DBACB64F2119A78C004FD994 /* HZAuthorization.m */,
+			);
+			path = Authorization;
 			sourceTree = "<group>";
 		};
 		DBB17C3E2117E85C00F9054F /* Iconfont */ = {
@@ -763,16 +788,19 @@
 				DB7B6F412109A1B5004F233C /* UIDevice+HZCommon.m in Sources */,
 				DB4AF2A4210C001E005ECF23 /* HZCustomControlModel.m in Sources */,
 				DBE04B892111815C00F94150 /* HZIconfont.m in Sources */,
+				DBACB6502119A78C004FD994 /* HZAuthorization.m in Sources */,
 				DB71B26921085C4100F8DEB3 /* HZBaseTabBarController.m in Sources */,
 				DB20A8DF20CFCF8700D7432A /* main.m in Sources */,
 				DB20A8E020CFCF8700D7432A /* AppDelegate.m in Sources */,
 				DB20A8F520CFD11900D7432A /* HZBaseModule.m in Sources */,
 				DB71B27821085E7700F8DEB3 /* HZAboutViewController.m in Sources */,
 				DBE04B9F21118DBA00F94150 /* HZFontelloModel.m in Sources */,
+				DBACB648211994F1004FD994 /* HZAauthorizationViewController.m in Sources */,
 				DB4AF2A8210C084D005ECF23 /* HZCustomControlCell.m in Sources */,
 				DB463AFC210ABA3A0018BCC5 /* HZDeviceModule.m in Sources */,
 				DB71B280210866F200F8DEB3 /* HZBaseModel.m in Sources */,
 				DBE04BA22111998300F94150 /* UIFont+HZIconfont.m in Sources */,
+				DBACB64B2119A026004FD994 /* HZAuthorizationModel.m in Sources */,
 				DB4AF2AC210C091F005ECF23 /* HZBaseCollectionViewCell.m in Sources */,
 				DB71B28E2108782F00F8DEB3 /* HZMainRouter.m in Sources */,
 				DB71B27121085D6100F8DEB3 /* HZShowModule.m in Sources */,

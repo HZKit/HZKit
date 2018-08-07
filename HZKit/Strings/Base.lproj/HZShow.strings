@@ -16,6 +16,8 @@ checkAppUpdateTitle = "App update";
 checkAppUpdateDesc = "Modify App id";
 deviceTitle = "Device";
 deviceDesc = "More device info";
+authorizationTitle = "Authorization";
+authorizationDesc = "Check the application authorization status";
 
 viewControllerSectionTitle = "ViewController";
 viewControllerTitle = "ViewController";
@@ -26,9 +28,27 @@ iconfontTitle = "Iconfont";
 iconfontDesc = "Use iconfont";
 
 // Device view
-deviceTitle = "Device";
+deviceViewTitle = "Device";
 deviceCommonSectionTitle = "Common";
 deviceIdentifierTitle = "Device Identifier";
 deviceIdentifierDesc = "Use KeyChain, import <Security/Security.h>";
 deviceNameTitle = "Device name";
 deviceNameDesc = "import <sys/utsname.h>";
+
+// Authorization view
+authorizationViewTitle = "Authorization";
+authorizationNFC = "NFC Reader";
+authorizationMediaLibrary = "Media Library";
+authorizationBluetooth = "Bluetooth Peripheral";
+authorizationCalendars = "Calendars";
+authorizationCamera = "Camera";
+authorizationContacts = "Contacts";
+authorizationFaceID = "Face ID";
+authorizationHealth = "Health Share";
+authorizationHomeKit = "HomeKit";
+authorizationLocation = "Location";
+authorizationMicrophone = "Microphone";
+authorizationMotion = "Motion";
+authorizationPhotoLibrary = "Photo Library";
+authorizationReminders = "Reminders";
+authorizationTV = "TV Provider";

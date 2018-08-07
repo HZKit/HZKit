@@ -119,6 +119,13 @@
 }
 
 /**
+ 进入授权界面
+ */
+- (void)pushAuthorizationAction {
+    [[HZMainRouter shared] pushWith:HZShowRouterAuthorization fromModule:HZModuleNameShow];
+}
+
+/**
  显示使用 Iconfont 效果
  */
 - (void)pushIconfontAction {
@@ -232,8 +239,13 @@
                                                         title:HZShowLocalizedString("deviceTitle")
                                                      subtitle:HZShowLocalizedString("deviceDesc")
                                                        action:@"pushDeviceAction"];
+        
+        HZShowModel *authorization = [HZShowModel modelWithGroupName:nil
+                                                        title:HZShowLocalizedString("authorizationTitle")
+                                                     subtitle:HZShowLocalizedString("authorizationDesc")
+                                                       action:@"pushAuthorizationAction"];
 
-        NSArray *toolArray = @[checkUpdate, device];
+        NSArray *toolArray = @[checkUpdate, device, authorization];
         [_dataArray addObject:toolArray];
         
         // ViewController
