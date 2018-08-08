@@ -10,6 +10,8 @@
 findNewVersion = "发现新版本";
 
 // 内容
+authorized = "已授权";
+unauthorized = "未授权";
 
 // 按钮
 cancel = "取消";

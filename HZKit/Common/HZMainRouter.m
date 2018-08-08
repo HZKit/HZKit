@@ -10,6 +10,10 @@
 
 @implementation HZMainRouter
 
+- (void)pushWith:(NSUInteger)controllerId fromModule:(NSString *)moduleName {
+    [self pushWith:controllerId fromModule:moduleName args:nil hideTabBar:YES];
+}
+
 - (void)pushWith:(NSUInteger)controllerId
       fromModule:(NSString *)moduleName
             args:(NSDictionary *)args

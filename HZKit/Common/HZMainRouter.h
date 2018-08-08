@@ -16,7 +16,7 @@
 @property (nonatomic, strong) NSDictionary *moduleRouterMapping;
 @property (nonatomic, weak) UITabBarController *mainViewController;
 
-+ (instancetype)shared;
+- (void)pushWith:(NSUInteger)controllerId fromModule:(NSString *)moduleName;
 
 - (void)pushWith:(NSUInteger)controllerId
       fromModule:(NSString *)moduleName

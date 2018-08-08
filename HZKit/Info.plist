@@ -15,11 +15,35 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1.4.1</string>
+	<string>0.1.4.2</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>hzkit</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>hzkitapp</string>
+				<string>hzkit</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
-	<string>15</string>
+	<string>16</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NFCReaderUsageDescription</key>
+	<string>InfoPlist.strings -&gt; NFCReaderUsageDescription</string>
+	<key>NSCameraUsageDescription</key>
+	<string>InfoPlist.strings -&gt; NSCameraUsageDescription</string>
+	<key>NSLocationUsageDescription</key>
+	<string>InfoPlist.strings -&gt; NSLocationUsageDescription</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>InfoPlist.strings -&gt; NSLocationWhenInUseUsageDescription</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>InfoPlist.strings -&gt; NSLocationAlwaysUsageDescription</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>InfoPlist.strings -&gt; NSLocationAlwaysAndWhenInUseUsageDescription</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>fontello.ttf</string>

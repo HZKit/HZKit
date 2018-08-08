@@ -9,13 +9,17 @@
 #import "HZCustomControlViewController.h"
 #import "HZCustomControlModel.h"
 #import "HZCustomControlCell.h"
+#import <CoreLocation/CoreLocation.h>
 
 NSString *cellIdentifier = @"HZCustomControlCell";
 
-@interface HZCustomControlViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface HZCustomControlViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, CLLocationManagerDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
+
+// test
+@property (nonatomic, strong) CLLocationManager *locationManager;
 
 @end
 
@@ -63,6 +67,10 @@ NSString *cellIdentifier = @"HZCustomControlCell";
 //        }
 //    }
     
+    [self.locationManager requestWhenInUseAuthorization];
+    
+    return;
+    
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
     view.backgroundColor = [UIColor blueColor];
     
@@ -109,6 +117,15 @@ NSString *cellIdentifier = @"HZCustomControlCell";
     }
     
     return _dataArray;
+}
+
+- (CLLocationManager *)locationManager {
+    if (!_locationManager) {
+        _locationManager = [[CLLocationManager alloc] init];
+        _locationManager.delegate = self;
+    }
+    
+    return _locationManager;
 }
 
 @end

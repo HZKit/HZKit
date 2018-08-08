@@ -11,6 +11,7 @@
 #import "HZShowViewController.h"
 #import "HZShowIconfontViewController.h"
 #import "HZShowDetailViewController.h"
+#import "HZAauthorizationViewController.h"
 
 @implementation HZShowRouter
 
@@ -21,7 +22,8 @@
         self.mapping = @{
                          HZ_NUM(HZShowRouterMain): NSStringFromClass([HZShowViewController class]),
                          HZ_NUM(HZShowRouterIconfont): NSStringFromClass([HZShowIconfontViewController class]),
-                         HZ_NUM(HZShowRouterDetail): NSStringFromClass([HZShowDetailViewController class])
+                         HZ_NUM(HZShowRouterDetail): NSStringFromClass([HZShowDetailViewController class]),
+                         HZ_NUM(HZShowRouterAuthorization): NSStringFromClass([HZAauthorizationViewController class])
                          };
     }
     return self;

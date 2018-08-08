@@ -22,7 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = HZShowLocalizedString("deviceTitle");
+    self.title = HZShowLocalizedString("deviceViewTitle");
     [self.view addSubview:self.tableView];
 }
 

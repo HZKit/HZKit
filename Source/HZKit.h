@@ -17,6 +17,7 @@
 #import <HZKit/HZKitDevice.h>
 #import <HZKit/HZKitViewController.h>
 #import <HZKit/HZKitIconfont.h>
+#import <HZKit/HZKitAuthorization.h>
 
 #else
 
@@ -26,6 +27,7 @@
 #import "HZKitDevice.h"
 #import "HZKitViewController.h"
 #import "HZKitIconfont.h"
+#import "HZKitAuthorization.h"
 
 #endif
 

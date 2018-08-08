@@ -10,6 +10,8 @@
 findNewVersion = "Find new version";
 
 // Connect
+authorized = "authorized";
+unauthorized = "unauthorized";
 
 // Button
 cancel = "Cancel";
