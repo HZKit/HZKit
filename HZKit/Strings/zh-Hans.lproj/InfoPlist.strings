@@ -9,3 +9,7 @@
 CFBundleDisplayName = "HZKit中文";
 NSCameraUsageDescription = "授权相机";
 NFCReaderUsageDescription = "授权 NFC";
+NSLocationUsageDescription = "授权位置";
+NSLocationWhenInUseUsageDescription = "授权位置-使用应用期间";
+NSLocationAlwaysUsageDescription = "授权位置-始终";
+NSLocationAlwaysAndWhenInUseUsageDescription = "授权位置-始终和使用应用期间";

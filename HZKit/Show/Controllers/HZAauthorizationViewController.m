@@ -14,7 +14,7 @@
 @interface HZAauthorizationViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray<HZAuthorizationModel *> *dataArray;
+@property (nonatomic, strong) NSMutableArray<NSArray<HZAuthorizationModel *> *> *dataArray;
 
 @end
 
@@ -95,7 +95,9 @@
 }
 
 - (void)authorizationLocationAction {
-    
+    [HZAuthorization authorizationType:HZAuthorizationLocation completionHandler:^(BOOL grandted, NSString *description) {
+        [self showWithGrandted:grandted description:description];
+    }];
 }
 
 - (void)authorizationMicrophoneAction {
@@ -119,8 +121,12 @@
 }
 
 #pragma mark - UITableViewDataSource, UITableViewDelegate
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.dataArray.count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataArray[section].count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -132,7 +138,7 @@
         cell.detailTextLabel.textColor = [UIColor grayColor];
     }
     
-    HZAuthorizationModel *model = self.dataArray[indexPath.row];
+    HZAuthorizationModel *model = self.dataArray[indexPath.section][indexPath.row];
     cell.textLabel.text = model.title;
     cell.detailTextLabel.text = model.subtitle;
     
@@ -146,10 +152,20 @@
     return cell;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return @"Hardware";
+    } else if (section == 1) {
+        return @"Software";
+    } else {
+        return @"Unknown";
+    }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    HZAuthorizationModel *model = self.dataArray[indexPath.row];
+    HZAuthorizationModel *model = self.dataArray[indexPath.section][indexPath.row];
     if (model.clicked == NO) {
         model.clicked = YES;
         [tableView reloadRowsAtIndexPaths:@[ indexPath ] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -181,25 +197,38 @@
     return _tableView;
 }
 
-- (NSMutableArray<HZAuthorizationModel *> *)dataArray {
+- (NSMutableArray<NSArray<HZAuthorizationModel *> *> *)dataArray {
     if (!_dataArray) {
-        _dataArray = [NSMutableArray arrayWithObjects:
-                      [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationNFC") subtitle:@"Settings Info.plist, open Capabilities" action:@"authorizationNFCAction"],
-                      [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationMediaLibrary") subtitle:@"Unfinished" action:@"authorizationMediaLibraryAction"],
-                      [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationBluetooth") subtitle:@"Unfinished" action:@"authorizationBluetoothAction"],
-                      [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationCalendars") subtitle:@"Unfinished" action:@"authorizationCalendarsAction"],
-                      [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationCamera") subtitle:@"Setting Info.plist" action:@"authorizationCameraAction"],
-                      [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationContacts") subtitle:@"Unfinished" action:@"authorizationContactsAction"],
-                      [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationFaceID") subtitle:@"Unfinished" action:@"authorizationFaceIDAction"],
-                      [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationHealth") subtitle:@"Unfinished" action:@"authorizationHealthAction"],
-                      [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationHomeKit") subtitle:@"Unfinished" action:@"authorizationHomeKitAction"],
-                      [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationLocation") subtitle:@"Unfinished" action:@"authorizationLocationAction"],
-                      [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationMicrophone") subtitle:@"Unfinished" action:@"authorizationMicrophoneAction"],
-                      [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationMotion") subtitle:@"Unfinished" action:@"authorizationMotionAction"],
-                      [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationPhotoLibrary") subtitle:@"Unfinished" action:@"authorizationPhotoLibraryAction"],
-                      [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationReminders") subtitle:@"Unfinished" action:@"authorizationRemindersAction"],
-                      [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationTV") subtitle:@"Unfinished" action:@"authorizationTVAction"],
-                      nil];
+        // 共15个：相机、相册、位置、麦克风、运动与健康、通讯录、NFC、媒体库、蓝牙、日历、Face ID、健康、HomeKit、Reminders、TV
+        // 硬件7个：相机、位置、麦克风、运动与健康、NFC、蓝牙、Face ID
+        // 软件3个：相册、通讯录、日历
+        // 未确定5个：媒体库、健康、HomeKit、Reminders、TV
+        
+        NSArray *hardwareArray = @[
+                                   [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationCamera") subtitle:@"Setting Info.plist" action:@"authorizationCameraAction"],
+                                   [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationLocation") subtitle:@"Setting Info.plist" action:@"authorizationLocationAction"],
+                                   [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationMicrophone") subtitle:@"Unfinished" action:@"authorizationMicrophoneAction"],
+                                   [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationMotion") subtitle:@"Unfinished" action:@"authorizationMotionAction"],
+                                   [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationNFC") subtitle:@"Settings Info.plist, open Capabilities" action:@"authorizationNFCAction"],
+                                   [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationBluetooth") subtitle:@"Unfinished" action:@"authorizationBluetoothAction"],
+                                    [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationFaceID") subtitle:@"Unfinished" action:@"authorizationFaceIDAction"]
+                                   ];
+        
+        NSArray *softwareArray = @[
+                                   [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationPhotoLibrary") subtitle:@"Unfinished" action:@"authorizationPhotoLibraryAction"],
+                                   [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationContacts") subtitle:@"Unfinished" action:@"authorizationContactsAction"],
+                                   [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationCalendars") subtitle:@"Unfinished" action:@"authorizationCalendarsAction"],
+                                   
+                                   ];
+        NSArray *unknownArray = @[
+                                 [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationMediaLibrary") subtitle:@"Unfinished" action:@"authorizationMediaLibraryAction"],
+                                 [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationHealth") subtitle:@"Unfinished" action:@"authorizationHealthAction"],
+                                 [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationHomeKit") subtitle:@"Unfinished" action:@"authorizationHomeKitAction"],
+                                 [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationReminders") subtitle:@"Unfinished" action:@"authorizationRemindersAction"],
+                                 [HZAuthorizationModel modelWithTitle:HZShowLocalizedString("authorizationTV") subtitle:@"Unfinished" action:@"authorizationTVAction"]
+                                 ];
+        
+        _dataArray = [NSMutableArray arrayWithObjects: hardwareArray, softwareArray, unknownArray, nil];
     }
     
     return _dataArray;

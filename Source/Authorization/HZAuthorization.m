@@ -9,11 +9,15 @@
 #import "HZAuthorization.h"
 #import <AVFoundation/AVCaptureDevice.h>
 #import <CoreNFC/CoreNFC.h>
+#import <CoreLocation/CoreLocation.h>
 
+// Reference：https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html
 NSString *const kAuthorizationCameraKey = @"NSCameraUsageDescription";
 NSString *const kAuthorizationNFCKey = @"NFCReaderUsageDescription";
-
-NSString *const kAuthorizationAssert = @">>> Unknown usage description <<<";
+NSString *const kAuthorizationLocation = @"NSLocationUsageDescription";
+NSString *const kAuthorizationLocationAlways = @"NSLocationAlwaysUsageDescription";
+NSString *const kAuthorizationLocationWhenInUse = @"NSLocationWhenInUseUsageDescription";
+NSString *const kAuthorizationLocationAlwaysAndWhenInUse = @"NSLocationAlwaysAndWhenInUseUsageDescription";
 
 @interface HZAuthorization ()
 
@@ -66,7 +70,13 @@ NSString *const kAuthorizationAssert = @">>> Unknown usage description <<<";
             
             break;
         case HZAuthorizationLocation:
-            
+        {
+            [HZAuthorization authorizationLocation:^(BOOL grandted, NSString *description) {
+                if (handler) {
+                    handler(grandted, description);
+                }
+            }];
+        }
             break;
         case HZAuthorizationMicrophone:
             
@@ -114,6 +124,39 @@ NSString *const kAuthorizationAssert = @">>> Unknown usage description <<<";
     }
 }
 
++ (void)authorizationLocation:(HZAuthorizationBlock)handler {
+
+    if ([CLLocationManager locationServicesEnabled] == NO) {
+        handler(NO, @"Location services nonactivated");
+        
+        return;
+    }
+    
+    if ([CLLocationManager headingAvailable] == NO) {
+        handler(NO, @"Heading invalid");
+        
+        return;
+    }
+    
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+    switch (status) {
+        case kCLAuthorizationStatusAuthorizedAlways:
+            handler(YES, @"Always");
+            break;
+        case kCLAuthorizationStatusAuthorizedWhenInUse:
+            handler(YES, @"When in use");
+            break;
+        case kCLAuthorizationStatusNotDetermined:
+        {
+            handler(NO, @"Needs request location"); // TODO: 优化使用
+        }
+            break;
+        default:
+            handler(NO, @"Restricted or Denied");
+            break;
+    }
+}
+
 + (void)authorizationCamera:(HZAuthorizationBlock)handler {
     
     [self checkInfoPlistKey:kAuthorizationCameraKey];
@@ -149,7 +192,8 @@ NSString *const kAuthorizationAssert = @">>> Unknown usage description <<<";
 + (void)checkInfoPlistKey:(NSString *)key {
     NSArray *keys = [[[NSBundle mainBundle] infoDictionary] allKeys];
     if ([keys containsObject:key] == NO) {
-        NSAssert(NO, kAuthorizationAssert);
+        NSString *text = [NSString stringWithFormat:@">>> Unknown %@ usage description <<<", key];
+        NSAssert(NO, text);
     }
 }
 
