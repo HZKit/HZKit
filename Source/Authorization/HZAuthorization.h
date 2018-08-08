@@ -32,6 +32,4 @@ typedef NS_ENUM(NSUInteger, HZAuthorizationType) {
 
 + (void)authorizationType:(HZAuthorizationType)type completionHandler:(HZAuthorizationBlock)handler;
 
-+ (void)authorizationCamera:(HZAuthorizationBlock)handler;
-
 @end

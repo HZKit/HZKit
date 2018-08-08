@@ -14,12 +14,18 @@
 
 #import "HZKit.h"
 
-#import <objc/message.h>
+#ifdef  __OBJC__
+    #import <objc/message.h>
+    #import <UIKit/UIKit.h>
+    #import <CoreGraphics/CoreGraphics.h>
+#endif
 
 #import "HZMainRouter.h"
 #import "HZShowModule.h"
 #import "HZAboutModule.h"
 #import "HZDeviceModule.h"
 #import "HZCustomControlModule.h"
+
+#import "MBProgressHUD+HZKit.h"
 
 #endif /* HZPrefixHeader_pch */

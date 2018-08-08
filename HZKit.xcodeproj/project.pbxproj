@@ -42,6 +42,8 @@
 		DBACB648211994F1004FD994 /* HZAauthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB647211994F1004FD994 /* HZAauthorizationViewController.m */; };
 		DBACB64B2119A026004FD994 /* HZAuthorizationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB64A2119A026004FD994 /* HZAuthorizationModel.m */; };
 		DBACB6502119A78C004FD994 /* HZAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB64F2119A78C004FD994 /* HZAuthorization.m */; };
+		DBACB655211A8F8A004FD994 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB653211A8F8A004FD994 /* MBProgressHUD.m */; };
+		DBACB659211A937B004FD994 /* MBProgressHUD+HZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB658211A937B004FD994 /* MBProgressHUD+HZKit.m */; };
 		DBB17BFB2114001F00F9054F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBB17BFD2114001F00F9054F /* InfoPlist.strings */; };
 		DBB17C01211401B200F9054F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBB17C00211401B200F9054F /* Info.plist */; };
 		DBB17C0B21142ADC00F9054F /* HZShow.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBB17C0D21142ADC00F9054F /* HZShow.strings */; };
@@ -159,6 +161,10 @@
 		DBACB64D2119A767004FD994 /* HZKitAuthorization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZKitAuthorization.h; sourceTree = "<group>"; };
 		DBACB64E2119A78C004FD994 /* HZAuthorization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZAuthorization.h; sourceTree = "<group>"; };
 		DBACB64F2119A78C004FD994 /* HZAuthorization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZAuthorization.m; sourceTree = "<group>"; };
+		DBACB653211A8F8A004FD994 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		DBACB654211A8F8A004FD994 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		DBACB657211A937B004FD994 /* MBProgressHUD+HZKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+HZKit.h"; sourceTree = "<group>"; };
+		DBACB658211A937B004FD994 /* MBProgressHUD+HZKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+HZKit.m"; sourceTree = "<group>"; };
 		DBB17BFC2114001F00F9054F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DBB17BFE2114002100F9054F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		DBB17BFF2114006300F9054F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -247,6 +253,7 @@
 		DB20A8CF20CFCF8700D7432A /* HZKit */ = {
 			isa = PBXGroup;
 			children = (
+				DBACB651211A8ED4004FD994 /* Vender */,
 				DB4AF293210BF5DA005ECF23 /* CustomControl */,
 				DB71B26E21085D3E00F8DEB3 /* About */,
 				DB20A8D020CFCF8700D7432A /* AppDelegate.h */,
@@ -303,6 +310,7 @@
 		DB20A8F920CFDA3500D7432A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DBACB656211A92D3004FD994 /* Category */,
 				DB4AF2A9210C0905005ECF23 /* Views */,
 				DB20A8FA20CFDA4800D7432A /* Controllers */,
 			);
@@ -506,6 +514,32 @@
 				DBACB64F2119A78C004FD994 /* HZAuthorization.m */,
 			);
 			path = Authorization;
+			sourceTree = "<group>";
+		};
+		DBACB651211A8ED4004FD994 /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+				DBACB652211A8F8A004FD994 /* MBProgressHUD */,
+			);
+			path = Vender;
+			sourceTree = "<group>";
+		};
+		DBACB652211A8F8A004FD994 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				DBACB654211A8F8A004FD994 /* MBProgressHUD.h */,
+				DBACB653211A8F8A004FD994 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		DBACB656211A92D3004FD994 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				DBACB657211A937B004FD994 /* MBProgressHUD+HZKit.h */,
+				DBACB658211A937B004FD994 /* MBProgressHUD+HZKit.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		DBB17C3E2117E85C00F9054F /* Iconfont */ = {
@@ -781,6 +815,7 @@
 				DB4AF29F210BFF07005ECF23 /* HZCustomControlRouter.m in Sources */,
 				DB4AF29A210BF74B005ECF23 /* HZCustomControlViewController.m in Sources */,
 				DBE04BCE2113F57300F94150 /* HZSettingViewController.m in Sources */,
+				DBACB659211A937B004FD994 /* MBProgressHUD+HZKit.m in Sources */,
 				DBE04B9C2111875700F94150 /* HZShowIconfontCell.m in Sources */,
 				DBE04B8F211183A400F94150 /* UILabel+HZIconfont.m in Sources */,
 				DB71B28B2108737000F8DEB3 /* HZShowDetailViewController.m in Sources */,
@@ -789,6 +824,7 @@
 				DB4AF2A4210C001E005ECF23 /* HZCustomControlModel.m in Sources */,
 				DBE04B892111815C00F94150 /* HZIconfont.m in Sources */,
 				DBACB6502119A78C004FD994 /* HZAuthorization.m in Sources */,
+				DBACB655211A8F8A004FD994 /* MBProgressHUD.m in Sources */,
 				DB71B26921085C4100F8DEB3 /* HZBaseTabBarController.m in Sources */,
 				DB20A8DF20CFCF8700D7432A /* main.m in Sources */,
 				DB20A8E020CFCF8700D7432A /* AppDelegate.m in Sources */,

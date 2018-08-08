@@ -7,3 +7,4 @@
 */
 
 CFBundleDisplayName = "HZKit";
+NSCameraUsageDescription = "Authorization camera";

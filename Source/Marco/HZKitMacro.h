@@ -9,9 +9,7 @@
 #ifndef HZKitMacro_h
 #define HZKitMacro_h
 
-// TODO: 待完善
-
-#pragma mark NLocalized
+#pragma mark - NLocalized
 #define HZLocalizedString(key, tbl) \
         [NSBundle.mainBundle localizedStringForKey:(@"" key) value:@"" table:(@"" tbl)]
 #define HZShowLocalizedString(key) \
@@ -22,5 +20,13 @@
         [NSBundle.mainBundle localizedStringForKey:(@"" key) value:@"" table:@"HZAbout"]
 #define HZAlertLocalizedString(key) \
         [NSBundle.mainBundle localizedStringForKey:(@"" key) value:@"" table:@"HZAlert"]
+
+#pragma mark - Queue
+#define HZ_MAIN_QUEUE(block) \
+    if ([NSThread mainThread]) { \
+        block(); \
+    } else { \
+        dispatch_async(dispatch_get_main_queue(), block()); \
+    }
 
 #endif /* HZKitMacro_h */

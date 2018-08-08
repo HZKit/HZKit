@@ -7,3 +7,4 @@
 */
 
 CFBundleDisplayName = "HZKit中文";
+NSCameraUsageDescription = "授权相机";

@@ -51,8 +51,15 @@
 }
 
 - (void)authorizationCameraAction {
+    
     [HZAuthorization authorizationType:HZAuthorizationCamera completionHandler:^(BOOL grandted, NSString *description) {
-        // TODO: 显示
+        
+        NSString *message = @"未授权";
+        if (grandted) {
+            message = @"已授权";
+        }
+        
+        HZShowHUD(message);
     }];
 }
 

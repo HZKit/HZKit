@@ -9,6 +9,16 @@
 #import "HZAuthorization.h"
 #import <AVFoundation/AVCaptureDevice.h>
 
+NSString *const kAuthorizationCameraKey = @"NSCameraUsageDescription";
+
+NSString *const kAuthorizationAssert = @">>> Unknown usage description <<<";
+
+@interface HZAuthorization ()
+
+@property (nonatomic, strong) NSDictionary *infoDict;
+
+@end
+
 @implementation HZAuthorization
 
 + (void)authorizationType:(HZAuthorizationType)type completionHandler:(HZAuthorizationBlock)handler {
@@ -71,6 +81,8 @@
 
 + (void)authorizationCamera:(HZAuthorizationBlock)handler {
     
+    [self checkInfoPlistKey:kAuthorizationCameraKey];
+    
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == NO) {
         handler(NO, @"设置不支持");
         
@@ -96,6 +108,13 @@
         default:
             handler(NO, @"");
             break;
+    }
+}
+
++ (void)checkInfoPlistKey:(NSString *)key {
+    NSArray *keys = [[[NSBundle mainBundle] infoDictionary] allKeys];
+    if ([keys containsObject:key] == NO) {
+        NSAssert(NO, kAuthorizationAssert);
     }
 }
 
