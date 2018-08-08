@@ -29,6 +29,7 @@
         hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
         hud.bezelView.backgroundColor = HZ_HUD_BEZEL_BACKGROUND_COLOR;
         hud.label.textColor = HZ_HUD_LABEL_COLOR;
+        hud.label.numberOfLines = 0;
         hud.label.text = message;
         
         [hud hideAnimated:YES afterDelay:HZ_HUD_DELAY];
@@ -43,6 +44,7 @@
         hud.bezelView.backgroundColor = HZ_HUD_BEZEL_BACKGROUND_COLOR;
         hud.offset = CGPointMake(0.f, MBProgressMaxOffset); // bottom
         hud.label.textColor = HZ_HUD_LABEL_COLOR;
+        hud.label.numberOfLines = 0;
         hud.label.text = message;
         
         [hud hideAnimated:YES afterDelay:HZ_HUD_DELAY];

@@ -37,6 +37,7 @@ deviceNameDesc = "import <sys/utsname.h>";
 
 // Authorization view
 authorizationViewTitle = "Authorization";
+authorizationJumpButtonTitle = "Authorize";
 authorizationNFC = "NFC Reader";
 authorizationMediaLibrary = "Media Library";
 authorizationBluetooth = "Bluetooth Peripheral";

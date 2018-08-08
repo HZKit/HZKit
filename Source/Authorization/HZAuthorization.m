@@ -8,8 +8,10 @@
 
 #import "HZAuthorization.h"
 #import <AVFoundation/AVCaptureDevice.h>
+#import <CoreNFC/CoreNFC.h>
 
 NSString *const kAuthorizationCameraKey = @"NSCameraUsageDescription";
+NSString *const kAuthorizationNFCKey = @"NFCReaderUsageDescription";
 
 NSString *const kAuthorizationAssert = @">>> Unknown usage description <<<";
 
@@ -21,10 +23,17 @@ NSString *const kAuthorizationAssert = @">>> Unknown usage description <<<";
 
 @implementation HZAuthorization
 
+#pragma mark - Public
 + (void)authorizationType:(HZAuthorizationType)type completionHandler:(HZAuthorizationBlock)handler {
     switch (type) {
         case HZAuthorizationNFC:
-            
+        {
+            [HZAuthorization authorizationNFC:^(BOOL grandted, NSString *description) {
+                if (handler) {
+                    handler(grandted, description);
+                }
+            }];
+        }
             break;
         case HZAuthorizationMediaLibrary:
             
@@ -79,12 +88,38 @@ NSString *const kAuthorizationAssert = @">>> Unknown usage description <<<";
     }
 }
 
++ (void)toAuthorization {
+    NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        if (@available(iOS 10.0, *)) {
+            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+        } else {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    }
+}
+
+#pragma mark - Pirvate
++ (void)authorizationNFC:(HZAuthorizationBlock)handler {
+    [self checkInfoPlistKey:kAuthorizationNFCKey];
+    
+    if (@available(iOS 11.0, *)) {
+        if (NFCNDEFReaderSession.readingAvailable) {
+            handler(YES, @"");
+        } else {
+            handler(NO, @"Device is not available or not open capabilities");
+        }
+    } else {
+        handler(NO, @"iOS 11 and later");
+    }
+}
+
 + (void)authorizationCamera:(HZAuthorizationBlock)handler {
     
     [self checkInfoPlistKey:kAuthorizationCameraKey];
     
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == NO) {
-        handler(NO, @"设置不支持");
+        handler(NO, @"Camera is not available");
         
         return;
     }
@@ -98,15 +133,15 @@ NSString *const kAuthorizationAssert = @">>> Unknown usage description <<<";
         {
             [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
                 if (granted) {
-                    handler(YES, nil);
+                    handler(YES, @"User allow");
                 } else {
-                    handler(YES, @"");
+                    handler(NO, @"User reject");
                 }
             }];
         }
             break;
         default:
-            handler(NO, @"");
+            handler(NO, @"Restricted or Denied");
             break;
     }
 }

@@ -8,3 +8,4 @@
 
 CFBundleDisplayName = "HZKit";
 NSCameraUsageDescription = "Authorization camera";
+NFCReaderUsageDescription = "Authorization NFC";

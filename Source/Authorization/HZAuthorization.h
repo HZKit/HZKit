@@ -31,5 +31,6 @@ typedef NS_ENUM(NSUInteger, HZAuthorizationType) {
 @interface HZAuthorization : NSObject
 
 + (void)authorizationType:(HZAuthorizationType)type completionHandler:(HZAuthorizationBlock)handler;
++ (void)toAuthorization;
 
 @end

@@ -32,6 +32,10 @@
 	<string>16</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NFCReaderUsageDescription</key>
+	<string>InfoPlist.strings -&gt; NFCReaderUsageDescription</string>
+	<key>NSCameraUsageDescription</key>
+	<string>InfoPlist.strings -&gt; NSCameraUsageDescription</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>fontello.ttf</string>
@@ -53,7 +57,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>InfoPlist.strings -&gt; NSCameraUsageDescription</string>
 </dict>
 </plist>

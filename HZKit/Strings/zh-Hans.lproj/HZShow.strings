@@ -37,6 +37,7 @@ deviceNameDesc = "需要 import <sys/utsname.h>";
 
 // 授权界面
 authorizationViewTitle = "应用授权";
+authorizationJumpButtonTitle = "授权";
 authorizationNFC = "NFC Reader";
 authorizationMediaLibrary = "Media Library - 媒体库";
 authorizationBluetooth = "Bluetooth Peripheral - 蓝牙外设";

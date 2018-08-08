@@ -8,3 +8,4 @@
 
 CFBundleDisplayName = "HZKit中文";
 NSCameraUsageDescription = "授权相机";
+NFCReaderUsageDescription = "授权 NFC";
