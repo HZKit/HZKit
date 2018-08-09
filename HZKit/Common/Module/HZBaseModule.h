@@ -11,6 +11,11 @@
 
 @class HZBaseRouter;
 
+#ifdef HZ_IMPORT_FMDB
+@class FMDatabase;
+#endif
+
+
 extern NSString *const HZModuleNameShow;
 extern NSString *const HZModuleNameAbout;
 extern NSString *const HZModuleNameDevice;
@@ -31,5 +36,11 @@ extern NSString *const HZModuleNameCustomControl;
  初始化后操作
  */
 - (void)afterStartup;
+
+// Database
+#ifdef HZ_IMPORT_FMDB
+- (void)onCreate:(FMDatabase *)db;
+- (BOOL)onUpgrade:(FMDatabase *)db from:(int)oldVersion to:(int)newVersion;
+#endif
 
 @end
