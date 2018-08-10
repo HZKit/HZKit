@@ -13,13 +13,10 @@
 
 NSString *cellIdentifier = @"HZCustomControlCell";
 
-@interface HZCustomControlViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, CLLocationManagerDelegate>
+@interface HZCustomControlViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
-
-// test
-@property (nonatomic, strong) CLLocationManager *locationManager;
 
 @end
 
@@ -39,7 +36,9 @@ NSString *cellIdentifier = @"HZCustomControlCell";
 }
 
 #pragma mark - Action
-
+- (void)scanQRCodeAction {
+    [[HZMainRouter shared] pushWith:HZCustomControlRouterScan fromModule:HZModuleNameCustomControl];
+}
 
 #pragma mark - Collection
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -59,17 +58,15 @@ NSString *cellIdentifier = @"HZCustomControlCell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     
-//    HZCustomControlModel *model = self.dataArray[indexPath.row];
-//    if (model.action) {
-//        SEL selector = NSSelectorFromString(model.action);
-//        if ([self respondsToSelector:selector]) {
-//            objc_msgSend(self, selector);
-//        }
-//    }
-    
-    [self.locationManager requestWhenInUseAuthorization];
-    
-    return;
+    HZCustomControlModel *model = self.dataArray[indexPath.row];
+    if (model.action) {
+        SEL selector = NSSelectorFromString(model.action);
+        if ([self respondsToSelector:selector]) {
+            objc_msgSend(self, selector);
+        }
+        
+        return;
+    }
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
     view.backgroundColor = [UIColor blueColor];
@@ -107,7 +104,7 @@ NSString *cellIdentifier = @"HZCustomControlCell";
 - (NSMutableArray *)dataArray {
     if (!_dataArray) {
         _dataArray = [NSMutableArray arrayWithObjects:
-                      [HZCustomControlModel modelWithIcon:@"Placeholder" action:nil],
+                      [HZCustomControlModel modelWithIcon:@"Scan QRCode" action:@"scanQRCodeAction"],
                       [HZCustomControlModel modelWithIcon:@"Placeholder" action:nil],
                       [HZCustomControlModel modelWithIcon:@"Placeholder" action:nil],
                       [HZCustomControlModel modelWithIcon:@"Placeholder" action:nil],
@@ -117,15 +114,6 @@ NSString *cellIdentifier = @"HZCustomControlCell";
     }
     
     return _dataArray;
-}
-
-- (CLLocationManager *)locationManager {
-    if (!_locationManager) {
-        _locationManager = [[CLLocationManager alloc] init];
-        _locationManager.delegate = self;
-    }
-    
-    return _locationManager;
 }
 
 @end

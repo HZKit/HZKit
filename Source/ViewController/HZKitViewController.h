@@ -10,5 +10,6 @@
 #define HZKitViewController_h
 
 #import "UIViewController+HZCommon.h"
+#import "HZScanViewController.h"
 
 #endif /* HZKitViewController_h */

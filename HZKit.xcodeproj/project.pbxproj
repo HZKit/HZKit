@@ -50,6 +50,7 @@
 		DBACB67E211C400B004FD994 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB678211C400B004FD994 /* FMDatabasePool.m */; };
 		DBACB67F211C400B004FD994 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB679211C400B004FD994 /* FMResultSet.m */; };
 		DBACB680211C400B004FD994 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBACB67A211C400B004FD994 /* Info.plist */; };
+		DBACB6A5211D5E42004FD994 /* HZScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB6A4211D5E42004FD994 /* HZScanViewController.m */; };
 		DBB17BFB2114001F00F9054F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBB17BFD2114001F00F9054F /* InfoPlist.strings */; };
 		DBB17C01211401B200F9054F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBB17C00211401B200F9054F /* Info.plist */; };
 		DBB17C0B21142ADC00F9054F /* HZShow.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBB17C0D21142ADC00F9054F /* HZShow.strings */; };
@@ -183,6 +184,8 @@
 		DBACB678211C400B004FD994 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		DBACB679211C400B004FD994 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		DBACB67A211C400B004FD994 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBACB6A3211D5E42004FD994 /* HZScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZScanViewController.h; sourceTree = "<group>"; };
+		DBACB6A4211D5E42004FD994 /* HZScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZScanViewController.m; sourceTree = "<group>"; };
 		DBB17BFC2114001F00F9054F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DBB17BFE2114002100F9054F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		DBB17BFF2114006300F9054F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -435,16 +438,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		DB4AF2BF210DD5AA005ECF23 /* AlertView */ = {
-			isa = PBXGroup;
-			children = (
-				DB4AF2BB210DC66A005ECF23 /* HZAlertView.h */,
-				DB4AF2BC210DC66A005ECF23 /* HZAlertView.m */,
-			);
-			name = AlertView;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		DB71B26621085C1600F8DEB3 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,6 +573,24 @@
 			path = FMDB;
 			sourceTree = "<group>";
 		};
+		DBACB6A1211D5D3F004FD994 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				DB4AF2BB210DC66A005ECF23 /* HZAlertView.h */,
+				DB4AF2BC210DC66A005ECF23 /* HZAlertView.m */,
+			);
+			path = AlertView;
+			sourceTree = "<group>";
+		};
+		DBACB6A2211D5DFB004FD994 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				DBACB6A3211D5E42004FD994 /* HZScanViewController.h */,
+				DBACB6A4211D5E42004FD994 /* HZScanViewController.m */,
+			);
+			path = Scan;
+			sourceTree = "<group>";
+		};
 		DBB17C3E2117E85C00F9054F /* Iconfont */ = {
 			isa = PBXGroup;
 			children = (
@@ -601,6 +612,7 @@
 		DBB17C3F2117E87E00F9054F /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DBACB6A2211D5DFB004FD994 /* Scan */,
 				DB463B06210AE3980018BCC5 /* UIViewController+HZCommon.h */,
 				DB463B07210AE3980018BCC5 /* UIViewController+HZCommon.m */,
 				DB463B09210AE3D20018BCC5 /* HZKitViewController.h */,
@@ -631,7 +643,7 @@
 		DBB17C442117E8F900F9054F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DB4AF2BF210DD5AA005ECF23 /* AlertView */,
+				DBACB6A1211D5D3F004FD994 /* AlertView */,
 				DB20A8EA20CFCF9D00D7432A /* HZKitView.h */,
 				DB20A8EB20CFCF9D00D7432A /* UIView+HZKitCommon.m */,
 				DB20A8EC20CFCF9D00D7432A /* UIView+HZKitCommon.h */,
@@ -870,6 +882,7 @@
 				DB71B26921085C4100F8DEB3 /* HZBaseTabBarController.m in Sources */,
 				DB20A8DF20CFCF8700D7432A /* main.m in Sources */,
 				DB20A8E020CFCF8700D7432A /* AppDelegate.m in Sources */,
+				DBACB6A5211D5E42004FD994 /* HZScanViewController.m in Sources */,
 				DB20A8F520CFD11900D7432A /* HZBaseModule.m in Sources */,
 				DB71B27821085E7700F8DEB3 /* HZAboutViewController.m in Sources */,
 				DBE04B9F21118DBA00F94150 /* HZFontelloModel.m in Sources */,
