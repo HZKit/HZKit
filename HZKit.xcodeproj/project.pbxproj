@@ -161,6 +161,7 @@
 		DB71B28F2108824200F8DEB3 /* HZPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZPrefixHeader.pch; sourceTree = "<group>"; };
 		DB7B6F3F2109A1B5004F233C /* UIDevice+HZCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+HZCommon.h"; sourceTree = "<group>"; };
 		DB7B6F402109A1B5004F233C /* UIDevice+HZCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+HZCommon.m"; sourceTree = "<group>"; };
+		DBA620ED2120714000DB6D2D /* HZKitLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZKitLog.h; sourceTree = "<group>"; };
 		DBACB646211994F1004FD994 /* HZAauthorizationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZAauthorizationViewController.h; sourceTree = "<group>"; };
 		DBACB647211994F1004FD994 /* HZAauthorizationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZAauthorizationViewController.m; sourceTree = "<group>"; };
 		DBACB6492119A026004FD994 /* HZAuthorizationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZAuthorizationModel.h; sourceTree = "<group>"; };
@@ -292,6 +293,7 @@
 		DB20A8E220CFCF9D00D7432A /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DBA620EC21206EC900DB6D2D /* Log */,
 				DBACB64C2119A745004FD994 /* Authorization */,
 				DBB17C3E2117E85C00F9054F /* Iconfont */,
 				DBB17C3F2117E87E00F9054F /* ViewController */,
@@ -515,6 +517,14 @@
 				DB71B28521086F6500F8DEB3 /* HZShowRouter.m */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		DBA620EC21206EC900DB6D2D /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				DBA620ED2120714000DB6D2D /* HZKitLog.h */,
+			);
+			path = Log;
 			sourceTree = "<group>";
 		};
 		DBACB64C2119A745004FD994 /* Authorization */ = {
@@ -1123,7 +1133,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PHE34R4452;
+				DEVELOPMENT_TEAM = 64Z9QAXW9D;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/HZPrefixHeader.pch";
 				INFOPLIST_FILE = HZKit/Info.plist;
@@ -1143,7 +1153,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PHE34R4452;
+				DEVELOPMENT_TEAM = 64Z9QAXW9D;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/HZPrefixHeader.pch";
 				INFOPLIST_FILE = HZKit/Info.plist;
