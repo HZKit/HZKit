@@ -9,6 +9,6 @@
 #ifndef HZKitLog_h
 #define HZKitLog_h
 
-// QLog 官方日志 https://developer.apple.com/library/content/samplecode/MVCNetworking/Introduction/Intro.html#//apple_ref/doc/uid/DTS40010443-Intro-DontLinkElementID_2
+#import "HZLog.h"
 
 #endif /* HZKitLog_h */

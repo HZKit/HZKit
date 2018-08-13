@@ -39,6 +39,7 @@
 		DB71B28B2108737000F8DEB3 /* HZShowDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B28A2108737000F8DEB3 /* HZShowDetailViewController.m */; };
 		DB71B28E2108782F00F8DEB3 /* HZMainRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B28D2108782F00F8DEB3 /* HZMainRouter.m */; };
 		DB7B6F412109A1B5004F233C /* UIDevice+HZCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7B6F402109A1B5004F233C /* UIDevice+HZCommon.m */; };
+		DB7D619E212168E700558D1E /* HZLog.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7D619D212168E700558D1E /* HZLog.m */; };
 		DBACB648211994F1004FD994 /* HZAauthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB647211994F1004FD994 /* HZAauthorizationViewController.m */; };
 		DBACB64B2119A026004FD994 /* HZAuthorizationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB64A2119A026004FD994 /* HZAuthorizationModel.m */; };
 		DBACB6502119A78C004FD994 /* HZAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB64F2119A78C004FD994 /* HZAuthorization.m */; };
@@ -161,6 +162,8 @@
 		DB71B28F2108824200F8DEB3 /* HZPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZPrefixHeader.pch; sourceTree = "<group>"; };
 		DB7B6F3F2109A1B5004F233C /* UIDevice+HZCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+HZCommon.h"; sourceTree = "<group>"; };
 		DB7B6F402109A1B5004F233C /* UIDevice+HZCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+HZCommon.m"; sourceTree = "<group>"; };
+		DB7D619C212168E700558D1E /* HZLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZLog.h; sourceTree = "<group>"; };
+		DB7D619D212168E700558D1E /* HZLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZLog.m; sourceTree = "<group>"; };
 		DBA620ED2120714000DB6D2D /* HZKitLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZKitLog.h; sourceTree = "<group>"; };
 		DBACB646211994F1004FD994 /* HZAauthorizationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZAauthorizationViewController.h; sourceTree = "<group>"; };
 		DBACB647211994F1004FD994 /* HZAauthorizationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZAauthorizationViewController.m; sourceTree = "<group>"; };
@@ -523,6 +526,8 @@
 			isa = PBXGroup;
 			children = (
 				DBA620ED2120714000DB6D2D /* HZKitLog.h */,
+				DB7D619C212168E700558D1E /* HZLog.h */,
+				DB7D619D212168E700558D1E /* HZLog.m */,
 			);
 			path = Log;
 			sourceTree = "<group>";
@@ -875,6 +880,7 @@
 				DB20A8ED20CFCF9E00D7432A /* HZVersionManager.m in Sources */,
 				DB71B27C21085E9D00F8DEB3 /* HZShowViewController.m in Sources */,
 				DB4AF29F210BFF07005ECF23 /* HZCustomControlRouter.m in Sources */,
+				DB7D619E212168E700558D1E /* HZLog.m in Sources */,
 				DB4AF29A210BF74B005ECF23 /* HZCustomControlViewController.m in Sources */,
 				DBE04BCE2113F57300F94150 /* HZSettingViewController.m in Sources */,
 				DBACB659211A937B004FD994 /* MBProgressHUD+HZKit.m in Sources */,
