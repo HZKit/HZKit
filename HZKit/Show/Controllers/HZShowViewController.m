@@ -26,11 +26,11 @@
     self.title = HZShowLocalizedString("title");
     [self.view addSubview:self.tableView];
 
-#if DEBUG
-    NSLog(@"%@", self.view);
-    UIView *copyView = [self.view hzCopy];
-    NSLog(@"copy:%@", copyView);
-#endif
+    if (isDebug) {
+        HLog(@"%@", self.view);
+        UIView *copyView = [self.view hzCopy];
+        HLog(@"copy:%@", copyView);
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,9 +48,8 @@
     NSString *appId = @"414478124"; // 使用时修改App Id
     [HZVersionManager checkAppUpdateWithAppId:appId complete:^(BOOL isFindNew, id info) {
         if (isFindNew) {
-            if (DEBUG) {
-                NSLog(@"info:\n%@", info);
-            }
+            
+            HLog(@"info:\n%@", info);
             // 发现新版本处理
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:HZAlertLocalizedString("findNewVersion")
                                                                            message:nil

@@ -16,6 +16,18 @@ const NSString *HZ_HIDDEN_TABBAR_KEY = @"hiddenTabBar";
 
 @implementation HZBaseViewController
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    HLog(@"%@ viewDidAppear", NSStringFromClass(self.class));
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    HLog(@"%@ viewDidDisappear", NSStringFromClass(self.class));
+}
+
 - (instancetype)initWithArgs:(NSDictionary *)args {
     self = [super init];
     if (self) {
