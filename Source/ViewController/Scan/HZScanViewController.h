@@ -11,3 +11,10 @@
 @interface HZScanViewController : UIViewController
 
 @end
+
+#pragma mark - HZScanMaskView
+@interface HZScanMaskView : UIView
+
++ (instancetype)maskViewWithFrame:(CGRect)frame transparentFrame:(CGRect)transparentFrame;
+
+@end
