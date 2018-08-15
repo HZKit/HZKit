@@ -8,7 +8,29 @@
 
 #import <UIKit/UIKit.h>
 
+@class HZScanViewController;
+
+#pragma mark - HZScanViewControllerDelegate
+@protocol HZScanViewControllerDelegate <NSObject>
+
+@optional
+- (void)scanViewController:(HZScanViewController *)scanViewController stringValue:(NSString *)stringValue;
+
+@end
+
+
+#pragma mark - HZScanViewController
+
+extern NSString *const HZScanViewStringValueBlockKey;
+
+typedef void(^HZScanViewStringValueBlock)(NSString *stringValue);
+
 @interface HZScanViewController : UIViewController
+
+@property (nonatomic, weak, nullable) id <HZScanViewControllerDelegate> delegate;
+@property (nonatomic, copy) HZScanViewStringValueBlock stringValueBlock;
+
+- (instancetype)initWithArgs:(NSDictionary *)args;
 
 @end
 

@@ -9,6 +9,10 @@
 #import "HZScanViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
+NSString *const HZScanViewStringValueBlockKey = @"scanViewStringValueBlock";
+
+#define kHZScanAnimationTimeInterval 3.0f
+
 @interface HZScanViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 
 @property (nonatomic, strong) AVCaptureDevice *device;
@@ -18,13 +22,33 @@
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
 
 @property (nonatomic, assign) CGRect scanArea; // Scan the effective area
+@property (nonatomic, strong) UIView *focusScopeView; // 对焦范围view // 对焦范围view
+@property (nonatomic, strong) UIView *focusView; // 对焦效果view
+@property (nonatomic, strong) UIButton *flashlightBtn; // 手电筒
+@property (nonatomic, strong) UIView *scanAnimationView; // 扫一扫
+@property (nonatomic, strong) UIView *scanAnimationLayer; // 扫一扫动画图层
+@property (nonatomic, strong) NSTimer *scanAnimationTimer; // 动画计时器
 
+@property (nonatomic, assign) BOOL statusBarHidden;
 @property (nonatomic, assign) BOOL tabBarHidden;
 @property (nonatomic, assign) BOOL navigationBarHidden;
+
+@property (nonatomic, assign) BOOL usageDelegate;
 
 @end
 
 @implementation HZScanViewController
+
+- (instancetype)initWithArgs:(NSDictionary *)args {
+    self = [super init];
+    if (self) {
+        HZScanViewStringValueBlock stringValueBlock = args[HZScanViewStringValueBlockKey];
+        if (stringValueBlock) {
+            _stringValueBlock = [stringValueBlock copy];
+        }
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,10 +57,17 @@
     self.view.backgroundColor = [UIColor blackColor];
     [self.view.layer insertSublayer:self.previewLayer atIndex:0];
     
-
-    _scanArea = CGRectMake(100, 100, 200, 200); // TODO: 调整
+    CGPoint origin = self.view.center;
+    CGFloat areaWidth = 200;
+    CGFloat areaHeight = 200;
+    _scanArea = CGRectMake(origin.x - areaWidth * 0.5,
+                           origin.y - areaHeight * 0.5,
+                           areaWidth, areaHeight); // TODO: 调整
     HZScanMaskView *maskView = [HZScanMaskView maskViewWithFrame:self.view.bounds transparentFrame:_scanArea];
     [self.view addSubview:maskView];
+    [self.view addSubview:self.scanAnimationView];
+    [self.view addSubview:self.focusScopeView];
+    [self.view addSubview:self.flashlightBtn];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -44,22 +75,22 @@
     
     if (_session) {
         [self.session startRunning];
+        self.output.rectOfInterest = [self.previewLayer metadataOutputRectOfInterestForRect:self.scanArea];
+        
+        [self.scanAnimationTimer setFireDate:[NSDate date]];
     }
     
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        self.output.rectOfInterest = [self.previewLayer metadataOutputRectOfInterestForRect:self.scanArea];
-    });
+    self.statusBarHidden = [UIApplication sharedApplication].statusBarHidden;
     
     if (self.tabBarController) {
         self.tabBarHidden = self.tabBarController.tabBar.hidden;
         self.tabBarController.tabBar.hidden = YES;
     }
     
-    if (self.navigationController) {
-        self.navigationBarHidden = self.navigationController.navigationBar.hidden;
-        self.navigationController.navigationBar.hidden = YES;
-    }
+//    if (self.navigationController) {
+//        self.navigationBarHidden = self.navigationController.navigationBar.hidden;
+//        self.navigationController.navigationBar.hidden = YES;
+//    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -69,13 +100,49 @@
         [self.session stopRunning];
     }
     
+    if (_scanAnimationTimer) {
+        [_scanAnimationTimer invalidate];
+        _scanAnimationTimer = nil;
+    }
+    
+    [UIApplication sharedApplication].statusBarHidden = self.statusBarHidden;
+    
     if (self.tabBarController) {
         self.tabBarController.tabBar.hidden = self.tabBarHidden;
     }
     
-    if (self.navigationController) {
-        self.navigationController.navigationBar.hidden = self.navigationBarHidden;
+//    if (self.navigationController) {
+//        self.navigationController.navigationBar.hidden = self.navigationBarHidden;
+//    }
+}
+
+#pragma mark - Private
+- (void)setDelegate:(id<HZScanViewControllerDelegate>)delegate {
+    if (!_delegate || _delegate != delegate) {
+        _delegate = delegate;
+        
+        if ([delegate respondsToSelector:@selector(scanViewController:stringValue:)]) {
+            _usageDelegate = YES;
+        }
     }
+}
+
+- (void)scanAnimation {
+    self.scanAnimationLayer.hidden = NO;
+    // TODO: 优化，使用 layer
+    [UIView animateWithDuration:kHZScanAnimationTimeInterval * 0.75
+                     animations:^{
+                         CGRect endFrame = self.scanAnimationView.bounds;
+                         endFrame.origin.y += CGRectGetHeight(endFrame);
+                         self.scanAnimationLayer.frame =endFrame;
+                     }
+                     completion:^(BOOL finished) {
+                         self.scanAnimationLayer.hidden = YES;
+                         
+                         CGRect startFrame = self.scanAnimationView.bounds;
+                         startFrame.origin.y -= CGRectGetHeight(startFrame);
+                         self.scanAnimationLayer.frame = startFrame;
+                     }];
 }
 
 #pragma mark - Memory
@@ -87,6 +154,71 @@
 #pragma mark - AVCaptureMetadataOutputObjectsDelegate
 - (void)captureOutput:(AVCaptureOutput *)output didOutputMetadataObjects:(NSArray<__kindof AVMetadataObject *> *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
     
+    if (metadataObjects.count > 0) {
+        [self.session stopRunning];
+        
+        AVMetadataMachineReadableCodeObject *metadataObject = metadataObjects.firstObject;
+        NSString *stringValue = metadataObject.stringValue;
+        if (_usageDelegate) {
+            [_delegate scanViewController:self stringValue:stringValue];
+        }
+        
+        if (_stringValueBlock) {
+            _stringValueBlock(stringValue);
+        }
+    }
+}
+
+#pragma mark - Action
+- (void)switchFlashlightAction:(UIButton *)btn {
+    if ([self.device hasTorch] && [self.device hasFlash]) {
+        btn.selected = !btn.selected;
+        
+        [self.device lockForConfiguration:nil];
+        if (btn.selected) {
+            // 打开
+            [self.device setTorchMode:AVCaptureTorchModeOn];
+            [self.device setFlashMode:AVCaptureFlashModeOn];
+        } else {
+            // 关闭
+            [self.device setTorchMode:AVCaptureTorchModeOff];
+            [self.device setFlashMode:AVCaptureFlashModeOff];
+        }
+        [self.device unlockForConfiguration];
+    }
+}
+
+#pragma mark - UITapGestureRecognizer
+- (void)focusGesture:(UITapGestureRecognizer*)gesture{
+    CGPoint point = [gesture locationInView:gesture.view];
+    [self focusAtPoint:point];
+}
+
+- (void)focusAtPoint:(CGPoint)point{
+    CGSize size = self.view.bounds.size;
+    CGPoint focusPoint = CGPointMake( point.y /size.height ,1-point.x/size.width );
+    NSError *error;
+    if ([self.device lockForConfiguration:&error]) {
+        if ([self.device isFocusModeSupported:AVCaptureFocusModeAutoFocus]) {
+            [self.device setFocusPointOfInterest:focusPoint];
+            [self.device setFocusMode:AVCaptureFocusModeAutoFocus];
+        }
+        [self.device unlockForConfiguration];
+    }
+    
+    // 手触碰屏幕后对焦的效果
+    _focusView.center = point;
+    _focusView.hidden = NO;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.focusView.transform = CGAffineTransformMakeScale(1.25, 1.25);
+    }completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.focusView.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+            self.focusView.hidden = YES;
+        }];
+    }];
 }
 
 #pragma mark - Lazy load
@@ -165,6 +297,111 @@
     }
     
     return _previewLayer;
+}
+
+- (UIView *)focusScopeView {
+    if (!_focusScopeView) {
+        UIView *view = [[UIView alloc] initWithFrame:self.scanArea];
+        view.backgroundColor = nil;
+        
+        // 对焦手势
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(focusGesture:)];
+        [view addGestureRecognizer:tapGesture];
+        
+        [view addSubview:self.focusView];
+        
+        _focusScopeView = view;
+    }
+    
+    return _focusScopeView;
+}
+
+- (UIView *)focusView {
+    if (!_focusView) {
+        // 对焦效果view
+        _focusView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
+        _focusView.layer.borderWidth = 1.0;
+        _focusView.layer.borderColor = [UIColor greenColor].CGColor;
+        _focusView.backgroundColor = [UIColor clearColor];
+        _focusView.hidden = YES;
+    }
+    
+    return _focusView;
+}
+
+- (UIButton *)flashlightBtn {
+    if (!_flashlightBtn) {
+        CGPoint origin = CGPointMake(self.view.center.x, CGRectGetMaxY(self.scanArea) + 30);
+        CGRect frame = CGRectMake(0, 0, 80, 30);
+        _flashlightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _flashlightBtn.frame = frame;
+        _flashlightBtn.center = origin;
+        _flashlightBtn.backgroundColor = nil;
+        _flashlightBtn.selected = NO;
+        [_flashlightBtn setTitle:@"点击照明" forState:UIControlStateNormal];
+        [_flashlightBtn setTitle:@"关闭照明" forState:UIControlStateSelected];
+        _flashlightBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+        [_flashlightBtn addTarget:self action:@selector(switchFlashlightAction:) forControlEvents:UIControlEventTouchUpInside];
+        
+        _flashlightBtn.layer.cornerRadius = 5;
+        _flashlightBtn.layer.borderColor = [UIColor whiteColor].CGColor;
+        _flashlightBtn.layer.borderWidth = 0.8;
+        _flashlightBtn.layer.masksToBounds = YES;
+    }
+    
+    return _flashlightBtn;
+}
+
+- (UIView *)scanAnimationView {
+    if (!_scanAnimationView) {
+        UIView *view = [[UIView alloc] initWithFrame:self.scanArea];
+        view.backgroundColor = [UIColor clearColor];
+        view.clipsToBounds = YES;
+        [view addSubview:self.scanAnimationLayer];
+        
+        _scanAnimationView = view;
+    }
+    
+    return _scanAnimationView;
+}
+
+- (UIView *)scanAnimationLayer {
+    if (!_scanAnimationLayer) {
+        
+        CGRect frame = CGRectMake(0, 0 - CGRectGetHeight(self.scanArea),
+                                  CGRectGetWidth(self.scanArea),
+                                  CGRectGetHeight(self.scanArea) * 0.75);
+        UIView *scanAnimationLayer = [[UIView alloc] initWithFrame:frame];
+        scanAnimationLayer.backgroundColor = nil;
+        scanAnimationLayer.hidden = YES;
+        
+        CAGradientLayer *layer = [CAGradientLayer layer];
+        
+        layer.frame = scanAnimationLayer.bounds;
+        layer.colors = @[(id)[[UIColor blueColor] colorWithAlphaComponent:0.0].CGColor,
+                         (id)[[UIColor blueColor] colorWithAlphaComponent:0.4].CGColor];
+        [scanAnimationLayer.layer addSublayer:layer];
+
+        _scanAnimationLayer = scanAnimationLayer;
+    }
+    
+    return _scanAnimationLayer;
+}
+
+- (NSTimer *)scanAnimationTimer {
+    if (!_scanAnimationTimer) {
+        _scanAnimationTimer = [NSTimer scheduledTimerWithTimeInterval:kHZScanAnimationTimeInterval
+                                                               target:self
+                                                             selector:@selector(scanAnimation) userInfo:nil
+                                                              repeats:YES];
+    }
+    
+    return _scanAnimationTimer;
+}
+
+#pragma mark - Dealloc
+- (void)dealloc {
+    HLog(@"%@ dealloc", NSStringFromClass(self.class));
 }
 
 @end

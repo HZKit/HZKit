@@ -8,7 +8,6 @@
 
 #import "HZCustomControlRouter.h"
 #import "HZCustomControlViewController.h"
-#import "HZScanViewController.h"
 
 @implementation HZCustomControlRouter
 
@@ -17,8 +16,8 @@
     self = [super init];
     if (self) {
         self.mapping = @{
-                         HZ_NUM(HZCustomControlRouterMain): NSStringFromClass([HZCustomControlViewController class]),
-                         HZ_NUM(HZCustomControlRouterScan): NSStringFromClass([HZScanViewController class])
+                         HZ_NUM(HZCustomControlRouterMain): NSStringFromClass([HZCustomControlViewController class])
+                         
                          };
     }
     return self;

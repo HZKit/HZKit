@@ -7,13 +7,14 @@
 //
 
 #import "HZCustomControlViewController.h"
+#import <CoreLocation/CoreLocation.h>
 #import "HZCustomControlModel.h"
 #import "HZCustomControlCell.h"
-#import <CoreLocation/CoreLocation.h>
+#import "HZScanViewController.h"
 
 NSString *cellIdentifier = @"HZCustomControlCell";
 
-@interface HZCustomControlViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface HZCustomControlViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, HZScanViewControllerDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
@@ -37,7 +38,22 @@ NSString *cellIdentifier = @"HZCustomControlCell";
 
 #pragma mark - Action
 - (void)scanQRCodeAction {
-    [[HZMainRouter shared] pushWith:HZCustomControlRouterScan fromModule:HZModuleNameCustomControl];
+    HZScanViewStringValueBlock stringValueBlock = ^(NSString *stringValue) {
+        HLog(@"stringValueBlock: %@", stringValue);
+    };
+    NSDictionary *args = @{ HZScanViewStringValueBlockKey :stringValueBlock};
+    HZScanViewController *scanVC = [[HZScanViewController alloc] initWithArgs:args];
+    scanVC.delegate = self;
+    
+    [self.navigationController pushViewController:scanVC animated:YES];
+}
+
+#pragma mark - HZScanViewControllerDelegate
+- (void)scanViewController:(HZScanViewController *)scanViewController stringValue:(NSString *)stringValue {
+    HLog(@"delegate: %@", stringValue);
+    HZShowHUD(stringValue);
+    
+    [scanViewController.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Collection

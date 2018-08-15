@@ -10,7 +10,6 @@
 
 typedef NS_ENUM(NSUInteger, HZCustomControlModuleId) {
     HZCustomControlRouterMain = HZRouterCustomControl,
-    HZCustomControlRouterScan,
     // ...
 };
 
