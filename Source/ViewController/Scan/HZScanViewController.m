@@ -10,10 +10,11 @@
 #import <AVFoundation/AVFoundation.h>
 
 NSString *const HZScanViewStringValueBlockKey = @"scanViewStringValueBlock";
+NSString *const kHZScanPhotoLibraryUnknown = @"No QR code found";
 
 #define kHZScanAnimationTimeInterval 3.0f
 
-@interface HZScanViewController ()<AVCaptureMetadataOutputObjectsDelegate>
+@interface HZScanViewController ()<AVCaptureMetadataOutputObjectsDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong) AVCaptureDevice *device;
 @property (nonatomic, strong) AVCaptureDeviceInput *input;
@@ -25,6 +26,7 @@ NSString *const HZScanViewStringValueBlockKey = @"scanViewStringValueBlock";
 @property (nonatomic, strong) UIView *focusScopeView; // 对焦范围view // 对焦范围view
 @property (nonatomic, strong) UIView *focusView; // 对焦效果view
 @property (nonatomic, strong) UIButton *flashlightBtn; // 手电筒
+@property (nonatomic, strong) UIButton *photoLibraryBtn; // 从相册选择
 @property (nonatomic, strong) UIView *scanAnimationView; // 扫一扫
 @property (nonatomic, strong) UIImageView *scanAnimationLayer; // 扫一扫动画图层
 @property (nonatomic, strong) NSTimer *scanAnimationTimer; // 动画计时器
@@ -68,6 +70,7 @@ NSString *const HZScanViewStringValueBlockKey = @"scanViewStringValueBlock";
     [self.view addSubview:self.scanAnimationView];
     [self.view addSubview:self.focusScopeView];
     [self.view addSubview:self.flashlightBtn];
+    [self.view addSubview:self.photoLibraryBtn];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -147,6 +150,21 @@ NSString *const HZScanViewStringValueBlockKey = @"scanViewStringValueBlock";
                      }];
 }
 
+- (void)stringFromImage:(UIImage *)image {
+    NSString *stringValue = [self stringValueFromImage:image];
+    if (!stringValue) {
+        stringValue = kHZScanPhotoLibraryUnknown;
+    }
+    
+    if (_usageDelegate) {
+        [_delegate scanViewController:self stringValue:stringValue];
+    }
+    
+    if (_stringValueBlock) {
+        _stringValueBlock(stringValue);
+    }
+}
+
 #pragma mark - Memory
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -171,7 +189,29 @@ NSString *const HZScanViewStringValueBlockKey = @"scanViewStringValueBlock";
     }
 }
 
+#pragma mark -
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    // TODO: 优化，压缩
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    [self stringFromImage:image];
+#if DEBUG
+    NSLog(@"%@", info);
+#endif
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - Action
+/**
+ 开灯/关灯
+
+ @param btn 按钮
+ */
 - (void)switchFlashlightAction:(UIButton *)btn {
     if ([self.device hasTorch] && [self.device hasFlash]) {
         btn.selected = !btn.selected;
@@ -190,14 +230,28 @@ NSString *const HZScanViewStringValueBlockKey = @"scanViewStringValueBlock";
     }
 }
 
-#pragma mark - UITapGestureRecognizer
-- (void)focusGesture:(UITapGestureRecognizer*)gesture{
-    CGPoint point = [gesture locationInView:gesture.view];
-    [self focusAtPoint:point];
+/**
+ 打开相册，从照片中获取信息
+
+ @param btn 按钮
+ */
+- (void)openPhotoLibraryAction:(UIButton *)btn {
+    // TODO: 打开相册优化，优先使用已封装的类访问，未 import 再使用 UIImagePickerController
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.delegate = self;
+    
+    [self presentViewController:picker animated:YES completion:nil];
 }
 
-- (void)focusAtPoint:(CGPoint)point{
+#pragma mark - UITapGestureRecognizer
+- (void)focusGesture:(UITapGestureRecognizer*)gesture {
+
+    [self.focusView.layer removeAllAnimations]; // 移除动画
+    
+    CGPoint point = [gesture locationInView:gesture.view];
     CGSize size = self.view.bounds.size;
+    
     CGPoint focusPoint = CGPointMake( point.y /size.height ,1-point.x/size.width );
     NSError *error;
     if ([self.device lockForConfiguration:&error]) {
@@ -212,14 +266,11 @@ NSString *const HZScanViewStringValueBlockKey = @"scanViewStringValueBlock";
     _focusView.center = point;
     _focusView.hidden = NO;
     
+    self.focusView.transform = CGAffineTransformMakeScale(1.5, 1.5);
     [UIView animateWithDuration:0.3 animations:^{
-        self.focusView.transform = CGAffineTransformMakeScale(1.25, 1.25);
+        self.focusView.transform = CGAffineTransformIdentity;
     }completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.5 animations:^{
-            self.focusView.transform = CGAffineTransformIdentity;
-        } completion:^(BOOL finished) {
-            self.focusView.hidden = YES;
-        }];
+        self.focusView.hidden = YES;
     }];
 }
 
@@ -354,6 +405,30 @@ NSString *const HZScanViewStringValueBlockKey = @"scanViewStringValueBlock";
     return _flashlightBtn;
 }
 
+- (UIButton *)photoLibraryBtn {
+    if (!_photoLibraryBtn) {
+        CGPoint origin = CGPointMake(self.view.center.x, CGRectGetMaxY(self.scanArea) + 70);
+        CGRect frame = CGRectMake(0, 0, 80, 30);
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = frame;
+        button.center = origin;
+        button.backgroundColor = nil;
+        button.selected = NO;
+        [button setTitle:@"相 册" forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:14];
+        [button addTarget:self action:@selector(openPhotoLibraryAction:) forControlEvents:UIControlEventTouchUpInside];
+        
+        button.layer.cornerRadius = 5;
+        button.layer.borderColor = [UIColor whiteColor].CGColor;
+        button.layer.borderWidth = 0.8;
+        button.layer.masksToBounds = YES;
+        
+        _photoLibraryBtn = button;
+    }
+    
+    return _photoLibraryBtn;
+}
+
 - (UIView *)scanAnimationView {
     if (!_scanAnimationView) {
         UIView *view = [[UIView alloc] initWithFrame:self.scanArea];
@@ -418,6 +493,22 @@ NSString *const HZScanViewStringValueBlockKey = @"scanViewStringValueBlock";
 #if DEBUG
     NSLog(@"%@ dealloc", NSStringFromClass(self.class));
 #endif
+}
+
+@end
+
+@implementation HZScanViewController (Image)
+
+- (NSString *)stringValueFromImage:(UIImage *)image {
+    CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeQRCode
+                                              context:nil
+                                              options:@{
+                                                        CIDetectorAccuracy : CIDetectorAccuracyHigh
+                                                        }];
+    NSArray *features = [detector featuresInImage:[CIImage imageWithCGImage:image.CGImage]];
+    CIQRCodeFeature *feature = features.firstObject;
+    NSString *stringValue = [feature.messageString mutableCopy];
+    return stringValue;
 }
 
 @end

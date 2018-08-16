@@ -36,6 +36,13 @@ typedef void(^HZScanViewStringValueBlock)(NSString *stringValue);
 
 @end
 
+@interface HZScanViewController (Image)
+
+- (NSString *)stringValueFromImage:(UIImage *)image;
+
+@end
+
+
 #pragma mark - HZScanMaskView
 @interface HZScanMaskView : UIView
 
