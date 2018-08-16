@@ -130,17 +130,19 @@ NSString *const HZScanViewStringValueBlockKey = @"scanViewStringValueBlock";
 - (void)scanAnimation {
     self.scanAnimationLayer.hidden = NO;
     // TODO: 优化，使用 layer
-    [UIView animateWithDuration:kHZScanAnimationTimeInterval * 0.75
+    CGSize imageSize = self.scanAnimationLayer.bounds.size;
+    CGRect endFrame = CGRectMake(0, CGRectGetHeight(self.scanAnimationView.bounds) + imageSize.height,
+                                 imageSize.width, imageSize.height);
+    
+    CGRect startFrame = CGRectMake(0, 0 - imageSize.height, imageSize.width, imageSize.height);
+    
+    [UIView animateWithDuration:kHZScanAnimationTimeInterval * 0.5
                      animations:^{
-                         CGRect endFrame = self.scanAnimationView.bounds;
-                         endFrame.origin.y += CGRectGetHeight(endFrame);
-                         self.scanAnimationLayer.frame =endFrame;
+                         self.scanAnimationLayer.frame = endFrame;
                      }
                      completion:^(BOOL finished) {
                          self.scanAnimationLayer.hidden = YES;
                          
-                         CGRect startFrame = self.scanAnimationView.bounds;
-                         startFrame.origin.y -= CGRectGetHeight(startFrame);
                          self.scanAnimationLayer.frame = startFrame;
                      }];
 }
@@ -371,9 +373,13 @@ NSString *const HZScanViewStringValueBlockKey = @"scanViewStringValueBlock";
         // layer
         CAGradientLayer *layer = [CAGradientLayer layer];
         
-        layer.frame = CGRectMake(0, 0, CGRectGetWidth(self.scanArea), CGRectGetHeight(self.scanArea) * 0.5);
-        layer.colors = @[(id)[[UIColor blueColor] colorWithAlphaComponent:0.0].CGColor,
-                         (id)[[UIColor blueColor] colorWithAlphaComponent:0.4].CGColor];
+        layer.frame = CGRectMake(0, 0, CGRectGetWidth(self.scanArea), 3);
+        layer.colors = @[(id)[[UIColor clearColor] colorWithAlphaComponent:0.0].CGColor,
+                         (id)[[UIColor greenColor] colorWithAlphaComponent:0.8].CGColor,
+                         (id)[[UIColor clearColor] colorWithAlphaComponent:0.0].CGColor];
+        layer.locations = @[@(0.05), @(0.5), @(0.95)];
+        layer.startPoint = CGPointMake(0, 0);
+        layer.endPoint = CGPointMake(1, 0);
         
         // image
         UIGraphicsBeginImageContextWithOptions(layer.frame.size, NO, 0);
