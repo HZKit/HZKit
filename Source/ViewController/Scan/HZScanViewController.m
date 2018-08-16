@@ -26,7 +26,7 @@ NSString *const HZScanViewStringValueBlockKey = @"scanViewStringValueBlock";
 @property (nonatomic, strong) UIView *focusView; // 对焦效果view
 @property (nonatomic, strong) UIButton *flashlightBtn; // 手电筒
 @property (nonatomic, strong) UIView *scanAnimationView; // 扫一扫
-@property (nonatomic, strong) UIView *scanAnimationLayer; // 扫一扫动画图层
+@property (nonatomic, strong) UIImageView *scanAnimationLayer; // 扫一扫动画图层
 @property (nonatomic, strong) NSTimer *scanAnimationTimer; // 动画计时器
 
 @property (nonatomic, assign) BOOL statusBarHidden;
@@ -365,22 +365,30 @@ NSString *const HZScanViewStringValueBlockKey = @"scanViewStringValueBlock";
     return _scanAnimationView;
 }
 
-- (UIView *)scanAnimationLayer {
+- (UIImageView *)scanAnimationLayer {
     if (!_scanAnimationLayer) {
         
-        CGRect frame = CGRectMake(0, 0 - CGRectGetHeight(self.scanArea),
-                                  CGRectGetWidth(self.scanArea),
-                                  CGRectGetHeight(self.scanArea) * 0.75);
-        UIView *scanAnimationLayer = [[UIView alloc] initWithFrame:frame];
-        scanAnimationLayer.backgroundColor = nil;
-        scanAnimationLayer.hidden = YES;
-        
+        // layer
         CAGradientLayer *layer = [CAGradientLayer layer];
         
-        layer.frame = scanAnimationLayer.bounds;
+        layer.frame = CGRectMake(0, 0, CGRectGetWidth(self.scanArea), CGRectGetHeight(self.scanArea) * 0.5);
         layer.colors = @[(id)[[UIColor blueColor] colorWithAlphaComponent:0.0].CGColor,
                          (id)[[UIColor blueColor] colorWithAlphaComponent:0.4].CGColor];
-        [scanAnimationLayer.layer addSublayer:layer];
+        
+        // image
+        UIGraphicsBeginImageContextWithOptions(layer.frame.size, NO, 0);
+        [layer renderInContext:UIGraphicsGetCurrentContext()];
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        
+        CGRect frame = CGRectMake(0, 0 - CGRectGetHeight(layer.frame),
+                                  CGRectGetWidth(layer.frame),
+                                  CGRectGetHeight(layer.frame));
+        UIImageView *scanAnimationLayer = [[UIImageView alloc] initWithFrame:frame];
+        scanAnimationLayer.backgroundColor = [UIColor clearColor];
+        scanAnimationLayer.image = image;
+        scanAnimationLayer.hidden = YES;
 
         _scanAnimationLayer = scanAnimationLayer;
     }
