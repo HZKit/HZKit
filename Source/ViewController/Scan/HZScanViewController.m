@@ -449,6 +449,57 @@ NSString *const HZScanViewStringValueBlockKey = @"scanViewStringValueBlock";
     lineLayer.borderColor = [UIColor colorWithWhite:1.0 alpha:0.5].CGColor;
     [maskView.layer addSublayer:lineLayer];
     
+    // 四个角
+    CGFloat lineLength = 20;
+    CGFloat lineWidth = 2;
+    
+    CGFloat minX = CGRectGetMinX(transparentFrame);
+    CGFloat maxX = CGRectGetMaxX(transparentFrame);
+    CGFloat minY = CGRectGetMinY(transparentFrame);
+    CGFloat maxY = CGRectGetMaxY(transparentFrame);
+    
+    /// 左上角
+    UIBezierPath *linePath = [UIBezierPath bezierPath];
+    [linePath moveToPoint:CGPointMake(minX, minY + lineLength)];
+    [linePath addLineToPoint:CGPointMake(minX, minY)];
+    [linePath addLineToPoint:CGPointMake(minX + lineLength, minY)];
+    /// 右上角
+    [linePath moveToPoint:CGPointMake(maxX - lineLength, minY)];
+    [linePath addLineToPoint:CGPointMake(maxX, minY)];
+    [linePath addLineToPoint:CGPointMake(maxX, minY + lineLength)];
+    /// 右下角
+    [linePath moveToPoint:CGPointMake(maxX, maxY - lineLength)];
+    [linePath addLineToPoint:CGPointMake(maxX, maxY)];
+    [linePath addLineToPoint:CGPointMake(maxX - lineLength, maxY)];
+    /// 左下角
+    [linePath moveToPoint:CGPointMake(minX + lineLength, maxY)];
+    [linePath addLineToPoint:CGPointMake(minX, maxY)];
+    [linePath addLineToPoint:CGPointMake(minX, maxY - lineLength)];
+    
+    CAShapeLayer *superscriptLayer = [CAShapeLayer layer];
+    superscriptLayer.lineWidth = lineWidth;
+    superscriptLayer.strokeColor = [UIColor greenColor].CGColor;
+    superscriptLayer.path = linePath.CGPath;
+    superscriptLayer.fillColor = nil;
+    
+    [maskView.layer addSublayer:superscriptLayer];
+    // 线的路径
+//    UIBezierPath *linePath = [UIBezierPath bezierPath];
+//    // 起点
+//    [linePath moveToPoint:CGPointMake(20, 20)];
+//    // 其他点
+//    [linePath addLineToPoint:CGPointMake(160, 160)];
+//    [linePath addLineToPoint:CGPointMake(180, 50)];
+//
+//    CAShapeLayer *lineLayer = [CAShapeLayer layer];
+//
+//    lineLayer.lineWidth = 2;
+//    lineLayer.strokeColor = [UIColor greenColor].CGColor;
+//    lineLayer.path = linePath.CGPath;
+//    lineLayer.fillColor = nil; // 默认为blackColor
+//
+//    [lineView.layer addSublayer:lineLayer];
+    
     return maskView;
 }
 
