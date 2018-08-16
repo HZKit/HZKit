@@ -9,7 +9,14 @@
 #import "HZScanViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
-NSString *const HZScanViewStringValueBlockKey = @"scanViewStringValueBlock";
+#ifndef HLog
+    #if DEBUG
+        #define HLog(fmt, ...) NSLog((@"%@ [line %u]: " fmt), NSStringFromClass(self.class), __LINE__, ##__VA_ARGS__)
+    #else
+        #define HLog(...)
+    #endif
+#endif
+
 NSString *const kHZScanPhotoLibraryUnknown = @"No QR code found";
 
 #define kHZScanAnimationTimeInterval 3.0f
@@ -41,15 +48,12 @@ NSString *const kHZScanPhotoLibraryUnknown = @"No QR code found";
 
 @implementation HZScanViewController
 
-- (instancetype)initWithArgs:(NSDictionary *)args {
-    self = [super init];
-    if (self) {
-        HZScanViewStringValueBlock stringValueBlock = args[HZScanViewStringValueBlockKey];
-        if (stringValueBlock) {
-            _stringValueBlock = [stringValueBlock copy];
-        }
-    }
-    return self;
++ (instancetype)scanViewWithArea:(CGRect)scanArea completion:(HZScanViewStringValueBlock)stringValueBlock {
+    HZScanViewController *viewController = [[HZScanViewController alloc] init];
+    viewController.scanArea = scanArea;
+    viewController.stringValueBlock = stringValueBlock;
+    
+    return viewController;
 }
 
 - (void)viewDidLoad {
@@ -58,13 +62,7 @@ NSString *const kHZScanPhotoLibraryUnknown = @"No QR code found";
     
     self.view.backgroundColor = [UIColor blackColor];
     [self.view.layer insertSublayer:self.previewLayer atIndex:0];
-    
-    CGPoint origin = self.view.center;
-    CGFloat areaWidth = 200;
-    CGFloat areaHeight = 200;
-    _scanArea = CGRectMake(origin.x - areaWidth * 0.5,
-                           origin.y - areaHeight * 0.5,
-                           areaWidth, areaHeight); // TODO: 调整
+        
     HZScanMaskView *maskView = [HZScanMaskView maskViewWithFrame:self.view.bounds transparentFrame:_scanArea];
     [self.view addSubview:maskView];
     [self.view addSubview:self.scanAnimationView];
@@ -189,15 +187,13 @@ NSString *const kHZScanPhotoLibraryUnknown = @"No QR code found";
     }
 }
 
-#pragma mark -
+#pragma mark - UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     // TODO: 优化，压缩
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     [self stringFromImage:image];
-#if DEBUG
-    NSLog(@"%@", info);
-#endif
+    HLog(@"%@", info);
     
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
@@ -490,9 +486,7 @@ NSString *const kHZScanPhotoLibraryUnknown = @"No QR code found";
 
 #pragma mark - Dealloc
 - (void)dealloc {
-#if DEBUG
-    NSLog(@"%@ dealloc", NSStringFromClass(self.class));
-#endif
+    HLog(@"%@ dealloc", NSStringFromClass(self.class));
 }
 
 @end

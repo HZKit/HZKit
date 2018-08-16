@@ -21,8 +21,6 @@
 
 #pragma mark - HZScanViewController
 
-extern NSString *const HZScanViewStringValueBlockKey;
-
 typedef void(^HZScanViewStringValueBlock)(NSString *stringValue);
 
 @interface HZScanViewController : UIViewController
@@ -30,9 +28,9 @@ typedef void(^HZScanViewStringValueBlock)(NSString *stringValue);
 @property (nonatomic, weak, nullable) id <HZScanViewControllerDelegate> delegate;
 @property (nonatomic, copy) HZScanViewStringValueBlock stringValueBlock;
 
-- (instancetype)initWithArgs:(NSDictionary *)args;
++ (instancetype)scanViewWithArea:(CGRect)scanArea completion:(nullable HZScanViewStringValueBlock)stringValueBlock;
 
-// TODO: 封装使用，如：设置扫描区域范围、设置光柱颜色、设置角标颜色等
+// TODO: 封装使用，如：设置光柱颜色、设置角标颜色等
 
 @end
 

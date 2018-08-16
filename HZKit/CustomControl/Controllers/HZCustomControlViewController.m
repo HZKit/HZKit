@@ -38,11 +38,18 @@ NSString *cellIdentifier = @"HZCustomControlCell";
 
 #pragma mark - Action
 - (void)scanQRCodeAction {
-    HZScanViewStringValueBlock stringValueBlock = ^(NSString *stringValue) {
+
+    CGPoint origin = self.view.center;
+    CGFloat areaWidth = 200;
+    CGFloat areaHeight = 200;
+    
+    CGRect scanArea = CGRectMake(origin.x - areaWidth * 0.5,
+                           origin.y - areaHeight * 0.5,
+                           areaWidth, areaHeight);
+    
+    HZScanViewController *scanVC = [HZScanViewController scanViewWithArea:scanArea completion:^(NSString *stringValue) {
         HLog(@"stringValueBlock: %@", stringValue);
-    };
-    NSDictionary *args = @{ HZScanViewStringValueBlockKey :stringValueBlock};
-    HZScanViewController *scanVC = [[HZScanViewController alloc] initWithArgs:args];
+    }];
     scanVC.delegate = self;
     
     [self.navigationController pushViewController:scanVC animated:YES];

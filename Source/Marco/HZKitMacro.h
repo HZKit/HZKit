@@ -37,10 +37,12 @@
 
 
 #pragma mark - Log
-#if DEBUG
-    #define HLog(fmt, ...) NSLog((@"%@ [line %u]: " fmt), NSStringFromClass(self.class), __LINE__, ##__VA_ARGS__)
-#else
-    #define HLog(...)
+#ifndef HLog
+    #if DEBUG
+        #define HLog(fmt, ...) NSLog((@"%@ [line %u]: " fmt), NSStringFromClass(self.class), __LINE__, ##__VA_ARGS__)
+    #else
+        #define HLog(...)
+    #endif
 #endif
 
 
