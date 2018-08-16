@@ -32,6 +32,8 @@ typedef void(^HZScanViewStringValueBlock)(NSString *stringValue);
 
 - (instancetype)initWithArgs:(NSDictionary *)args;
 
+// TODO: 封装使用，如：设置扫描区域范围、设置光柱颜色、设置角标颜色等
+
 @end
 
 #pragma mark - HZScanMaskView

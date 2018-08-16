@@ -415,7 +415,9 @@ NSString *const HZScanViewStringValueBlockKey = @"scanViewStringValueBlock";
 
 #pragma mark - Dealloc
 - (void)dealloc {
-    HLog(@"%@ dealloc", NSStringFromClass(self.class));
+#if DEBUG
+    NSLog(@"%@ dealloc", NSStringFromClass(self.class));
+#endif
 }
 
 @end
@@ -483,22 +485,6 @@ NSString *const HZScanViewStringValueBlockKey = @"scanViewStringValueBlock";
     superscriptLayer.fillColor = nil;
     
     [maskView.layer addSublayer:superscriptLayer];
-    // 线的路径
-//    UIBezierPath *linePath = [UIBezierPath bezierPath];
-//    // 起点
-//    [linePath moveToPoint:CGPointMake(20, 20)];
-//    // 其他点
-//    [linePath addLineToPoint:CGPointMake(160, 160)];
-//    [linePath addLineToPoint:CGPointMake(180, 50)];
-//
-//    CAShapeLayer *lineLayer = [CAShapeLayer layer];
-//
-//    lineLayer.lineWidth = 2;
-//    lineLayer.strokeColor = [UIColor greenColor].CGColor;
-//    lineLayer.path = linePath.CGPath;
-//    lineLayer.fillColor = nil; // 默认为blackColor
-//
-//    [lineView.layer addSublayer:lineLayer];
     
     return maskView;
 }
