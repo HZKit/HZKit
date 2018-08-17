@@ -13,4 +13,5 @@ NSLocationUsageDescription = "Authorization Location";
 NSLocationWhenInUseUsageDescription = "Authorization Location when in use";
 NSLocationAlwaysUsageDescription = "Authorization Location always";
 NSLocationAlwaysAndWhenInUseUsageDescription = "Authorization Location alwyas and when in use";
+NSPhotoLibraryUsageDescription = "Authorization Photo Library";
 
