@@ -59,4 +59,9 @@ const NSString *HZ_HIDDEN_TABBAR_KEY = @"hiddenTabBar";
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+#pragma mark - Dealloc
+- (void)dealloc {
+    HLog(@"%@ dealloc", NSStringFromClass([self class]));
+}
+
 @end

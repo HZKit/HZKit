@@ -11,6 +11,7 @@
 #import "HZBaseViewController.h"
 #import "HZBaseNavigationController.h"
 #import "HZMainViewController.h"
+#import "HZLib/HZLib.h"
 
 @interface AppDelegate ()
 
@@ -24,7 +25,20 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [self.window makeKeyAndVisible];
+//    [self.window makeKeyAndVisible];
+    
+    HZLibInitRootViewControllerWithModuleNames(@[@"HZShowModule", @"HZCustomControlModule"]);
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSArray *modules = @[
+                             [HZShowModule new],
+                             [HZAboutModule new],
+                             [HZDeviceModule new],
+                             [HZCustomControlModule new]
+                             ];
+        // TODO: 未处理释放
+        HZLibInitRootViewControllerWithModules(modules);
+    });
     
     return YES;
 }

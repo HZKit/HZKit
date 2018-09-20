@@ -50,14 +50,13 @@
 		DBACB67D211C400B004FD994 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB674211C400B004FD994 /* FMDatabase.m */; };
 		DBACB67E211C400B004FD994 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB678211C400B004FD994 /* FMDatabasePool.m */; };
 		DBACB67F211C400B004FD994 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB679211C400B004FD994 /* FMResultSet.m */; };
-		DBACB680211C400B004FD994 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBACB67A211C400B004FD994 /* Info.plist */; };
 		DBACB6A5211D5E42004FD994 /* HZScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB6A4211D5E42004FD994 /* HZScanViewController.m */; };
 		DBB17BFB2114001F00F9054F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBB17BFD2114001F00F9054F /* InfoPlist.strings */; };
-		DBB17C01211401B200F9054F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBB17C00211401B200F9054F /* Info.plist */; };
 		DBB17C0B21142ADC00F9054F /* HZShow.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBB17C0D21142ADC00F9054F /* HZShow.strings */; };
 		DBB17C2721144CE500F9054F /* HZCustomControl.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBB17C2921144CE500F9054F /* HZCustomControl.strings */; };
 		DBB17C2E21144E0400F9054F /* HZAbout.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBB17C3021144E0400F9054F /* HZAbout.strings */; };
 		DBB17C3521145DFE00F9054F /* HZAlert.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBB17C3721145DFE00F9054F /* HZAlert.strings */; };
+		DBD6522D2151DD7400EA90E8 /* HZLib.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD6522B2151DD7400EA90E8 /* HZLib.m */; };
 		DBE04B892111815C00F94150 /* HZIconfont.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE04B882111815C00F94150 /* HZIconfont.m */; };
 		DBE04B8C2111829200F94150 /* fontello.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBE04B8B2111829200F94150 /* fontello.ttf */; };
 		DBE04B8F211183A400F94150 /* UILabel+HZIconfont.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE04B8E211183A400F94150 /* UILabel+HZIconfont.m */; };
@@ -187,7 +186,6 @@
 		DBACB677211C400B004FD994 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
 		DBACB678211C400B004FD994 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		DBACB679211C400B004FD994 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
-		DBACB67A211C400B004FD994 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBACB6A3211D5E42004FD994 /* HZScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZScanViewController.h; sourceTree = "<group>"; };
 		DBACB6A4211D5E42004FD994 /* HZScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZScanViewController.m; sourceTree = "<group>"; };
 		DBB17BFC2114001F00F9054F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -206,6 +204,8 @@
 		DBB17C3621145DFE00F9054F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HZAlert.strings; sourceTree = "<group>"; };
 		DBB17C3821145E0300F9054F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/HZAlert.strings"; sourceTree = "<group>"; };
 		DBB17C3921145E0700F9054F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/HZAlert.strings; sourceTree = "<group>"; };
+		DBD6522B2151DD7400EA90E8 /* HZLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HZLib.m; path = HZKit/HZLib/HZLib.m; sourceTree = SOURCE_ROOT; };
+		DBD6522C2151DD7400EA90E8 /* HZLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HZLib.h; path = HZKit/HZLib/HZLib.h; sourceTree = SOURCE_ROOT; };
 		DBE04B872111815C00F94150 /* HZIconfont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZIconfont.h; sourceTree = "<group>"; };
 		DBE04B882111815C00F94150 /* HZIconfont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZIconfont.m; sourceTree = "<group>"; };
 		DBE04B8B2111829200F94150 /* fontello.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fontello.ttf; sourceTree = "<group>"; };
@@ -278,6 +278,7 @@
 		DB20A8CF20CFCF8700D7432A /* HZKit */ = {
 			isa = PBXGroup;
 			children = (
+				DBD652272151DAE900EA90E8 /* HZLib */,
 				DB71B26E21085D3E00F8DEB3 /* About */,
 				DB20A8D020CFCF8700D7432A /* AppDelegate.h */,
 				DB20A8D820CFCF8700D7432A /* AppDelegate.m */,
@@ -583,7 +584,6 @@
 				DBACB677211C400B004FD994 /* FMDatabaseAdditions.h */,
 				DBACB678211C400B004FD994 /* FMDatabasePool.m */,
 				DBACB679211C400B004FD994 /* FMResultSet.m */,
-				DBACB67A211C400B004FD994 /* Info.plist */,
 			);
 			path = FMDB;
 			sourceTree = "<group>";
@@ -672,6 +672,16 @@
 				DB20A8E420CFCF9D00D7432A /* HZKitMacro.h */,
 			);
 			path = Marco;
+			sourceTree = "<group>";
+		};
+		DBD652272151DAE900EA90E8 /* HZLib */ = {
+			isa = PBXGroup;
+			children = (
+				DBD6522C2151DD7400EA90E8 /* HZLib.h */,
+				DBD6522B2151DD7400EA90E8 /* HZLib.m */,
+			);
+			name = HZLib;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		DBE03A0020E3D88D0012C824 /* Supporting Files */ = {
@@ -841,13 +851,11 @@
 			files = (
 				DBE04BD52113FB5200F94150 /* LaunchScreen.storyboard in Resources */,
 				DBE04B95211184BF00F94150 /* fontelloConfig.json in Resources */,
-				DBB17C01211401B200F9054F /* Info.plist in Resources */,
 				DBB17C2E21144E0400F9054F /* HZAbout.strings in Resources */,
 				DBB17C0B21142ADC00F9054F /* HZShow.strings in Resources */,
 				DBE04B8C2111829200F94150 /* fontello.ttf in Resources */,
 				DBB17C2721144CE500F9054F /* HZCustomControl.strings in Resources */,
 				DB20A8DB20CFCF8700D7432A /* Assets.xcassets in Resources */,
-				DBACB680211C400B004FD994 /* Info.plist in Resources */,
 				DBB17BFB2114001F00F9054F /* InfoPlist.strings in Resources */,
 				DBB17C3521145DFE00F9054F /* HZAlert.strings in Resources */,
 			);
@@ -909,6 +917,7 @@
 				DBE04BA22111998300F94150 /* UIFont+HZIconfont.m in Sources */,
 				DBACB64B2119A026004FD994 /* HZAuthorizationModel.m in Sources */,
 				DB4AF2AC210C091F005ECF23 /* HZBaseCollectionViewCell.m in Sources */,
+				DBD6522D2151DD7400EA90E8 /* HZLib.m in Sources */,
 				DB71B28E2108782F00F8DEB3 /* HZMainRouter.m in Sources */,
 				DB71B27121085D6100F8DEB3 /* HZShowModule.m in Sources */,
 				DB20A8FD20CFDA6500D7432A /* HZBaseViewController.m in Sources */,
