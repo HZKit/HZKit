@@ -27,7 +27,17 @@
 		DB3B78A9215F1716002ED788 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B789D215F1716002ED788 /* MASConstraint.m */; };
 		DB3B78AA215F1716002ED788 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B789F215F1716002ED788 /* MASViewConstraint.m */; };
 		DB3B78AB215F1716002ED788 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B78A0215F1716002ED788 /* MASViewAttribute.m */; };
-		DB3B78AC215F1716002ED788 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB3B78A1215F1716002ED788 /* Info.plist */; };
+		DB3B78AF215F3FD4002ED788 /* HZBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B78AE215F3FD4002ED788 /* HZBaseTableViewCell.m */; };
+		DB3B78C4215F687F002ED788 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B78BA215F687F002ED788 /* AFURLResponseSerialization.m */; };
+		DB3B78C5215F687F002ED788 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B78BB215F687F002ED788 /* AFHTTPSessionManager.m */; };
+		DB3B78C6215F687F002ED788 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B78BD215F687F002ED788 /* AFURLSessionManager.m */; };
+		DB3B78C7215F687F002ED788 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B78BE215F687F002ED788 /* AFURLRequestSerialization.m */; };
+		DB3B78C8215F687F002ED788 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B78C0215F687F002ED788 /* AFNetworkReachabilityManager.m */; };
+		DB3B78C9215F687F002ED788 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B78C1215F687F002ED788 /* AFSecurityPolicy.m */; };
+		DB3B78CC215F68E9002ED788 /* HZNetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B78CB215F68E9002ED788 /* HZNetworkClient.m */; };
+		DB3B78D4215F8226002ED788 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B78CE215F8226002ED788 /* JSONModel.m */; };
+		DB3B78D5215F8226002ED788 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B78CF215F8226002ED788 /* JSONModelError.m */; };
+		DB3B78D6215F8226002ED788 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B78D2215F8226002ED788 /* JSONModelClassProperty.m */; };
 		DB463AFC210ABA3A0018BCC5 /* HZDeviceModule.m in Sources */ = {isa = PBXBuildFile; fileRef = DB463AFB210ABA3A0018BCC5 /* HZDeviceModule.m */; };
 		DB463B00210ABA5F0018BCC5 /* HZDeviceRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB463AFF210ABA5F0018BCC5 /* HZDeviceRouter.m */; };
 		DB463B04210ABAA70018BCC5 /* HZDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB463B03210ABAA70018BCC5 /* HZDeviceViewController.m */; };
@@ -152,7 +162,30 @@
 		DB3B789E215F1716002ED788 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		DB3B789F215F1716002ED788 /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
 		DB3B78A0215F1716002ED788 /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
-		DB3B78A1215F1716002ED788 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB3B78AD215F3FD4002ED788 /* HZBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZBaseTableViewCell.h; sourceTree = "<group>"; };
+		DB3B78AE215F3FD4002ED788 /* HZBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZBaseTableViewCell.m; sourceTree = "<group>"; };
+		DB3B78B6215F687F002ED788 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		DB3B78B7215F687F002ED788 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		DB3B78B8215F687F002ED788 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		DB3B78B9215F687F002ED788 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		DB3B78BA215F687F002ED788 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		DB3B78BB215F687F002ED788 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		DB3B78BC215F687F002ED788 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		DB3B78BD215F687F002ED788 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		DB3B78BE215F687F002ED788 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		DB3B78BF215F687F002ED788 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		DB3B78C0215F687F002ED788 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		DB3B78C1215F687F002ED788 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		DB3B78C2215F687F002ED788 /* AFCompatibilityMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCompatibilityMacros.h; sourceTree = "<group>"; };
+		DB3B78C3215F687F002ED788 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		DB3B78CA215F68E8002ED788 /* HZNetworkClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZNetworkClient.h; sourceTree = "<group>"; };
+		DB3B78CB215F68E9002ED788 /* HZNetworkClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZNetworkClient.m; sourceTree = "<group>"; };
+		DB3B78CE215F8226002ED788 /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
+		DB3B78CF215F8226002ED788 /* JSONModelError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelError.m; sourceTree = "<group>"; };
+		DB3B78D0215F8226002ED788 /* JSONModelClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelClassProperty.h; sourceTree = "<group>"; };
+		DB3B78D1215F8226002ED788 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
+		DB3B78D2215F8226002ED788 /* JSONModelClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelClassProperty.m; sourceTree = "<group>"; };
+		DB3B78D3215F8226002ED788 /* JSONModelError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelError.h; sourceTree = "<group>"; };
 		DB463AFA210ABA3A0018BCC5 /* HZDeviceModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZDeviceModule.h; sourceTree = "<group>"; };
 		DB463AFB210ABA3A0018BCC5 /* HZDeviceModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZDeviceModule.m; sourceTree = "<group>"; };
 		DB463AFE210ABA5F0018BCC5 /* HZDeviceRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZDeviceRouter.h; sourceTree = "<group>"; };
@@ -318,6 +351,7 @@
 		DB20A8CF20CFCF8700D7432A /* HZKit */ = {
 			isa = PBXGroup;
 			children = (
+				DB3B78B4215F66BA002ED788 /* Network */,
 				DBD652272151DAE900EA90E8 /* HZLib */,
 				DB71B26E21085D3E00F8DEB3 /* About */,
 				DB20A8D020CFCF8700D7432A /* AppDelegate.h */,
@@ -425,9 +459,51 @@
 				DB3B789E215F1716002ED788 /* ViewController+MASAdditions.h */,
 				DB3B789F215F1716002ED788 /* MASViewConstraint.m */,
 				DB3B78A0215F1716002ED788 /* MASViewAttribute.m */,
-				DB3B78A1215F1716002ED788 /* Info.plist */,
 			);
 			path = Masonry;
+			sourceTree = "<group>";
+		};
+		DB3B78B4215F66BA002ED788 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DB3B78CA215F68E8002ED788 /* HZNetworkClient.h */,
+				DB3B78CB215F68E9002ED788 /* HZNetworkClient.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DB3B78B5215F687F002ED788 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				DB3B78C2215F687F002ED788 /* AFCompatibilityMacros.h */,
+				DB3B78C3215F687F002ED788 /* AFHTTPSessionManager.h */,
+				DB3B78BB215F687F002ED788 /* AFHTTPSessionManager.m */,
+				DB3B78BF215F687F002ED788 /* AFNetworking.h */,
+				DB3B78B7215F687F002ED788 /* AFNetworkReachabilityManager.h */,
+				DB3B78C0215F687F002ED788 /* AFNetworkReachabilityManager.m */,
+				DB3B78B6215F687F002ED788 /* AFSecurityPolicy.h */,
+				DB3B78C1215F687F002ED788 /* AFSecurityPolicy.m */,
+				DB3B78B9215F687F002ED788 /* AFURLRequestSerialization.h */,
+				DB3B78BE215F687F002ED788 /* AFURLRequestSerialization.m */,
+				DB3B78BC215F687F002ED788 /* AFURLResponseSerialization.h */,
+				DB3B78BA215F687F002ED788 /* AFURLResponseSerialization.m */,
+				DB3B78B8215F687F002ED788 /* AFURLSessionManager.h */,
+				DB3B78BD215F687F002ED788 /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		DB3B78CD215F8226002ED788 /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				DB3B78CE215F8226002ED788 /* JSONModel.m */,
+				DB3B78CF215F8226002ED788 /* JSONModelError.m */,
+				DB3B78D0215F8226002ED788 /* JSONModelClassProperty.h */,
+				DB3B78D1215F8226002ED788 /* JSONModel.h */,
+				DB3B78D2215F8226002ED788 /* JSONModelClassProperty.m */,
+				DB3B78D3215F8226002ED788 /* JSONModelError.h */,
+			);
+			path = JSONModel;
 			sourceTree = "<group>";
 		};
 		DB463AF9210ABA0C0018BCC5 /* Device */ = {
@@ -513,6 +589,8 @@
 			children = (
 				DB4AF2AA210C091F005ECF23 /* HZBaseCollectionViewCell.h */,
 				DB4AF2AB210C091F005ECF23 /* HZBaseCollectionViewCell.m */,
+				DB3B78AD215F3FD4002ED788 /* HZBaseTableViewCell.h */,
+				DB3B78AE215F3FD4002ED788 /* HZBaseTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -621,6 +699,8 @@
 		DBACB651211A8ED4004FD994 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				DB3B78CD215F8226002ED788 /* JSONModel */,
+				DB3B78B5215F687F002ED788 /* AFNetworking */,
 				DB3B7887215F1716002ED788 /* Masonry */,
 				DBACB66E211C400B004FD994 /* FMDB */,
 				DBACB652211A8F8A004FD994 /* MBProgressHUD */,
@@ -933,7 +1013,6 @@
 				DBB17C2721144CE500F9054F /* HZCustomControl.strings in Resources */,
 				DB20A8DB20CFCF8700D7432A /* Assets.xcassets in Resources */,
 				DBB17BFB2114001F00F9054F /* InfoPlist.strings in Resources */,
-				DB3B78AC215F1716002ED788 /* Info.plist in Resources */,
 				DBB17C3521145DFE00F9054F /* HZAlert.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -960,9 +1039,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBE04B982111864E00F94150 /* HZShowIconfontViewController.m in Sources */,
+				DB3B78C9215F687F002ED788 /* AFSecurityPolicy.m in Sources */,
+				DB3B78D5215F8226002ED788 /* JSONModelError.m in Sources */,
 				DB20A90020CFDB1600D7432A /* HZBaseNavigationController.m in Sources */,
 				DBACB67C211C400B004FD994 /* FMDatabaseAdditions.m in Sources */,
 				DB20A8ED20CFCF9E00D7432A /* HZVersionManager.m in Sources */,
+				DB3B78C4215F687F002ED788 /* AFURLResponseSerialization.m in Sources */,
 				DB71B27C21085E9D00F8DEB3 /* HZShowViewController.m in Sources */,
 				DB4AF29F210BFF07005ECF23 /* HZCustomControlRouter.m in Sources */,
 				DB7D619E212168E700558D1E /* HZLog.m in Sources */,
@@ -971,9 +1053,12 @@
 				DBACB659211A937B004FD994 /* MBProgressHUD+HZKit.m in Sources */,
 				DBE04B9C2111875700F94150 /* HZShowIconfontCell.m in Sources */,
 				DB3B78A5215F1716002ED788 /* MASConstraintMaker.m in Sources */,
+				DB3B78C5215F687F002ED788 /* AFHTTPSessionManager.m in Sources */,
 				DBE04B8F211183A400F94150 /* UILabel+HZIconfont.m in Sources */,
 				DBACB67E211C400B004FD994 /* FMDatabasePool.m in Sources */,
+				DB3B78D4215F8226002ED788 /* JSONModel.m in Sources */,
 				DB71B28B2108737000F8DEB3 /* HZShowDetailViewController.m in Sources */,
+				DB3B78C6215F687F002ED788 /* AFURLSessionManager.m in Sources */,
 				DB463B00210ABA5F0018BCC5 /* HZDeviceRouter.m in Sources */,
 				DB7B6F412109A1B5004F233C /* UIDevice+HZCommon.m in Sources */,
 				DB4AF2A4210C001E005ECF23 /* HZCustomControlModel.m in Sources */,
@@ -985,6 +1070,7 @@
 				DB3B78A6215F1716002ED788 /* MASLayoutConstraint.m in Sources */,
 				DBACB655211A8F8A004FD994 /* MBProgressHUD.m in Sources */,
 				DB3B7860215F1354002ED788 /* HZNetworkViewController.m in Sources */,
+				DB3B78D6215F8226002ED788 /* JSONModelClassProperty.m in Sources */,
 				DB71B26921085C4100F8DEB3 /* HZBaseTabBarController.m in Sources */,
 				DB20A8DF20CFCF8700D7432A /* main.m in Sources */,
 				DB20A8E020CFCF8700D7432A /* AppDelegate.m in Sources */,
@@ -1002,15 +1088,18 @@
 				DB3B78A8215F1716002ED788 /* View+MASAdditions.m in Sources */,
 				DBE04BA22111998300F94150 /* UIFont+HZIconfont.m in Sources */,
 				DBACB64B2119A026004FD994 /* HZAuthorizationModel.m in Sources */,
+				DB3B78CC215F68E9002ED788 /* HZNetworkClient.m in Sources */,
 				DB4AF2AC210C091F005ECF23 /* HZBaseCollectionViewCell.m in Sources */,
 				DBD6522D2151DD7400EA90E8 /* HZLib.m in Sources */,
 				DB71B28E2108782F00F8DEB3 /* HZMainRouter.m in Sources */,
 				DB71B27121085D6100F8DEB3 /* HZShowModule.m in Sources */,
 				DB20A8FD20CFDA6500D7432A /* HZBaseViewController.m in Sources */,
 				DB20A8F820CFD33200D7432A /* HZBaseRouter.m in Sources */,
+				DB3B78C8215F687F002ED788 /* AFNetworkReachabilityManager.m in Sources */,
 				DB3B78A4215F1716002ED788 /* MASCompositeConstraint.m in Sources */,
 				DBE04B932111841C00F94150 /* HZIconfont+HZFontello.m in Sources */,
 				DBACB67B211C400B004FD994 /* FMDatabaseQueue.m in Sources */,
+				DB3B78AF215F3FD4002ED788 /* HZBaseTableViewCell.m in Sources */,
 				DB3B78A9215F1716002ED788 /* MASConstraint.m in Sources */,
 				DB463B08210AE3980018BCC5 /* UIViewController+HZCommon.m in Sources */,
 				DB463B04210ABAA70018BCC5 /* HZDeviceViewController.m in Sources */,
@@ -1021,6 +1110,7 @@
 				DB71B26C21085C5700F8DEB3 /* HZMainViewController.m in Sources */,
 				DB4AF296210BF649005ECF23 /* HZCustomControlModule.m in Sources */,
 				DB4AF2BD210DC66A005ECF23 /* HZAlertView.m in Sources */,
+				DB3B78C7215F687F002ED788 /* AFURLRequestSerialization.m in Sources */,
 				DB71B27421085D7100F8DEB3 /* HZAboutModule.m in Sources */,
 				DB71B28621086F6500F8DEB3 /* HZShowRouter.m in Sources */,
 			);

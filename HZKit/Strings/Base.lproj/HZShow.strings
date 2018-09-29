@@ -58,3 +58,6 @@ authorizationTV = "TV Provider";
 
 // Network view
 networkViewTitle = "Network";
+networkSend = "Send";
+networkClean = "Clean";
+networkParams = "Params";
