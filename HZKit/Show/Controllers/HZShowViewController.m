@@ -125,6 +125,16 @@
 }
 
 /**
+ 进入网络请求界面
+ */
+- (void)pushNetworkAction {
+    [[HZMainRouter shared] pushWith:HZShowRouterNetwork
+                         fromModule:HZModuleNameShow
+                               args:nil
+                         hideTabBar:YES];
+}
+
+/**
  显示使用 Iconfont 效果
  */
 - (void)pushIconfontAction {
@@ -243,8 +253,13 @@
                                                         title:HZShowLocalizedString("authorizationTitle")
                                                      subtitle:HZShowLocalizedString("authorizationDesc")
                                                        action:@"pushAuthorizationAction"];
+        
+        HZShowModel *network = [HZShowModel modelWithGroupName:nil
+                                                               title:HZShowLocalizedString("networkTitle")
+                                                            subtitle:HZShowLocalizedString("networkDesc")
+                                                              action:@"pushNetworkAction"];
 
-        NSArray *toolArray = @[checkUpdate, device, authorization];
+        NSArray *toolArray = @[checkUpdate, device, authorization, network];
         [_dataArray addObject:toolArray];
         
         // ViewController

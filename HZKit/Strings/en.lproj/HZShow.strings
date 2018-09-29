@@ -18,6 +18,8 @@ deviceTitle = "Device";
 deviceDesc = "More device info";
 authorizationTitle = "Authorization";
 authorizationDesc = "Check the application authorization status";
+networkTitle = "Network";
+networkDesc = "Network request encapsulation";
 
 viewControllerSectionTitle = "ViewController";
 viewControllerTitle = "ViewController";
@@ -53,3 +55,6 @@ authorizationMotion = "Motion";
 authorizationPhotoLibrary = "Photo Library";
 authorizationReminders = "Reminders";
 authorizationTV = "TV Provider";
+
+// Network view
+networkViewTitle = "Network";

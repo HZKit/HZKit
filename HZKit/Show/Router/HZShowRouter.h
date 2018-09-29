@@ -13,6 +13,7 @@ typedef NS_ENUM(NSUInteger, HZShowRouterId) {
     HZShowRouterIconfont,
     HZShowRouterDetail,
     HZShowRouterAuthorization,
+    HZShowRouterNetwork,
     // next controller
 };
 

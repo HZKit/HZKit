@@ -16,6 +16,7 @@
 		DB20A8F820CFD33200D7432A /* HZBaseRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8F720CFD33200D7432A /* HZBaseRouter.m */; };
 		DB20A8FD20CFDA6500D7432A /* HZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8FC20CFDA6500D7432A /* HZBaseViewController.m */; };
 		DB20A90020CFDB1600D7432A /* HZBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8FF20CFDB1600D7432A /* HZBaseNavigationController.m */; };
+		DB3B7860215F1354002ED788 /* HZNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B785F215F1354002ED788 /* HZNetworkViewController.m */; };
 		DB463AFC210ABA3A0018BCC5 /* HZDeviceModule.m in Sources */ = {isa = PBXBuildFile; fileRef = DB463AFB210ABA3A0018BCC5 /* HZDeviceModule.m */; };
 		DB463B00210ABA5F0018BCC5 /* HZDeviceRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB463AFF210ABA5F0018BCC5 /* HZDeviceRouter.m */; };
 		DB463B04210ABAA70018BCC5 /* HZDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB463B03210ABAA70018BCC5 /* HZDeviceViewController.m */; };
@@ -113,6 +114,8 @@
 		DB20A8FE20CFDB1600D7432A /* HZBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZBaseNavigationController.h; sourceTree = "<group>"; };
 		DB20A8FF20CFDB1600D7432A /* HZBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZBaseNavigationController.m; sourceTree = "<group>"; };
 		DB2D5AE120E272BE005893ED /* HZKitDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZKitDevice.h; sourceTree = "<group>"; };
+		DB3B785E215F1354002ED788 /* HZNetworkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZNetworkViewController.h; sourceTree = "<group>"; };
+		DB3B785F215F1354002ED788 /* HZNetworkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZNetworkViewController.m; sourceTree = "<group>"; };
 		DB463AFA210ABA3A0018BCC5 /* HZDeviceModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZDeviceModule.h; sourceTree = "<group>"; };
 		DB463AFB210ABA3A0018BCC5 /* HZDeviceModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZDeviceModule.m; sourceTree = "<group>"; };
 		DB463AFE210ABA5F0018BCC5 /* HZDeviceRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZDeviceRouter.h; sourceTree = "<group>"; };
@@ -499,6 +502,8 @@
 				DBE04B972111864E00F94150 /* HZShowIconfontViewController.m */,
 				DBACB646211994F1004FD994 /* HZAauthorizationViewController.h */,
 				DBACB647211994F1004FD994 /* HZAauthorizationViewController.m */,
+				DB3B785E215F1354002ED788 /* HZNetworkViewController.h */,
+				DB3B785F215F1354002ED788 /* HZNetworkViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -903,6 +908,7 @@
 				DBE04B892111815C00F94150 /* HZIconfont.m in Sources */,
 				DBACB6502119A78C004FD994 /* HZAuthorization.m in Sources */,
 				DBACB655211A8F8A004FD994 /* MBProgressHUD.m in Sources */,
+				DB3B7860215F1354002ED788 /* HZNetworkViewController.m in Sources */,
 				DB71B26921085C4100F8DEB3 /* HZBaseTabBarController.m in Sources */,
 				DB20A8DF20CFCF8700D7432A /* main.m in Sources */,
 				DB20A8E020CFCF8700D7432A /* AppDelegate.m in Sources */,

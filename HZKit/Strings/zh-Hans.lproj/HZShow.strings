@@ -18,6 +18,8 @@ deviceTitle = "设备相关";
 deviceDesc = "更多设备信息";
 authorizationTitle = "应用授权";
 authorizationDesc = "检查应用授权状态";
+networkTitle = "网络";
+networkDesc = "网络请求封装";
 
 viewControllerSectionTitle = "ViewController";
 viewControllerTitle = "ViewController 相关";
@@ -53,3 +55,6 @@ authorizationMotion = "Motion - 运动与健身";
 authorizationPhotoLibrary = "Photo Library - 照片";
 authorizationReminders = "Reminders";
 authorizationTV = "TV Provider";
+
+// Network view
+networkViewTitle = "网络请求";
