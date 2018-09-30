@@ -174,6 +174,7 @@ typedef NS_ENUM(NSUInteger, HZNetworkRequestType) {
                           
                           if (response.error) {
                               HZ_NETWORK_ADD_LOG(@"请求失败")
+                              HZ_NETWORK_ADD_LOG(response.error.description)
                           } else {
                               HZ_NETWORK_ADD_LOG(@"请求成功")
                               HZNetworkModel *model = response.model;
@@ -297,7 +298,6 @@ typedef NS_ENUM(NSUInteger, HZNetworkRequestType) {
         
         if (key && value && key.length > 0 && value.length > 0) {
            
-            // TODO: add or update
             if (isAdd) {
                 HZBaseModel *model = [[HZBaseModel alloc] init];
                 model.title = key;

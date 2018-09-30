@@ -92,11 +92,6 @@ NSTimeInterval kHZNetworkTimeout = 30.f;
     
     HZNetworkClient *client = [HZNetworkClient shared];
     
-//    if ([client hasNetwork] == NO) {
-//        // TODO: 新建失败共用类（Class : JSONModel）
-//        return;
-//    }
-    
     [client.manager POST:URLString
               parameters:parameters
                 progress:nil
@@ -117,13 +112,7 @@ NSTimeInterval kHZNetworkTimeout = 30.f;
 
 + (void)getURL:(NSString *)URLString parameters:(NSDictionary *)parameters modelClass:(Class)modelClass  responseObject:(HZNetworkResponseBlock)completionHandler {
     
-    // TODO: 失败处理（网络原因、返回数据异常）
     HZNetworkClient *client = [HZNetworkClient shared];
-    
-//    if ([client hasNetwork] == NO) {
-//        // TODO: 新建失败共用类（Class : JSONModel）
-//        return;
-//    }
     
     [client.manager GET:URLString
              parameters:parameters
