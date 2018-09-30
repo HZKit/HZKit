@@ -157,28 +157,34 @@ typedef NS_ENUM(NSUInteger, HZNetworkRequestType) {
     
     NSString *apiURL = [NSString stringWithFormat:@"%@%@", serverURL, apiName];
     
-    NSMutableDictionary *parmeters = [NSMutableDictionary dictionaryWithCapacity:self.paramsArray.count];
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:self.paramsArray.count];
     for (HZBaseModel *model in self.paramsArray) {
-        [parmeters setObject:model.subtitle forKey:model.title];
+        [parameters setObject:model.subtitle forKey:model.title];
     }
     
     if (self.requestTypeSegmented.selectedSegmentIndex == HZNetworkRequestPOST) {
         HZ_NETWORK_ADD_LOG(@"POST:")
         HZ_NETWORK_ADD_LOG(apiURL)
-        HZ_NETWORK_ADD_LOG(parmeters)
-        [[HZNetworkClient shared] postURL:apiURL
-                               parameters:parmeters
-                                  success:^(NSURLSessionTask * _Nonnull task, id  _Nonnull object) {
-                                      sender.enabled = YES;
-                                      HZ_NETWORK_ADD_LOG(@"success")
-                                      NSString *response = [NSString stringWithFormat:@"response:\n%@", object];
-                                      HZ_NETWORK_ADD_LOG(response)
-                                      NSLog(@"");
-                                  } failure:^(NSURLSessionTask * _Nonnull task, NSError * _Nonnull error) {
-                                      sender.enabled = YES;
-                                      HZ_NETWORK_ADD_LOG(@"failure")
-                                      NSLog(@"");
-                                  }];
+        HZ_NETWORK_ADD_LOG(parameters)
+        [HZNetworkClient postURL:apiURL
+                      parameters:parameters
+                      modelClass:[HZNetworkModel class]
+                      responseObject:^(HZDataResponse * _Nonnull response) {
+                          sender.enabled = YES;
+                          
+                          if (response.error) {
+                              HZ_NETWORK_ADD_LOG(@"请求失败")
+                          } else {
+                              HZ_NETWORK_ADD_LOG(@"请求成功")
+                              HZNetworkModel *model = response.model;
+                              if (model) {
+                                  NSString *text = [NSString stringWithFormat:@"title:%@", model.title];
+                                  HZ_NETWORK_ADD_LOG(text)
+                              }
+                          }
+                          
+                          HZ_NETWORK_ADD_LOG(@"====== end ======")
+                      }];
     } else if (self.requestTypeSegmented.selectedSegmentIndex == HZNetworkRequestGET) {
         HZ_NETWORK_ADD_LOG(@"GET:")
         
@@ -189,33 +195,25 @@ typedef NS_ENUM(NSUInteger, HZNetworkRequestType) {
         }
         
         HZ_NETWORK_ADD_LOG(getURL)
-        [[HZNetworkClient shared] getURL:getURL
-                              parameters:parmeters
-                                 success:^(NSURLSessionTask * _Nonnull task, id  _Nonnull object) {
-                                     sender.enabled = YES;
-                                     HZ_NETWORK_ADD_LOG(@"success")
-                                     NSString *response = [NSString stringWithFormat:@"response:\n%@", object];
-                                     HZ_NETWORK_ADD_LOG(response)
-                                     
-                                     HZNetworkModel *netwrokModel = nil;
-                                     if ([object isKindOfClass:[NSDictionary class]]) {
-                                         NSError *error = nil;
-                                         netwrokModel = [[HZNetworkModel alloc] initWithDictionary:(NSDictionary *)object error:&error];
-                                         if (error) {
-                                             HZ_NETWORK_ADD_LOG(error.description)
-                                         } else {
-                                             HZ_NETWORK_ADD_LOG(@"response 转 model 成功")
-                                             
-                                         }
-                                     }
-                                     
-                                     
-                                     NSLog(@"");
-                                 } failure:^(NSURLSessionTask * _Nonnull task, NSError * _Nonnull error) {
-                                     sender.enabled = YES;
-                                     HZ_NETWORK_ADD_LOG(@"failure")
-                                     NSLog(@"");
-                                 }];
+        [HZNetworkClient getURL:getURL
+                     parameters:parameters
+                     modelClass:[HZNetworkModel class]
+                 responseObject:^(HZDataResponse * _Nonnull response) {
+                     sender.enabled = YES;
+                     
+                     if (response.error) {
+                         HZ_NETWORK_ADD_LOG(@"请求失败")
+                     } else {
+                         HZ_NETWORK_ADD_LOG(@"请求成功")
+                         HZNetworkModel *model = response.model;
+                         if (model) {
+                             NSString *text = [NSString stringWithFormat:@"title:%@", model.title];
+                             HZ_NETWORK_ADD_LOG(text)
+                         }
+                     }
+                     
+                     HZ_NETWORK_ADD_LOG(@"====== end ======")
+                 }];
     }
     
 }

@@ -88,23 +88,99 @@ NSTimeInterval kHZNetworkTimeout = 30.f;
     return (status > AFNetworkReachabilityStatusNotReachable);
 }
 
-- (void)postURL:(NSString *)URLString parameters:(NSDictionary *)parameters success:(HZNetworkSuccessBlock)success failure:(HZNetworkFailureBlock)failure {
++ (void)postURL:(NSString *)URLString parameters:(NSDictionary *)parameters modelClass:(Class)modelClass responseObject:(HZNetworkResponseBlock)completionHandler {
     
-    [self.manager POST:URLString
-            parameters:parameters
-              progress:nil
-               success:success
-               failure:failure];
+    HZNetworkClient *client = [HZNetworkClient shared];
+    
+//    if ([client hasNetwork] == NO) {
+//        // TODO: 新建失败共用类（Class : JSONModel）
+//        return;
+//    }
+    
+    [client.manager POST:URLString
+              parameters:parameters
+                progress:nil
+                 success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                     [self responseWithCompletionHandler:completionHandler
+                                              modelClass:modelClass
+                                                    task:task
+                                                response:responseObject
+                                                   error:nil];
+                 } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                     [self responseWithCompletionHandler:completionHandler
+                                              modelClass:nil
+                                                    task:task
+                                                response:nil
+                                                   error:error];
+                 }];
 }
 
-- (void)getURL:(NSString *)URLString parameters:(NSDictionary *)parameters success:(HZNetworkSuccessBlock)success failure:(HZNetworkFailureBlock)failure {
++ (void)getURL:(NSString *)URLString parameters:(NSDictionary *)parameters modelClass:(Class)modelClass  responseObject:(HZNetworkResponseBlock)completionHandler {
     
     // TODO: 失败处理（网络原因、返回数据异常）
-    [self.manager GET:URLString
-           parameters:parameters
-             progress:nil
-              success:success
-              failure:failure];
+    HZNetworkClient *client = [HZNetworkClient shared];
+    
+//    if ([client hasNetwork] == NO) {
+//        // TODO: 新建失败共用类（Class : JSONModel）
+//        return;
+//    }
+    
+    [client.manager GET:URLString
+             parameters:parameters
+               progress:nil
+                success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                    [self responseWithCompletionHandler:completionHandler
+                                             modelClass:modelClass
+                                                   task:task
+                                               response:responseObject
+                                                  error:nil];
+                } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                    [self responseWithCompletionHandler:completionHandler
+                                             modelClass:modelClass
+                                                   task:task
+                                               response:nil
+                                                  error:error];
+                }];
+}
+
++ (void)responseWithCompletionHandler:(HZNetworkResponseBlock)completionHandler
+                           modelClass:(Class)modelClass
+                                 task:(NSURLSessionDataTask *)task
+                             response:(id)responseObject
+                                error:(NSError *)error {
+    
+    if (completionHandler) {
+        HZDataResponse *response = [[HZDataResponse alloc] initWithModelClass:modelClass task:task response:responseObject error:error];
+        completionHandler(response);
+    }
+}
+
+@end
+
+
+@implementation HZDataResponse
+
+- (instancetype)initWithModelClass:(Class)modelClass
+                         task:(NSURLSessionTask *)task
+                     response:(id _Nullable)response
+                        error:(NSError * _Nullable )error {
+    
+    self = [super init];
+    if (self) {
+        _task = task;
+        _response = response;
+        _error = error;
+        
+        if (response && [response isKindOfClass:[NSDictionary class]] && modelClass) {
+            NSError *transError = nil;
+            NSDictionary *dict = (NSDictionary *)response;
+            _model = [(JSONModel *)[modelClass alloc] initWithDictionary:dict
+                                                                   error:&transError];
+            _error = transError;
+        }
+    }
+    
+    return self;
 }
 
 @end

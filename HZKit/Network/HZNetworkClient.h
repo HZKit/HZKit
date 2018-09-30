@@ -8,12 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-//@class <#name#>
+@class JSONModel, HZDataResponse;
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^HZNetworkSuccessBlock)(NSURLSessionTask *task, id object);
-typedef void(^HZNetworkFailureBlock)(NSURLSessionTask *task, NSError *error);
+typedef void(^HZNetworkResponseBlock)(HZDataResponse *response);
 
 @interface HZNetworkClient : NSObject
 
@@ -23,10 +22,24 @@ typedef void(^HZNetworkFailureBlock)(NSURLSessionTask *task, NSError *error);
 - (BOOL)isViaWiFi;
 - (BOOL)isViaWWAN;
 
-- (void)postURL:(NSString *)URLString parameters:(NSDictionary *)parameters success:(HZNetworkSuccessBlock)success failure:(HZNetworkFailureBlock)failure;
-- (void)getURL:(NSString *)URLString parameters:(NSDictionary *)parameters success:(HZNetworkSuccessBlock)success failure:(HZNetworkFailureBlock)failure;
-- (void)uploadURL:(NSString *)URLString parameters:(NSDictionary *)parameters success:(HZNetworkSuccessBlock)success failure:(HZNetworkFailureBlock)failure;
-- (void)dnwoloadURL:(NSString *)URLString parameters:(NSDictionary *)parameters success:(HZNetworkSuccessBlock)success failure:(HZNetworkFailureBlock)failure;
++ (void)postURL:(NSString *)URLString parameters:(NSDictionary *)parameters modelClass:(Class)modelClass responseObject:(HZNetworkResponseBlock)completionHandler;
++ (void)getURL:(NSString *)URLString parameters:(NSDictionary *)parameters modelClass:(Class)modelClass  responseObject:(HZNetworkResponseBlock)completionHandler;
+// TODO: download、upload
+
+@end
+
+@interface HZDataResponse : NSObject
+
+@property (nonatomic, strong) NSURLSessionTask *task;
+@property (nonatomic, assign) id response;
+@property (nonatomic, strong) NSError *error;
+
+@property (nonatomic, strong) id model;
+
+- (instancetype)initWithModelClass:(Class _Nullable)modelClass
+                         task:(NSURLSessionTask *)task
+                    response:(id _Nullable)response
+                       error:(NSError * _Nullable )error;
 
 @end
 
