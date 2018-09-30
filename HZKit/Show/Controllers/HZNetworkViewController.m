@@ -9,6 +9,7 @@
 #import "HZNetworkViewController.h"
 
 #import "HZBaseModel.h"
+#import "HZNetworkModel.h"
 
 #define HZ_NETWORK_ADD_LOG(log) \
     self.logTextView.text = [NSString stringWithFormat:@"%@%@\n", self.logTextView.text, log];
@@ -20,12 +21,18 @@ NSString *kTempValue = @"0df993c66c0c636e29ecbb5344252a4a";
 
 // http://api.douban.com/v2/movie/nowplaying?apikey=0df993c66c0c636e29ecbb5344252a4a
 
+typedef NS_ENUM(NSUInteger, HZNetworkRequestType) {
+    HZNetworkRequestPOST,
+    HZNetworkRequestGET,
+};
+
 @interface HZNetworkViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITextField *serverURLTF; // 服务器地址
 @property (nonatomic, strong) UITextField *apiTF; // API名称
 @property (nonatomic, strong) UIButton *requestBtn; // 请求按钮
 @property (nonatomic, strong) UITableView *paramsList; // 参数列表
+@property (nonatomic, strong) UISegmentedControl *requestTypeSegmented; // POST/GET
 @property (nonatomic, strong) UITextView *logTextView; // log视图
 @property (nonatomic, strong) NSMutableArray<HZBaseModel *> *paramsArray; // 参数
 
@@ -53,9 +60,14 @@ NSString *kTempValue = @"0df993c66c0c636e29ecbb5344252a4a";
     CGFloat itemHeight = 44.0;
     __weak typeof(self) wself = self;
     
+    [_requestTypeSegmented mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.topMargin.mas_equalTo(margin);
+        make.centerX.mas_equalTo(wself.view.mas_centerX);
+    }];
+    
     [_serverURLTF mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(margin);
-        make.topMargin.mas_equalTo(margin);
+        make.top.mas_equalTo(wself.requestTypeSegmented.mas_bottom).offset(padding);
         make.right.mas_equalTo(-margin);
         make.height.mas_equalTo(itemHeight);
     }];
@@ -89,6 +101,10 @@ NSString *kTempValue = @"0df993c66c0c636e29ecbb5344252a4a";
 }
 
 - (void)initView {
+    _requestTypeSegmented = [[UISegmentedControl alloc] initWithItems:@[@"POST", @"GET"]];
+    _requestTypeSegmented.selectedSegmentIndex = HZNetworkRequestPOST;
+    [self.view addSubview:_requestTypeSegmented];
+    
     _serverURLTF = [[UITextField alloc] init];
     _serverURLTF.borderStyle = UITextBorderStyleBezel;
     _serverURLTF.text = kTempServerURL;
@@ -136,7 +152,72 @@ NSString *kTempValue = @"0df993c66c0c636e29ecbb5344252a4a";
     sender.enabled = NO;
     
     HZ_NETWORK_ADD_LOG(@"准备发起请求")
-    // TODO: 请求
+    NSString *serverURL = self.serverURLTF.text;
+    NSString *apiName = self.apiTF.text;
+    
+    NSString *apiURL = [NSString stringWithFormat:@"%@%@", serverURL, apiName];
+    
+    NSMutableDictionary *parmeters = [NSMutableDictionary dictionaryWithCapacity:self.paramsArray.count];
+    for (HZBaseModel *model in self.paramsArray) {
+        [parmeters setObject:model.subtitle forKey:model.title];
+    }
+    
+    if (self.requestTypeSegmented.selectedSegmentIndex == HZNetworkRequestPOST) {
+        HZ_NETWORK_ADD_LOG(@"POST:")
+        HZ_NETWORK_ADD_LOG(apiURL)
+        HZ_NETWORK_ADD_LOG(parmeters)
+        [[HZNetworkClient shared] postURL:apiURL
+                               parameters:parmeters
+                                  success:^(NSURLSessionTask * _Nonnull task, id  _Nonnull object) {
+                                      sender.enabled = YES;
+                                      HZ_NETWORK_ADD_LOG(@"success")
+                                      NSString *response = [NSString stringWithFormat:@"response:\n%@", object];
+                                      HZ_NETWORK_ADD_LOG(response)
+                                      NSLog(@"");
+                                  } failure:^(NSURLSessionTask * _Nonnull task, NSError * _Nonnull error) {
+                                      sender.enabled = YES;
+                                      HZ_NETWORK_ADD_LOG(@"failure")
+                                      NSLog(@"");
+                                  }];
+    } else if (self.requestTypeSegmented.selectedSegmentIndex == HZNetworkRequestGET) {
+        HZ_NETWORK_ADD_LOG(@"GET:")
+        
+        NSMutableString *getURL = [NSMutableString stringWithFormat:@"%@?", apiURL];
+        for (HZBaseModel *model in self.paramsArray) {
+            NSString *parmeter = [NSString stringWithFormat:@"%@=%@", model.title, model.subtitle];
+            [getURL stringByAppendingString:parmeter];
+        }
+        
+        HZ_NETWORK_ADD_LOG(getURL)
+        [[HZNetworkClient shared] getURL:getURL
+                              parameters:parmeters
+                                 success:^(NSURLSessionTask * _Nonnull task, id  _Nonnull object) {
+                                     sender.enabled = YES;
+                                     HZ_NETWORK_ADD_LOG(@"success")
+                                     NSString *response = [NSString stringWithFormat:@"response:\n%@", object];
+                                     HZ_NETWORK_ADD_LOG(response)
+                                     
+                                     HZNetworkModel *netwrokModel = nil;
+                                     if ([object isKindOfClass:[NSDictionary class]]) {
+                                         NSError *error = nil;
+                                         netwrokModel = [[HZNetworkModel alloc] initWithDictionary:(NSDictionary *)object error:&error];
+                                         if (error) {
+                                             HZ_NETWORK_ADD_LOG(error.description)
+                                         } else {
+                                             HZ_NETWORK_ADD_LOG(@"response 转 model 成功")
+                                             
+                                         }
+                                     }
+                                     
+                                     
+                                     NSLog(@"");
+                                 } failure:^(NSURLSessionTask * _Nonnull task, NSError * _Nonnull error) {
+                                     sender.enabled = YES;
+                                     HZ_NETWORK_ADD_LOG(@"failure")
+                                     NSLog(@"");
+                                 }];
+    }
+    
 }
 
 #pragma mark - Touch

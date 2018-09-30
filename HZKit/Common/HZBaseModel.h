@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HZBaseModel : NSObject
+@interface HZBaseModel : JSONModel
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;

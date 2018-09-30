@@ -88,8 +88,23 @@ NSTimeInterval kHZNetworkTimeout = 30.f;
     return (status > AFNetworkReachabilityStatusNotReachable);
 }
 
-- (void)postURL:(NSString *)url parameters:(NSDictionary *)parameters success:(HZNetworkSuccessBlock)success failure:(HZNetworkFailureBlock)failure {
+- (void)postURL:(NSString *)URLString parameters:(NSDictionary *)parameters success:(HZNetworkSuccessBlock)success failure:(HZNetworkFailureBlock)failure {
     
+    [self.manager POST:URLString
+            parameters:parameters
+              progress:nil
+               success:success
+               failure:failure];
+}
+
+- (void)getURL:(NSString *)URLString parameters:(NSDictionary *)parameters success:(HZNetworkSuccessBlock)success failure:(HZNetworkFailureBlock)failure {
+    
+    // TODO: 失败处理（网络原因、返回数据异常）
+    [self.manager GET:URLString
+           parameters:parameters
+             progress:nil
+              success:success
+              failure:failure];
 }
 
 @end

@@ -23,7 +23,10 @@ typedef void(^HZNetworkFailureBlock)(NSURLSessionTask *task, NSError *error);
 - (BOOL)isViaWiFi;
 - (BOOL)isViaWWAN;
 
-- (void)postURL:(NSString *)url parameters:(NSDictionary *)parameters success:(HZNetworkSuccessBlock)success failure:(HZNetworkFailureBlock)failure;
+- (void)postURL:(NSString *)URLString parameters:(NSDictionary *)parameters success:(HZNetworkSuccessBlock)success failure:(HZNetworkFailureBlock)failure;
+- (void)getURL:(NSString *)URLString parameters:(NSDictionary *)parameters success:(HZNetworkSuccessBlock)success failure:(HZNetworkFailureBlock)failure;
+- (void)uploadURL:(NSString *)URLString parameters:(NSDictionary *)parameters success:(HZNetworkSuccessBlock)success failure:(HZNetworkFailureBlock)failure;
+- (void)dnwoloadURL:(NSString *)URLString parameters:(NSDictionary *)parameters success:(HZNetworkSuccessBlock)success failure:(HZNetworkFailureBlock)failure;
 
 @end
 

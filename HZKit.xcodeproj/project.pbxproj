@@ -38,6 +38,9 @@
 		DB3B78D4215F8226002ED788 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B78CE215F8226002ED788 /* JSONModel.m */; };
 		DB3B78D5215F8226002ED788 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B78CF215F8226002ED788 /* JSONModelError.m */; };
 		DB3B78D6215F8226002ED788 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B78D2215F8226002ED788 /* JSONModelClassProperty.m */; };
+		DB3B78DD21605E5E002ED788 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B78D921605E5E002ED788 /* JSONValueTransformer.m */; };
+		DB3B78DE21605E5E002ED788 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B78DC21605E5E002ED788 /* JSONKeyMapper.m */; };
+		DB3B78EF21609E44002ED788 /* HZNetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B78EE21609E44002ED788 /* HZNetworkModel.m */; };
 		DB463AFC210ABA3A0018BCC5 /* HZDeviceModule.m in Sources */ = {isa = PBXBuildFile; fileRef = DB463AFB210ABA3A0018BCC5 /* HZDeviceModule.m */; };
 		DB463B00210ABA5F0018BCC5 /* HZDeviceRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB463AFF210ABA5F0018BCC5 /* HZDeviceRouter.m */; };
 		DB463B04210ABAA70018BCC5 /* HZDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB463B03210ABAA70018BCC5 /* HZDeviceViewController.m */; };
@@ -186,6 +189,13 @@
 		DB3B78D1215F8226002ED788 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
 		DB3B78D2215F8226002ED788 /* JSONModelClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelClassProperty.m; sourceTree = "<group>"; };
 		DB3B78D3215F8226002ED788 /* JSONModelError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelError.h; sourceTree = "<group>"; };
+		DB3B78D921605E5E002ED788 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
+		DB3B78DA21605E5E002ED788 /* JSONKeyMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKeyMapper.h; sourceTree = "<group>"; };
+		DB3B78DB21605E5E002ED788 /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
+		DB3B78DC21605E5E002ED788 /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
+		DB3B78DF21605E6E002ED788 /* JSONModelLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONModelLib.h; sourceTree = "<group>"; };
+		DB3B78ED21609E44002ED788 /* HZNetworkModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZNetworkModel.h; sourceTree = "<group>"; };
+		DB3B78EE21609E44002ED788 /* HZNetworkModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZNetworkModel.m; sourceTree = "<group>"; };
 		DB463AFA210ABA3A0018BCC5 /* HZDeviceModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZDeviceModule.h; sourceTree = "<group>"; };
 		DB463AFB210ABA3A0018BCC5 /* HZDeviceModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZDeviceModule.m; sourceTree = "<group>"; };
 		DB463AFE210ABA5F0018BCC5 /* HZDeviceRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZDeviceRouter.h; sourceTree = "<group>"; };
@@ -496,6 +506,8 @@
 		DB3B78CD215F8226002ED788 /* JSONModel */ = {
 			isa = PBXGroup;
 			children = (
+				DB3B78DF21605E6E002ED788 /* JSONModelLib.h */,
+				DB3B78D821605E5E002ED788 /* JSONModelTransformations */,
 				DB3B78CE215F8226002ED788 /* JSONModel.m */,
 				DB3B78CF215F8226002ED788 /* JSONModelError.m */,
 				DB3B78D0215F8226002ED788 /* JSONModelClassProperty.h */,
@@ -504,6 +516,17 @@
 				DB3B78D3215F8226002ED788 /* JSONModelError.h */,
 			);
 			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		DB3B78D821605E5E002ED788 /* JSONModelTransformations */ = {
+			isa = PBXGroup;
+			children = (
+				DB3B78D921605E5E002ED788 /* JSONValueTransformer.m */,
+				DB3B78DA21605E5E002ED788 /* JSONKeyMapper.h */,
+				DB3B78DB21605E5E002ED788 /* JSONValueTransformer.h */,
+				DB3B78DC21605E5E002ED788 /* JSONKeyMapper.m */,
+			);
+			path = JSONModelTransformations;
 			sourceTree = "<group>";
 		};
 		DB463AF9210ABA0C0018BCC5 /* Device */ = {
@@ -663,6 +686,8 @@
 				DB71B2822108673B00F8DEB3 /* HZShowModel.m */,
 				DBACB6492119A026004FD994 /* HZAuthorizationModel.h */,
 				DBACB64A2119A026004FD994 /* HZAuthorizationModel.m */,
+				DB3B78ED21609E44002ED788 /* HZNetworkModel.h */,
+				DB3B78EE21609E44002ED788 /* HZNetworkModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1042,6 +1067,7 @@
 				DB3B78C9215F687F002ED788 /* AFSecurityPolicy.m in Sources */,
 				DB3B78D5215F8226002ED788 /* JSONModelError.m in Sources */,
 				DB20A90020CFDB1600D7432A /* HZBaseNavigationController.m in Sources */,
+				DB3B78DE21605E5E002ED788 /* JSONKeyMapper.m in Sources */,
 				DBACB67C211C400B004FD994 /* FMDatabaseAdditions.m in Sources */,
 				DB20A8ED20CFCF9E00D7432A /* HZVersionManager.m in Sources */,
 				DB3B78C4215F687F002ED788 /* AFURLResponseSerialization.m in Sources */,
@@ -1065,6 +1091,7 @@
 				DB3B78AA215F1716002ED788 /* MASViewConstraint.m in Sources */,
 				DBACB67D211C400B004FD994 /* FMDatabase.m in Sources */,
 				DB3B78A3215F1716002ED788 /* ViewController+MASAdditions.m in Sources */,
+				DB3B78DD21605E5E002ED788 /* JSONValueTransformer.m in Sources */,
 				DBE04B892111815C00F94150 /* HZIconfont.m in Sources */,
 				DBACB6502119A78C004FD994 /* HZAuthorization.m in Sources */,
 				DB3B78A6215F1716002ED788 /* MASLayoutConstraint.m in Sources */,
@@ -1096,6 +1123,7 @@
 				DB20A8FD20CFDA6500D7432A /* HZBaseViewController.m in Sources */,
 				DB20A8F820CFD33200D7432A /* HZBaseRouter.m in Sources */,
 				DB3B78C8215F687F002ED788 /* AFNetworkReachabilityManager.m in Sources */,
+				DB3B78EF21609E44002ED788 /* HZNetworkModel.m in Sources */,
 				DB3B78A4215F1716002ED788 /* MASCompositeConstraint.m in Sources */,
 				DBE04B932111841C00F94150 /* HZIconfont+HZFontello.m in Sources */,
 				DBACB67B211C400B004FD994 /* FMDatabaseQueue.m in Sources */,
