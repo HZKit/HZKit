@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB0D70A22191285100AB9CDC /* HZKitDeviceModels.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB0D70A12191285100AB9CDC /* HZKitDeviceModels.plist */; };
 		DB20A8DB20CFCF8700D7432A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB20A8D120CFCF8700D7432A /* Assets.xcassets */; };
 		DB20A8DF20CFCF8700D7432A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8D720CFCF8700D7432A /* main.m */; };
 		DB20A8E020CFCF8700D7432A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8D820CFCF8700D7432A /* AppDelegate.m */; };
@@ -114,6 +115,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB0D70A12191285100AB9CDC /* HZKitDeviceModels.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = HZKitDeviceModels.plist; sourceTree = "<group>"; };
 		DB20A82D20CE614B00D7432A /* HZKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HZKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB20A84520CE614F00D7432A /* HZKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HZKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB20A85020CE614F00D7432A /* HZKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HZKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -832,6 +834,7 @@
 				DB2D5AE120E272BE005893ED /* HZKitDevice.h */,
 				DB7B6F3F2109A1B5004F233C /* UIDevice+HZCommon.h */,
 				DB7B6F402109A1B5004F233C /* UIDevice+HZCommon.m */,
+				DB0D70A12191285100AB9CDC /* HZKitDeviceModels.plist */,
 			);
 			path = Device;
 			sourceTree = "<group>";
@@ -1033,6 +1036,7 @@
 				DBE04BD52113FB5200F94150 /* LaunchScreen.storyboard in Resources */,
 				DBE04B95211184BF00F94150 /* fontelloConfig.json in Resources */,
 				DBB17C2E21144E0400F9054F /* HZAbout.strings in Resources */,
+				DB0D70A22191285100AB9CDC /* HZKitDeviceModels.plist in Resources */,
 				DBB17C0B21142ADC00F9054F /* HZShow.strings in Resources */,
 				DBE04B8C2111829200F94150 /* fontello.ttf in Resources */,
 				DBB17C2721144CE500F9054F /* HZCustomControl.strings in Resources */,

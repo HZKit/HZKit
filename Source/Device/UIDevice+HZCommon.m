@@ -32,46 +32,15 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         NSString *deviceIdentifier = [UIDevice hz_deviceIdentifier];
-        // Device info：https://www.theiphonewiki.com/wiki/Models
-        NSDictionary<NSString *, NSString *> *deviceInfo = @{
-                                                             @"iPhone1,1": @"iPhone",
-                                                             @"iPhone1,2": @"iPhone 3G",
-                                                             @"iPhone2,1": @"iPhone 3GS",
-                                                             @"iPhone3,1": @"iPhone 4",
-                                                             @"iPhone3,2": @"iPhone 4",
-                                                             @"iPhone3,3": @"iPhone 4",
-                                                             @"iPhone4,1": @"iPhone 4S",
-                                                             @"iPhone5,1": @"iPhone 5",
-                                                             @"iPhone5,2": @"iPhone 5",
-                                                             @"iPhone5,3": @"iPhone 5c",
-                                                             @"iPhone5,4": @"iPhone 5c",
-                                                             @"iPhone6,1": @"iPhone 5s",
-                                                             @"iPhone6,2": @"iPhone 5s",
-                                                             @"iPhone7,1": @"iPhone 6 Plus",
-                                                             @"iPhone7,2": @"iPhone 6",
-                                                             @"iPhone8,1": @"iPhone 6s",
-                                                             @"iPhone8,2": @"iPhone 6s Plus",
-                                                             @"iPhone8,4": @"iPhone SE",
-                                                             @"iPhone9,1": @"iPhone 7",
-                                                             @"iPhone9,3": @"iPhone 7",
-                                                             @"iPhone9,2": @"iPhone 7 Plus",
-                                                             @"iPhone9,4": @"iPhone 7 Plus",
-                                                             @"iPhone10,1": @"iPhone 8",
-                                                             @"iPhone10,4": @"iPhone 8",
-                                                             @"iPhone10,2": @"iPhone 8 Plus",
-                                                             @"iPhone10,5": @"iPhone 8 Plus",
-                                                             @"iPhone10,3": @"iPhone X",
-                                                             @"iPhone10,6": @"iPhone X",
-                                                             @"iPhone11,8": @"iPhone XR",
-                                                             @"iPhone11,2": @"iPhone XS",
-                                                             @"iPhone11,4": @"iPhone XS Max",
-                                                             @"iPhone11,6": @"iPhone XS Max"
-                                                             };
-        NSString *eneration = deviceInfo[deviceIdentifier];
-        if (eneration) {
-            deviceGeneration = eneration;
-        } else {
-            deviceGeneration = [UIDevice currentDevice].model;
+        
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"HZKitDeviceModels" ofType:@"plist"];
+        if (filePath) {
+            NSDictionary *deviceInfo = [NSDictionary dictionaryWithContentsOfFile:filePath];
+            deviceGeneration = deviceInfo[deviceIdentifier];
+        }
+        
+        if (deviceGeneration == nil) {
+            deviceGeneration = deviceIdentifier;
         }
     });
     
