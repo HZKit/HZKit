@@ -41,4 +41,26 @@
     }
 }
 
+#pragma mark - Gesture
+
+- (void)popGestureRecognizer:(BOOL)enable {
+    if (!self.navigationController) {
+        return;
+    }
+    
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = enable;
+    }
+}
+
+- (void)disablePopGesture {
+    if (!self.navigationController) {
+        return;
+    }
+    
+    id traget = self.navigationController.interactivePopGestureRecognizer.delegate;
+    UIPanGestureRecognizer * pan = [[UIPanGestureRecognizer alloc] initWithTarget:traget action:nil];
+    [self.view addGestureRecognizer:pan];
+}
+
 @end

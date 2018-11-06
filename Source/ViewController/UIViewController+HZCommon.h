@@ -30,4 +30,20 @@
 - (void)navigationBackground:(UIColor *)color;
 - (void)navigationTitleColor:(UIColor *)color;
 
+#pragma mark - Gesture
+
+/**
+ Disable sliding back
+ 
+ Invoke in viewDidAppear: or viewWillDisappear:
+
+ @param enable YES-Available NO-Unavailable
+ */
+- (void)popGestureRecognizer:(BOOL)enable;
+
+/**
+ Disable sliding back, irreversible
+ */
+- (void)disablePopGesture;
+
 @end
