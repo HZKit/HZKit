@@ -14,8 +14,10 @@
 #import <HZKit/HZKitMacro.h>
 #import <HZKit/HZKitVersion.h>
 #import <HZKit/HZKitView.h>
+#import <HZKit/HZAlertView.h>
 #import <HZKit/HZKitDevice.h>
 #import <HZKit/HZKitViewController.h>
+#import <HZKit/HZScanViewController.h>
 #import <HZKit/HZKitIconfont.h>
 #import <HZKit/HZKitAuthorization.h>
 #import <HZKit/HZKitLog.h>
@@ -25,8 +27,10 @@
 #import "HZKitMacro.h"
 #import "HZKitVersion.h"
 #import "HZKitView.h"
+#import "HZAlertView.h"
 #import "HZKitDevice.h"
 #import "HZKitViewController.h"
+#import "HZScanViewController.h"
 #import "HZKitIconfont.h"
 #import "HZKitAuthorization.h"
 #import "HZKitLog.h"

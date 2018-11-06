@@ -342,6 +342,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB0D70A321913A6100AB9CDC /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				DBB17C442117E8F900F9054F /* UIView */,
+				DBB17C432117E8D400F9054F /* UIDevice */,
+				DBB17C3F2117E87E00F9054F /* UIViewController */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		DB20A82420CE614B00D7432A = {
 			isa = PBXGroup;
 			children = (
@@ -383,15 +393,15 @@
 		DB20A8E220CFCF9D00D7432A /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				DBA620EC21206EC900DB6D2D /* Log */,
+				DBACB6A1211D5D3F004FD994 /* AlertView */,
 				DBACB64C2119A745004FD994 /* Authorization */,
-				DBB17C3E2117E85C00F9054F /* Iconfont */,
-				DBB17C3F2117E87E00F9054F /* ViewController */,
-				DBB17C452117E91D00F9054F /* Marco */,
-				DBB17C422117E8BF00F9054F /* Version */,
-				DBB17C432117E8D400F9054F /* Device */,
-				DBB17C442117E8F900F9054F /* View */,
+				DB0D70A321913A6100AB9CDC /* Category */,
 				DB20A8E520CFCF9D00D7432A /* HZKit.h */,
+				DBB17C3E2117E85C00F9054F /* Iconfont */,
+				DBA620EC21206EC900DB6D2D /* Log */,
+				DBB17C452117E91D00F9054F /* Marco */,
+				DBACB6A2211D5DFB004FD994 /* Scan */,
+				DBB17C422117E8BF00F9054F /* Version */,
 			);
 			path = Source;
 			sourceTree = SOURCE_ROOT;
@@ -807,28 +817,27 @@
 			path = Iconfont;
 			sourceTree = "<group>";
 		};
-		DBB17C3F2117E87E00F9054F /* ViewController */ = {
+		DBB17C3F2117E87E00F9054F /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
-				DBACB6A2211D5DFB004FD994 /* Scan */,
 				DB463B06210AE3980018BCC5 /* UIViewController+HZCommon.h */,
 				DB463B07210AE3980018BCC5 /* UIViewController+HZCommon.m */,
 				DB463B09210AE3D20018BCC5 /* HZKitViewController.h */,
 			);
-			path = ViewController;
+			path = UIViewController;
 			sourceTree = "<group>";
 		};
 		DBB17C422117E8BF00F9054F /* Version */ = {
 			isa = PBXGroup;
 			children = (
 				DB20A8EF20CFCFE000D7432A /* HZKitVersion.h */,
-				DB20A8E720CFCF9D00D7432A /* HZVersionManager.m */,
 				DB20A8E820CFCF9D00D7432A /* HZVersionManager.h */,
+				DB20A8E720CFCF9D00D7432A /* HZVersionManager.m */,
 			);
 			path = Version;
 			sourceTree = "<group>";
 		};
-		DBB17C432117E8D400F9054F /* Device */ = {
+		DBB17C432117E8D400F9054F /* UIDevice */ = {
 			isa = PBXGroup;
 			children = (
 				DB2D5AE120E272BE005893ED /* HZKitDevice.h */,
@@ -836,18 +845,17 @@
 				DB7B6F402109A1B5004F233C /* UIDevice+HZCommon.m */,
 				DB0D70A12191285100AB9CDC /* HZKitDeviceModels.plist */,
 			);
-			path = Device;
+			path = UIDevice;
 			sourceTree = "<group>";
 		};
-		DBB17C442117E8F900F9054F /* View */ = {
+		DBB17C442117E8F900F9054F /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				DBACB6A1211D5D3F004FD994 /* AlertView */,
 				DB20A8EA20CFCF9D00D7432A /* HZKitView.h */,
 				DB20A8EB20CFCF9D00D7432A /* UIView+HZKitCommon.m */,
 				DB20A8EC20CFCF9D00D7432A /* UIView+HZKitCommon.h */,
 			);
-			path = View;
+			path = UIView;
 			sourceTree = "<group>";
 		};
 		DBB17C452117E91D00F9054F /* Marco */ = {

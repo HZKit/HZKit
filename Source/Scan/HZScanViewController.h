@@ -23,6 +23,9 @@
 
 typedef void(^HZScanViewStringValueBlock)(NSString *stringValue);
 
+/**
+ // TODO: 编写扫一扫Readme文档，设计和使用
+ */
 @interface HZScanViewController : UIViewController
 
 @property (nonatomic, weak, nullable) id <HZScanViewControllerDelegate> delegate;

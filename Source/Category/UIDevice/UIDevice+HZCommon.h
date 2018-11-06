@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ // TODO: 编写 UIDevice Category 使用文档
+ */
 @interface UIDevice (HZCommon)
 
 /**

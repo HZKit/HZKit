@@ -10,6 +10,5 @@
 #define HZKitView_h
 
 #import "UIView+HZKitCommon.h"
-#import "HZAlertView.h"
 
 #endif /* HZKitView_h */

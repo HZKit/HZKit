@@ -40,7 +40,7 @@ NSString *const kAuthorizationLocationAlwaysAndWhenInUse = @"NSLocationAlwaysAnd
         }
             break;
         case HZAuthorizationMediaLibrary:
-            
+            // TODO: 完善更多授权
             break;
         case HZAuthorizationBluetooth:
             

@@ -10,6 +10,9 @@
 
 typedef void(^HZVersionManagerBlock)(BOOL isFindNew, id info);
 
+/**
+ // TODO: 检查应用更新功能以Category形式实现
+ */
 @interface HZVersionManager : NSObject
 
 /**

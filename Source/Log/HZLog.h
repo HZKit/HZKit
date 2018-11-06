@@ -7,6 +7,7 @@
 //
 
 /*
+ // TODO: 日志的便捷使用，生成文件上传等
  Apple Link: https://developer.apple.com/library/content/samplecode/MVCNetworking/Introduction/Intro.html#//apple_ref/doc/uid/DTS40010443-Intro-DontLinkElementID_2
  */
 #import <Foundation/Foundation.h>

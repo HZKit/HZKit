@@ -15,6 +15,8 @@
     #define isDebug (NO)
 #endif
 
+// TODO: 完善常用宏
+
 #pragma mark - NLocalized
 #define HZLocalizedString(key, tbl) \
         [NSBundle.mainBundle localizedStringForKey:(@"" key) value:@"" table:(@"" tbl)]
