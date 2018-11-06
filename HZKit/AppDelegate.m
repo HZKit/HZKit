@@ -23,7 +23,9 @@
     
     HZLibInitRootViewControllerWithModuleNames(@[@"HZShowModule",
                                                  @"HZCustomControlModule",
-                                                 @"HZDeviceModule"]);
+                                                 @"HZDeviceModule",
+                                                 @"HZAboutModule"
+                                                 ]);
     
     return YES;
 }

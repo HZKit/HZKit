@@ -10,35 +10,31 @@
 
 @implementation UIViewController (HZCommon)
 
-#pragma mark - Size
-- (CGFloat)hz_width {
-    return CGRectGetWidth(self.view.bounds);
-}
-
-- (CGFloat)hz_height {
-   return CGRectGetHeight(self.view.bounds);
-}
-
 #pragma mark - Navigation
-- (void)navigationBackground:(UIColor *)color {
-    if (self.navigationController) {
-        CGRect navigationBarFrame = self.navigationController.navigationBar.frame;
-        CGRect rect = CGRectMake(0, 0, CGRectGetWidth(navigationBarFrame), CGRectGetMaxY(navigationBarFrame));
-        UIGraphicsBeginImageContext(rect.size);
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        CGContextSetFillColorWithColor(context, color.CGColor);
-        CGContextFillRect(context, rect);
-        UIImage *bgImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
-        [self.navigationController.navigationBar setBackgroundImage:bgImage forBarMetrics:UIBarMetricsDefault];
+- (void)hz_setNavigationBackground:(UIColor *)color {
+    if (!self.navigationController) {
+        return;
     }
+    
+    CGRect navigationBarFrame = self.navigationController.navigationBar.frame;
+    CGRect rect = CGRectMake(0, 0, CGRectGetWidth(navigationBarFrame), CGRectGetMaxY(navigationBarFrame));
+    
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, [UIScreen mainScreen].scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, rect);
+    UIImage *bgImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    [self.navigationController.navigationBar setBackgroundImage:bgImage forBarMetrics:UIBarMetricsDefault];
 }
 
-- (void)navigationTitleColor:(UIColor *)color {
-    if (self.navigationController) {
-        self.navigationController.navigationBar.tintColor = color;
+- (void)hz_setNavigationTitleColor:(UIColor *)color {
+    if (!self.navigationController) {
+        return;
     }
+    
+    self.navigationController.navigationBar.tintColor = color;
 }
 
 #pragma mark - Gesture

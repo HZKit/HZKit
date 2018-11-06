@@ -28,7 +28,7 @@
 
     if (isDebug) {
         HLog(@"%@", self.view);
-        UIView *copyView = [self.view hzCopy];
+        UIView *copyView = [self.view hz_copy];
         HLog(@"copy:%@", copyView);
     }
 }

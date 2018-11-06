@@ -10,11 +10,29 @@
 
 @interface UIView (HZKitCommon)
 
-/**
- 复制view
+#pragma mark - Rect
+- (CGPoint)hz_origin;
+- (CGSize)hz_size;
+- (CGFloat)hz_x;
+- (CGFloat)hz_y;
+- (CGFloat)hz_width;
+- (CGFloat)hz_height;
+- (CGFloat)hz_minX;
+- (CGFloat)hz_midX;
+- (CGFloat)hz_maxX;
+- (CGFloat)hz_minY;
+- (CGFloat)hz_midY;
+- (CGFloat)hz_maxY;
 
- @return 新view
+#pragma mark - Image
+- (UIImage *)hz_generateImage; // Pending test
+
+#pragma mark - Copy
+/**
+ Copy view
+
+ @return New view
  */
-- (instancetype)hzCopy;
+- (instancetype)hz_copy;
 
 @end

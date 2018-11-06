@@ -18,7 +18,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self navigationBackground:[UIColor whiteColor]];
+    [self hz_setNavigationBackground:[UIColor whiteColor]];
+    [self hz_setNavigationTitleColor:[UIColor redColor]];
 }
 
 - (void)didReceiveMemoryWarning {

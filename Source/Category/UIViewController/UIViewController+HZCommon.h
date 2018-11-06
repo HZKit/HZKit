@@ -10,25 +10,9 @@
 
 @interface UIViewController (HZCommon)
 
-#pragma mark - Size
-
-/**
- Current view width
-
- @return view width
- */
-- (CGFloat)hz_width;
-
-/**
- Current view height
-
- @return view height
- */
-- (CGFloat)hz_height;
-
 #pragma mark - Navigation
-- (void)navigationBackground:(UIColor *)color;
-- (void)navigationTitleColor:(UIColor *)color;
+- (void)hz_setNavigationBackground:(UIColor *)color;
+- (void)hz_setNavigationTitleColor:(UIColor *)color;
 
 #pragma mark - Gesture
 
