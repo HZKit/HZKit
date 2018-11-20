@@ -10,6 +10,7 @@
 		DB0D70A22191285100AB9CDC /* HZKitDeviceModels.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB0D70A12191285100AB9CDC /* HZKitDeviceModels.plist */; };
 		DB0D70AE2191574F00AB9CDC /* UIImage+HZCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0D70AD2191574F00AB9CDC /* UIImage+HZCommon.m */; };
 		DB0D70B22191654700AB9CDC /* UIColor+HZCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0D70B12191654700AB9CDC /* UIColor+HZCommon.m */; };
+		DB0D8EBF21A3BD2F00176ACB /* HZModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0D8EBE21A3BD2F00176ACB /* HZModel.m */; };
 		DB20A8DB20CFCF8700D7432A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB20A8D120CFCF8700D7432A /* Assets.xcassets */; };
 		DB20A8DF20CFCF8700D7432A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8D720CFCF8700D7432A /* main.m */; };
 		DB20A8E020CFCF8700D7432A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8D820CFCF8700D7432A /* AppDelegate.m */; };
@@ -125,6 +126,8 @@
 		DB0D70B321916A5200AB9CDC /* HZKitImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZKitImage.h; sourceTree = "<group>"; };
 		DB0D70B421916A5B00AB9CDC /* HZKitColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZKitColor.h; sourceTree = "<group>"; };
 		DB0D70B521916A8000AB9CDC /* HZKitCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZKitCategory.h; sourceTree = "<group>"; };
+		DB0D8EBD21A3BD2F00176ACB /* HZModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZModel.h; sourceTree = "<group>"; };
+		DB0D8EBE21A3BD2F00176ACB /* HZModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZModel.m; sourceTree = "<group>"; };
 		DB20A82D20CE614B00D7432A /* HZKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HZKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB20A84520CE614F00D7432A /* HZKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HZKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB20A85020CE614F00D7432A /* HZKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HZKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -384,6 +387,25 @@
 			path = UIColor;
 			sourceTree = "<group>";
 		};
+		DB0D8EB021A3BCB900176ACB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DB0D8EBC21A3BD1300176ACB /* HZModel */,
+				DB71B27E210866F200F8DEB3 /* HZBaseModel.h */,
+				DB71B27F210866F200F8DEB3 /* HZBaseModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DB0D8EBC21A3BD1300176ACB /* HZModel */ = {
+			isa = PBXGroup;
+			children = (
+				DB0D8EBD21A3BD2F00176ACB /* HZModel.h */,
+				DB0D8EBE21A3BD2F00176ACB /* HZModel.m */,
+			);
+			path = HZModel;
+			sourceTree = "<group>";
+		};
 		DB20A82420CE614B00D7432A = {
 			isa = PBXGroup;
 			children = (
@@ -443,8 +465,7 @@
 			children = (
 				DB20A8F920CFDA3500D7432A /* Classes */,
 				DB20A8F220CFD0EE00D7432A /* Module */,
-				DB71B27E210866F200F8DEB3 /* HZBaseModel.h */,
-				DB71B27F210866F200F8DEB3 /* HZBaseModel.m */,
+				DB0D8EB021A3BCB900176ACB /* Model */,
 				DB71B28C2108782F00F8DEB3 /* HZMainRouter.h */,
 				DB71B28D2108782F00F8DEB3 /* HZMainRouter.m */,
 			);
@@ -1149,6 +1170,7 @@
 				DB20A8E020CFCF8700D7432A /* AppDelegate.m in Sources */,
 				DB3B78AB215F1716002ED788 /* MASViewAttribute.m in Sources */,
 				DBACB6A5211D5E42004FD994 /* HZScanViewController.m in Sources */,
+				DB0D8EBF21A3BD2F00176ACB /* HZModel.m in Sources */,
 				DB20A8F520CFD11900D7432A /* HZBaseModule.m in Sources */,
 				DB71B27821085E7700F8DEB3 /* HZAboutViewController.m in Sources */,
 				DBE04B9F21118DBA00F94150 /* HZFontelloModel.m in Sources */,
