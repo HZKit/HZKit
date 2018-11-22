@@ -74,7 +74,7 @@
         [_dbQueue inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
             NSString *bankSQL = @"CREATE TABLE IF NOT EXISTS bank ( \
                                 _id INTEGER PRIMARY KEY AUTOINCREMENT, \
-                                bin CHAR(6) UNIQUE, \
+                                bin  CHAR(19) UNIQUE, \
                                 name CHAR(64), \
                                 type CHAR(6) \
                                  )";

@@ -93,4 +93,26 @@ typedef NS_ENUM(NSUInteger, HZModelRuntimeOpeationType) {
     return self;
 }
 
+- (NSDictionary *)toDictionary {
+    unsigned int count = 0;
+    Ivar *ivars = class_copyIvarList([self class], &count);
+    
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:count];
+    for (int i = 0; i < count; i++) {
+        Ivar ivar = ivars[i];
+        const char *name = ivar_getName(ivar);
+        NSString *key = [NSString stringWithUTF8String:name];
+        id value = [self valueForKey:key];
+        if (value) {
+            if ([key hasPrefix:@"_"]) {
+                key = [key substringFromIndex:1];
+            }
+            [dict setValue:value forKey:key];
+        }
+    }
+    free(ivars);
+    
+    return dict;
+}
+
 @end

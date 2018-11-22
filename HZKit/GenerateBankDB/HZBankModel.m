@@ -10,15 +10,13 @@
 
 @implementation HZBankModel
 
-- (BOOL)insert {
-    __block BOOL result = NO;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    self = [super initWithDictionary:dictionary];
+    if (self) {
+        self.tableName = @"bank"; // 设置表名
+    }
     
-    [[self getDB] inDatabase:^(FMDatabase * _Nonnull db) {
-        NSString *sql = @"INSERT INTO bank (bin, name, type) VALUES (?, ?, ?)";
-        result = [db executeUpdate:sql withArgumentsInArray:@[ self.bin, self.name, self.type ]];
-    }];
-    
-    return result;
+    return self;
 }
 
 @end

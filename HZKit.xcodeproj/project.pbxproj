@@ -72,7 +72,7 @@
 		DB8FB30521A6469F0052AE1D /* HZBankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8FB30421A6469F0052AE1D /* HZBankModel.m */; };
 		DB8FB30721A64A7C0052AE1D /* bank.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB8FB30621A64A7C0052AE1D /* bank.plist */; };
 		DB8FB30B21A650220052AE1D /* HZDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8FB30A21A650220052AE1D /* HZDatabase.m */; };
-		DB8FB30E21A65E100052AE1D /* HZDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8FB30D21A65E100052AE1D /* HZDBModel.m */; };
+		DB8FB31121A68BED0052AE1D /* HZModel+Database.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8FB31021A68BED0052AE1D /* HZModel+Database.m */; };
 		DBACB648211994F1004FD994 /* HZAauthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB647211994F1004FD994 /* HZAauthorizationViewController.m */; };
 		DBACB64B2119A026004FD994 /* HZAuthorizationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB64A2119A026004FD994 /* HZAuthorizationModel.m */; };
 		DBACB6502119A78C004FD994 /* HZAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB64F2119A78C004FD994 /* HZAuthorization.m */; };
@@ -269,8 +269,8 @@
 		DB8FB30621A64A7C0052AE1D /* bank.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bank.plist; sourceTree = "<group>"; };
 		DB8FB30921A650220052AE1D /* HZDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZDatabase.h; sourceTree = "<group>"; };
 		DB8FB30A21A650220052AE1D /* HZDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZDatabase.m; sourceTree = "<group>"; };
-		DB8FB30C21A65E100052AE1D /* HZDBModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZDBModel.h; sourceTree = "<group>"; };
-		DB8FB30D21A65E100052AE1D /* HZDBModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZDBModel.m; sourceTree = "<group>"; };
+		DB8FB30F21A68BED0052AE1D /* HZModel+Database.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HZModel+Database.h"; sourceTree = "<group>"; };
+		DB8FB31021A68BED0052AE1D /* HZModel+Database.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HZModel+Database.m"; sourceTree = "<group>"; };
 		DBA620ED2120714000DB6D2D /* HZKitLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZKitLog.h; sourceTree = "<group>"; };
 		DBACB646211994F1004FD994 /* HZAauthorizationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZAauthorizationViewController.h; sourceTree = "<group>"; };
 		DBACB647211994F1004FD994 /* HZAauthorizationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZAauthorizationViewController.m; sourceTree = "<group>"; };
@@ -415,8 +415,8 @@
 				DB0D8EBE21A3BD2F00176ACB /* HZModel.m */,
 				DB8FB30921A650220052AE1D /* HZDatabase.h */,
 				DB8FB30A21A650220052AE1D /* HZDatabase.m */,
-				DB8FB30C21A65E100052AE1D /* HZDBModel.h */,
-				DB8FB30D21A65E100052AE1D /* HZDBModel.m */,
+				DB8FB30F21A68BED0052AE1D /* HZModel+Database.h */,
+				DB8FB31021A68BED0052AE1D /* HZModel+Database.m */,
 			);
 			path = HZModel;
 			sourceTree = "<group>";
@@ -1238,10 +1238,10 @@
 				DBE04BD22113F68200F94150 /* HZAboutRouter.m in Sources */,
 				DB71B2832108673B00F8DEB3 /* HZShowModel.m in Sources */,
 				DB8FB30521A6469F0052AE1D /* HZBankModel.m in Sources */,
-				DB8FB30E21A65E100052AE1D /* HZDBModel.m in Sources */,
 				DB20A8EE20CFCF9E00D7432A /* UIView+HZKitCommon.m in Sources */,
 				DBACB67F211C400B004FD994 /* FMResultSet.m in Sources */,
 				DB71B26C21085C5700F8DEB3 /* HZMainViewController.m in Sources */,
+				DB8FB31121A68BED0052AE1D /* HZModel+Database.m in Sources */,
 				DB4AF296210BF649005ECF23 /* HZCustomControlModule.m in Sources */,
 				DB4AF2BD210DC66A005ECF23 /* HZAlertView.m in Sources */,
 				DB3B78C7215F687F002ED788 /* AFURLRequestSerialization.m in Sources */,

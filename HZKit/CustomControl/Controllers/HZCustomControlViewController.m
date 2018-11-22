@@ -57,7 +57,6 @@ NSString *cellIdentifier = @"HZCustomControlCell";
 }
 
 - (void)generateBankDB {
-    // TODO: generateBankDB
     NSString *path = [[NSBundle mainBundle] pathForResource:@"bank" ofType:@"plist"];
     if (!path) {
         return;
@@ -66,6 +65,7 @@ NSString *cellIdentifier = @"HZCustomControlCell";
     NSArray *bankArray = [NSArray arrayWithContentsOfFile:path];
     for (NSDictionary *bank in bankArray) {
         HZBankModel *model = [[HZBankModel alloc] initWithDictionary:bank];
+//        [model insertData:[model toDictionary] atTable:@"bank"];
         [model insert];
     }
 }

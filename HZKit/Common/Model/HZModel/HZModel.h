@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HZModel (JSON)
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+- (NSDictionary *)toDictionary;
 
 @end
 
