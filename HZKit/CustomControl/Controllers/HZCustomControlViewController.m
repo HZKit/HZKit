@@ -11,6 +11,7 @@
 #import "HZCustomControlModel.h"
 #import "HZCustomControlCell.h"
 #import "HZScanViewController.h"
+#import "HZBankModel.h"
 
 NSString *cellIdentifier = @"HZCustomControlCell";
 
@@ -53,6 +54,20 @@ NSString *cellIdentifier = @"HZCustomControlCell";
     scanVC.delegate = self;
     
     [self.navigationController pushViewController:scanVC animated:YES];
+}
+
+- (void)generateBankDB {
+    // TODO: generateBankDB
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"bank" ofType:@"plist"];
+    if (!path) {
+        return;
+    }
+    
+    NSArray *bankArray = [NSArray arrayWithContentsOfFile:path];
+    for (NSDictionary *bank in bankArray) {
+        HZBankModel *model = [[HZBankModel alloc] initWithDictionary:bank];
+        [model insert];
+    }
 }
 
 #pragma mark - HZScanViewControllerDelegate
@@ -128,7 +143,7 @@ NSString *cellIdentifier = @"HZCustomControlCell";
     if (!_dataArray) {
         _dataArray = [NSMutableArray arrayWithObjects:
                       [HZCustomControlModel modelWithIcon:@"Scan QRCode" action:@"scanQRCodeAction"],
-                      [HZCustomControlModel modelWithIcon:@"Placeholder" action:nil],
+                      [HZCustomControlModel modelWithIcon:@"generateBankDB" action:@"generateBankDB"],
                       [HZCustomControlModel modelWithIcon:@"Placeholder" action:nil],
                       [HZCustomControlModel modelWithIcon:@"Placeholder" action:nil],
                       nil];

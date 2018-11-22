@@ -67,3 +67,30 @@ typedef NS_ENUM(NSUInteger, HZModelRuntimeOpeationType) {
 }
 
 @end
+
+@implementation HZModel (JSON)
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    self = [super init];
+    if (self && [dictionary isKindOfClass:[NSDictionary class]]) {
+        unsigned int count = 0;
+        Ivar *ivars = class_copyIvarList([self class], &count);
+        for (int i = 0; i < count; i++) {
+            Ivar ivar = ivars[i];
+            const char *name = ivar_getName(ivar);
+            NSString *key = [NSString stringWithUTF8String:name];
+            if ([key hasPrefix:@"_"]) {
+                key = [key substringFromIndex:1];
+            }
+            id value = [dictionary objectForKey:key];
+            if (value) {
+                [self setValue:value forKey:key];
+            }
+        }
+        free(ivars);
+    }
+    
+    return self;
+}
+
+@end

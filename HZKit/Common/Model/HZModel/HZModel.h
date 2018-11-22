@@ -12,16 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HZModel : NSObject<NSCoding, NSCopying>
 
-@end
+@property (nonatomic, assign) NSUInteger modelId; // 唯一标识
 
+@end
 
 @interface HZModel (JSON)
 
-
-
-@end
-
-@interface HZModel (Database)
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 

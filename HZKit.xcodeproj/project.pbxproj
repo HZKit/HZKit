@@ -69,6 +69,10 @@
 		DB71B28E2108782F00F8DEB3 /* HZMainRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71B28D2108782F00F8DEB3 /* HZMainRouter.m */; };
 		DB7B6F412109A1B5004F233C /* UIDevice+HZCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7B6F402109A1B5004F233C /* UIDevice+HZCommon.m */; };
 		DB7D619E212168E700558D1E /* HZLog.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7D619D212168E700558D1E /* HZLog.m */; };
+		DB8FB30521A6469F0052AE1D /* HZBankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8FB30421A6469F0052AE1D /* HZBankModel.m */; };
+		DB8FB30721A64A7C0052AE1D /* bank.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB8FB30621A64A7C0052AE1D /* bank.plist */; };
+		DB8FB30B21A650220052AE1D /* HZDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8FB30A21A650220052AE1D /* HZDatabase.m */; };
+		DB8FB30E21A65E100052AE1D /* HZDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8FB30D21A65E100052AE1D /* HZDBModel.m */; };
 		DBACB648211994F1004FD994 /* HZAauthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB647211994F1004FD994 /* HZAauthorizationViewController.m */; };
 		DBACB64B2119A026004FD994 /* HZAuthorizationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB64A2119A026004FD994 /* HZAuthorizationModel.m */; };
 		DBACB6502119A78C004FD994 /* HZAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACB64F2119A78C004FD994 /* HZAuthorization.m */; };
@@ -260,6 +264,13 @@
 		DB7B6F402109A1B5004F233C /* UIDevice+HZCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+HZCommon.m"; sourceTree = "<group>"; };
 		DB7D619C212168E700558D1E /* HZLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZLog.h; sourceTree = "<group>"; };
 		DB7D619D212168E700558D1E /* HZLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZLog.m; sourceTree = "<group>"; };
+		DB8FB30321A6469F0052AE1D /* HZBankModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZBankModel.h; sourceTree = "<group>"; };
+		DB8FB30421A6469F0052AE1D /* HZBankModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZBankModel.m; sourceTree = "<group>"; };
+		DB8FB30621A64A7C0052AE1D /* bank.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bank.plist; sourceTree = "<group>"; };
+		DB8FB30921A650220052AE1D /* HZDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZDatabase.h; sourceTree = "<group>"; };
+		DB8FB30A21A650220052AE1D /* HZDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZDatabase.m; sourceTree = "<group>"; };
+		DB8FB30C21A65E100052AE1D /* HZDBModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZDBModel.h; sourceTree = "<group>"; };
+		DB8FB30D21A65E100052AE1D /* HZDBModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZDBModel.m; sourceTree = "<group>"; };
 		DBA620ED2120714000DB6D2D /* HZKitLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZKitLog.h; sourceTree = "<group>"; };
 		DBACB646211994F1004FD994 /* HZAauthorizationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZAauthorizationViewController.h; sourceTree = "<group>"; };
 		DBACB647211994F1004FD994 /* HZAauthorizationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZAauthorizationViewController.m; sourceTree = "<group>"; };
@@ -402,6 +413,10 @@
 			children = (
 				DB0D8EBD21A3BD2F00176ACB /* HZModel.h */,
 				DB0D8EBE21A3BD2F00176ACB /* HZModel.m */,
+				DB8FB30921A650220052AE1D /* HZDatabase.h */,
+				DB8FB30A21A650220052AE1D /* HZDatabase.m */,
+				DB8FB30C21A65E100052AE1D /* HZDBModel.h */,
+				DB8FB30D21A65E100052AE1D /* HZDBModel.m */,
 			);
 			path = HZModel;
 			sourceTree = "<group>";
@@ -427,6 +442,7 @@
 		DB20A8CF20CFCF8700D7432A /* HZKit */ = {
 			isa = PBXGroup;
 			children = (
+				DB8FB30221A646500052AE1D /* GenerateBankDB */,
 				DB71B26E21085D3E00F8DEB3 /* About */,
 				DB20A8D020CFCF8700D7432A /* AppDelegate.h */,
 				DB20A8D820CFCF8700D7432A /* AppDelegate.m */,
@@ -766,6 +782,24 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		DB8FB30221A646500052AE1D /* GenerateBankDB */ = {
+			isa = PBXGroup;
+			children = (
+				DB8FB30821A64A800052AE1D /* Resource */,
+				DB8FB30321A6469F0052AE1D /* HZBankModel.h */,
+				DB8FB30421A6469F0052AE1D /* HZBankModel.m */,
+			);
+			path = GenerateBankDB;
+			sourceTree = "<group>";
+		};
+		DB8FB30821A64A800052AE1D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				DB8FB30621A64A7C0052AE1D /* bank.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		DBA620EC21206EC900DB6D2D /* Log */ = {
 			isa = PBXGroup;
 			children = (
@@ -820,15 +854,15 @@
 			isa = PBXGroup;
 			children = (
 				DBACB66F211C400B004FD994 /* FMDatabase.h */,
-				DBACB670211C400B004FD994 /* FMDatabaseQueue.m */,
-				DBACB671211C400B004FD994 /* FMResultSet.h */,
-				DBACB672211C400B004FD994 /* FMDatabasePool.h */,
-				DBACB673211C400B004FD994 /* FMDatabaseAdditions.m */,
 				DBACB674211C400B004FD994 /* FMDatabase.m */,
-				DBACB675211C400B004FD994 /* FMDatabaseQueue.h */,
-				DBACB676211C400B004FD994 /* FMDB.h */,
 				DBACB677211C400B004FD994 /* FMDatabaseAdditions.h */,
+				DBACB673211C400B004FD994 /* FMDatabaseAdditions.m */,
+				DBACB672211C400B004FD994 /* FMDatabasePool.h */,
 				DBACB678211C400B004FD994 /* FMDatabasePool.m */,
+				DBACB675211C400B004FD994 /* FMDatabaseQueue.h */,
+				DBACB670211C400B004FD994 /* FMDatabaseQueue.m */,
+				DBACB676211C400B004FD994 /* FMDB.h */,
+				DBACB671211C400B004FD994 /* FMResultSet.h */,
 				DBACB679211C400B004FD994 /* FMResultSet.m */,
 			);
 			path = FMDB;
@@ -1098,6 +1132,7 @@
 				DBE04B95211184BF00F94150 /* fontelloConfig.json in Resources */,
 				DBB17C2E21144E0400F9054F /* HZAbout.strings in Resources */,
 				DB0D70A22191285100AB9CDC /* HZKitDeviceModels.plist in Resources */,
+				DB8FB30721A64A7C0052AE1D /* bank.plist in Resources */,
 				DBB17C0B21142ADC00F9054F /* HZShow.strings in Resources */,
 				DBE04B8C2111829200F94150 /* fontello.ttf in Resources */,
 				DBB17C2721144CE500F9054F /* HZCustomControl.strings in Resources */,
@@ -1154,6 +1189,7 @@
 				DB463B00210ABA5F0018BCC5 /* HZDeviceRouter.m in Sources */,
 				DB7B6F412109A1B5004F233C /* UIDevice+HZCommon.m in Sources */,
 				DB4AF2A4210C001E005ECF23 /* HZCustomControlModel.m in Sources */,
+				DB8FB30B21A650220052AE1D /* HZDatabase.m in Sources */,
 				DB3B78AA215F1716002ED788 /* MASViewConstraint.m in Sources */,
 				DBACB67D211C400B004FD994 /* FMDatabase.m in Sources */,
 				DB3B78A3215F1716002ED788 /* ViewController+MASAdditions.m in Sources */,
@@ -1201,6 +1237,8 @@
 				DB463B04210ABAA70018BCC5 /* HZDeviceViewController.m in Sources */,
 				DBE04BD22113F68200F94150 /* HZAboutRouter.m in Sources */,
 				DB71B2832108673B00F8DEB3 /* HZShowModel.m in Sources */,
+				DB8FB30521A6469F0052AE1D /* HZBankModel.m in Sources */,
+				DB8FB30E21A65E100052AE1D /* HZDBModel.m in Sources */,
 				DB20A8EE20CFCF9E00D7432A /* UIView+HZKitCommon.m in Sources */,
 				DBACB67F211C400B004FD994 /* FMResultSet.m in Sources */,
 				DB71B26C21085C5700F8DEB3 /* HZMainViewController.m in Sources */,
