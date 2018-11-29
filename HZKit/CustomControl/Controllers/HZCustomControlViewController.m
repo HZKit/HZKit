@@ -70,6 +70,10 @@ NSString *cellIdentifier = @"HZCustomControlCell";
     }
 }
 
+- (void)generateIconAction {
+    [[HZMainRouter shared] pushWith:HZCustomControlRouterGenerateIcon fromModule:HZModuleNameCustomControl];
+}
+
 #pragma mark - HZScanViewControllerDelegate
 - (void)scanViewController:(HZScanViewController *)scanViewController stringValue:(NSString *)stringValue {
     HLog(@"delegate: %@", stringValue);
@@ -144,7 +148,7 @@ NSString *cellIdentifier = @"HZCustomControlCell";
         _dataArray = [NSMutableArray arrayWithObjects:
                       [HZCustomControlModel modelWithIcon:@"Scan QRCode" action:@"scanQRCodeAction"],
                       [HZCustomControlModel modelWithIcon:@"generateBankDB" action:@"generateBankDB"],
-                      [HZCustomControlModel modelWithIcon:@"Placeholder" action:nil],
+                      [HZCustomControlModel modelWithIcon:@"Generate Icon" action:@"generateIconAction"],
                       [HZCustomControlModel modelWithIcon:@"Placeholder" action:nil],
                       nil];
         

@@ -49,6 +49,8 @@
 	<string>InfoPlist.strings -&gt; NSLocationUsageDescription</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>InfoPlist.strings -&gt; NSLocationWhenInUseUsageDescription</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>InfoPlist.strings -&gt; NSPhotoLibraryAdditionsUsageDescription</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>InfoPlist.strings -&gt; NSPhotoLibraryUsageDescription</string>
 	<key>UIAppFonts</key>
