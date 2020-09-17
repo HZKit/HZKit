@@ -11,8 +11,6 @@ tabBarTitle = "List";
 // Show view
 title = "List";
 
-toolsSectionTitle = "Tools";
-checkAppUpdateTitle = "App update";
 checkAppUpdateDesc = "Modify App id";
 deviceTitle = "Device";
 deviceDesc = "More device info";

@@ -47,3 +47,22 @@ import `HZKitDevice.h`
 2. Add `fontello.tff` and `config.json` to project
 3. Add `UIAppFonts` in `Info.plist`
 
+# Demo
+
+* List
+	* Tools
+		* App update
+		* Device
+		* Authorization
+		* Network
+	* ViewController
+		* ViewController
+	* Iconfont
+		* Iconfont
+* DIY
+	* Scan QRCode	
+	* GenerateBankDB
+	* Generate Icon
+	* Placeholder
+* About
+	* Setting

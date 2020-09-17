@@ -52,6 +52,7 @@ NSString *const kHZScanPhotoLibraryUnknown = @"No QR code found";
     HZScanViewController *viewController = [[HZScanViewController alloc] init];
     viewController.scanArea = scanArea;
     viewController.stringValueBlock = stringValueBlock;
+    viewController.hidesBottomBarWhenPushed = YES;
     
     return viewController;
 }

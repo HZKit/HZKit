@@ -28,6 +28,7 @@ typedef NS_ENUM(NSUInteger, HZAuthorizationType) {
     HZAuthorizationTV
 };
 
+// TODO: 整理使用
 @interface HZAuthorization : NSObject
 
 + (void)authorizationType:(HZAuthorizationType)type completionHandler:(HZAuthorizationBlock)handler;

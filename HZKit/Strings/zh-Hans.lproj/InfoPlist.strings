@@ -1,17 +1,1 @@
-/* 
-  InfoPlist.strings
-  HZKit
 
-  Created by HertzWang on 2018/8/3.
-  Copyright © 2018年 Hertz Wang. All rights reserved.
-*/
-
-CFBundleDisplayName = "HZKit中文";
-NSCameraUsageDescription = "授权相机";
-NFCReaderUsageDescription = "授权 NFC";
-NSLocationUsageDescription = "授权位置";
-NSLocationWhenInUseUsageDescription = "授权位置-使用应用期间";
-NSLocationAlwaysUsageDescription = "授权位置-始终";
-NSLocationAlwaysAndWhenInUseUsageDescription = "授权位置-始终和使用应用期间";
-NSPhotoLibraryUsageDescription = "授权照片";
-NSPhotoLibraryAdditionsUsageDescription = "点击允许将生成的icon保存至相册";
