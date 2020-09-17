@@ -1,0 +1,46 @@
+//
+//  HZCustomControlCell.m
+//  HZKit
+//
+//  Created by Hertz Wang on 2018/7/28.
+//  Copyright © 2018 Hertz Wang. All rights reserved.
+//
+
+#import "HZCustomControlCell.h"
+#import "HZCustomControlModel.h"
+
+@interface HZCustomControlCell ()
+
+@property (nonatomic, strong) UILabel *titleLabel;
+
+@end
+
+@implementation HZCustomControlCell
+
+- (void)initView {
+    self.backgroundColor = nil;
+    self.layer.borderColor = [UIColor blackColor].CGColor;
+    self.layer.borderWidth = 1;
+    
+    _titleLabel = [[UILabel alloc] init];
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
+    _titleLabel.textColor = [UIColor blackColor];
+    _titleLabel.font = [UIFont boldSystemFontOfSize:18];
+    
+    [self.contentView addSubview:_titleLabel];
+}
+
+- (void)layoutSubviews {
+    self.titleLabel.frame = self.bounds;
+}
+
+- (void)setModel:(HZCustomControlModel *)model {
+    if (model.title) {
+        self.titleLabel.text = model.title;
+    } else if (model.icon) {
+       self.titleLabel.text = model.icon;
+    }
+    
+}
+
+@end
