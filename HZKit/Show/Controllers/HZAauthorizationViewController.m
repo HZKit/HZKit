@@ -175,9 +175,8 @@
     if (action) {
         SEL selector = NSSelectorFromString(action);
         if ([self respondsToSelector:selector]) {
-#if DEBUG
-            NSLog(@"call %@", action);
-#endif
+            HLog(@"call %@", action);
+            
             objc_msgSend(self, selector);
         }
     }

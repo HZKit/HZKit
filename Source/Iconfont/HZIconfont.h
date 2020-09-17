@@ -10,6 +10,9 @@
 
 #define kHZIcontfontName (@"fontello")
 
+/**
+ // TODO: 编写Iconfont Readme文档，包含设计和使用
+ */
 @interface HZIconfont : NSObject
 
 + (instancetype)shared;

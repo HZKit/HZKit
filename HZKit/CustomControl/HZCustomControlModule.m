@@ -38,7 +38,7 @@
 }
 
 - (HZBaseRouter *)router {
-    return nil;
+    return [HZCustomControlRouter shared];
 }
 
 @end

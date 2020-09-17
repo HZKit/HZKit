@@ -7,10 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "HZBaseModule.h"
-#import "HZBaseViewController.h"
-#import "HZBaseNavigationController.h"
-#import "HZMainViewController.h"
+#import "HZLib/HZLib.h"
 
 @interface AppDelegate ()
 
@@ -24,7 +21,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [self.window makeKeyAndVisible];
+    HZLibInitRootViewControllerWithModuleNames(@[@"HZShowModule",
+                                                 @"HZCustomControlModule",
+                                                 @"HZDeviceModule",
+                                                 @"HZAboutModule"
+                                                 ]);
     
     return YES;
 }
@@ -54,105 +55,6 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
-#pragma mark - Private
-- (UIViewController *)rootViewControllerWithModules:(NSArray<HZBaseModule *> *)modules {
-    
-    _modules = [NSArray arrayWithArray:modules];
-    
-    NSMutableArray *viewControllers = [NSMutableArray array];
-    NSMutableArray *indexes = [NSMutableArray array];
-    NSMutableDictionary *moduleMapping = [NSMutableDictionary dictionaryWithCapacity:modules.count];
-    NSMutableDictionary *moduleRouterMapping = [NSMutableDictionary dictionaryWithCapacity:modules.count];
-    
-    for (HZBaseModule *module in modules) {
-        NSString *tabBarClassName = module.tabBarControllerClassName;
-        if (tabBarClassName) {
-            Class tabBarClass = NSClassFromString(tabBarClassName);
-            if (tabBarClass) {
-                HZBaseViewController *baseViewController = [(HZBaseViewController *)[tabBarClass alloc] init];
-                UITabBarItem *tabBarItem = [module tabBarItem];
-                if (tabBarItem) {
-                    baseViewController.tabBarItem = tabBarItem;
-                }
-                
-                id viewController = baseViewController;
-                if (module.hasNavigationBar) {
-                    HZBaseNavigationController *baseNavigationController = [[HZBaseNavigationController alloc] initWithRootViewController:baseViewController];
-                    baseNavigationController.navigationBarHidden = module.navigationBarHidden;
-                    [moduleMapping setObject:baseNavigationController forKey:module.name];
-                    
-                    viewController = baseNavigationController;
-                }
-                
-                BOOL isInserted = NO;
-                NSInteger currindex = module.tabBarIndex;
-                for (int i = 0; i < indexes.count; i++) {
-                    NSInteger index = [indexes[i] integerValue];
-                    if (currindex < index) {
-                        isInserted = YES;
-                        [indexes insertObject:@(currindex) atIndex:i];
-                        [viewControllers insertObject:viewController atIndex:i];
-                        
-                        break;
-                    }
-                }
-                
-                if (isInserted == NO) {
-                    [indexes addObject:@(currindex)];
-                    [viewControllers addObject:viewController];
-                }
-            }
-        }
-        
-        HZBaseRouter *router = [module router];
-        if (router) {
-            [moduleRouterMapping setObject:router forKey:module.name];
-        }
-    }
-    
-    _mainViewController = [[HZMainViewController alloc] init];
-    _mainViewController.viewControllers = viewControllers;
-    
-    // 添加非 TabBar 上的模块
-    for (HZBaseModule *module in modules) {
-        NSString *groupName = module.groupName;
-        if (groupName && [module tabBarControllerClassName] == nil) {
-            id navigationController = [moduleMapping objectForKey:groupName];
-            if (navigationController) {
-                [moduleMapping setObject:navigationController forKey:module.name];
-            }
-        }
-    }
-    
-    // 设置 MainRouter
-    HZMainRouter *router = [HZMainRouter shared];
-    router.mainViewController = _mainViewController;
-    router.moduleMapping = moduleMapping;
-    router.moduleRouterMapping = moduleRouterMapping;
-    
-    return _mainViewController;
-}
-
-#pragma mark - Lazy load
-- (UIWindow *)window {
-    if (!_window) {
-        CGRect frame = [UIScreen mainScreen].bounds;
-        UIWindow *keyWindow = [[UIWindow alloc] initWithFrame:frame];
-        
-        NSArray *modules = @[
-                             [HZShowModule new],
-                             [HZAboutModule new],
-                             [HZDeviceModule new],
-                             [HZCustomControlModule new]
-                             ];
-        keyWindow.rootViewController = [self rootViewControllerWithModules:modules];
-        
-        _window = keyWindow;
-    }
-    
-    return _window;
 }
 
 @end

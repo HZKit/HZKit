@@ -7,19 +7,18 @@
 //
 
 #import "HZCustomControlViewController.h"
+#import <CoreLocation/CoreLocation.h>
 #import "HZCustomControlModel.h"
 #import "HZCustomControlCell.h"
-#import <CoreLocation/CoreLocation.h>
+#import "HZScanViewController.h"
+#import "HZBankModel.h"
 
 NSString *cellIdentifier = @"HZCustomControlCell";
 
-@interface HZCustomControlViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, CLLocationManagerDelegate>
+@interface HZCustomControlViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, HZScanViewControllerDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
-
-// test
-@property (nonatomic, strong) CLLocationManager *locationManager;
 
 @end
 
@@ -39,7 +38,49 @@ NSString *cellIdentifier = @"HZCustomControlCell";
 }
 
 #pragma mark - Action
+- (void)scanQRCodeAction {
 
+    CGPoint origin = self.view.center;
+    CGFloat areaWidth = 200;
+    CGFloat areaHeight = 200;
+    
+    CGRect scanArea = CGRectMake(origin.x - areaWidth * 0.5,
+                           origin.y - areaHeight * 0.5,
+                           areaWidth, areaHeight);
+    
+    HZScanViewController *scanVC = [HZScanViewController scanViewWithArea:scanArea completion:^(NSString *stringValue) {
+        HLog(@"stringValueBlock: %@", stringValue);
+    }];
+    scanVC.delegate = self;
+    
+    [self.navigationController pushViewController:scanVC animated:YES];
+}
+
+- (void)generateBankDB {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"bank" ofType:@"plist"];
+    if (!path) {
+        return;
+    }
+    
+    NSArray *bankArray = [NSArray arrayWithContentsOfFile:path];
+    for (NSDictionary *bank in bankArray) {
+        HZBankModel *model = [[HZBankModel alloc] initWithDictionary:bank];
+//        [model insertData:[model toDictionary] atTable:@"bank"];
+        [model insert];
+    }
+}
+
+- (void)generateIconAction {
+    [[HZMainRouter shared] pushWith:HZCustomControlRouterGenerateIcon fromModule:HZModuleNameCustomControl];
+}
+
+#pragma mark - HZScanViewControllerDelegate
+- (void)scanViewController:(HZScanViewController *)scanViewController stringValue:(NSString *)stringValue {
+    HLog(@"delegate: %@", stringValue);
+    HZShowHUD(stringValue);
+    
+    [scanViewController.navigationController popViewControllerAnimated:YES];
+}
 
 #pragma mark - Collection
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -59,17 +100,15 @@ NSString *cellIdentifier = @"HZCustomControlCell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     
-//    HZCustomControlModel *model = self.dataArray[indexPath.row];
-//    if (model.action) {
-//        SEL selector = NSSelectorFromString(model.action);
-//        if ([self respondsToSelector:selector]) {
-//            objc_msgSend(self, selector);
-//        }
-//    }
-    
-    [self.locationManager requestWhenInUseAuthorization];
-    
-    return;
+    HZCustomControlModel *model = self.dataArray[indexPath.row];
+    if (model.action) {
+        SEL selector = NSSelectorFromString(model.action);
+        if ([self respondsToSelector:selector]) {
+            objc_msgSend(self, selector);
+        }
+        
+        return;
+    }
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
     view.backgroundColor = [UIColor blueColor];
@@ -107,9 +146,9 @@ NSString *cellIdentifier = @"HZCustomControlCell";
 - (NSMutableArray *)dataArray {
     if (!_dataArray) {
         _dataArray = [NSMutableArray arrayWithObjects:
-                      [HZCustomControlModel modelWithIcon:@"Placeholder" action:nil],
-                      [HZCustomControlModel modelWithIcon:@"Placeholder" action:nil],
-                      [HZCustomControlModel modelWithIcon:@"Placeholder" action:nil],
+                      [HZCustomControlModel modelWithIcon:@"Scan QRCode" action:@"scanQRCodeAction"],
+                      [HZCustomControlModel modelWithIcon:@"generateBankDB" action:@"generateBankDB"],
+                      [HZCustomControlModel modelWithIcon:@"Generate Icon" action:@"generateIconAction"],
                       [HZCustomControlModel modelWithIcon:@"Placeholder" action:nil],
                       nil];
         
@@ -117,15 +156,6 @@ NSString *cellIdentifier = @"HZCustomControlCell";
     }
     
     return _dataArray;
-}
-
-- (CLLocationManager *)locationManager {
-    if (!_locationManager) {
-        _locationManager = [[CLLocationManager alloc] init];
-        _locationManager.delegate = self;
-    }
-    
-    return _locationManager;
 }
 
 @end

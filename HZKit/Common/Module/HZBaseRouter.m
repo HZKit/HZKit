@@ -64,7 +64,12 @@
             if (className) {
                 Class ctrlClasss= NSClassFromString(className);
                 if (ctrlClasss) {
-                    HZBaseViewController *viewController = [(HZBaseViewController *)[ctrlClasss alloc] initWithArgs:args];
+                    UIViewController *viewController;
+                    if ([ctrlClasss isKindOfClass:[HZBaseViewController class]]) {
+                        viewController = [(HZBaseViewController *)[ctrlClasss alloc] initWithArgs:args];
+                    } else {
+                        viewController = [(UIViewController *)[ctrlClasss alloc] init];
+                    }
                     
                     if (hideTabBar) {
                         viewController.hidesBottomBarWhenPushed = YES;
