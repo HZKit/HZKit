@@ -8,8 +8,13 @@
 
 #import "HZAuthorization.h"
 #import <AVFoundation/AVCaptureDevice.h>
-#import <CoreNFC/CoreNFC.h>
 #import <CoreLocation/CoreLocation.h>
+
+#if !TARGET_IPHONE_SIMULATOR
+
+#import <CoreNFC/CoreNFC.h>
+
+#endif
 
 // Reference：https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html
 NSString *const kAuthorizationCameraKey = @"NSCameraUsageDescription";
@@ -113,6 +118,9 @@ NSString *const kAuthorizationLocationAlwaysAndWhenInUse = @"NSLocationAlwaysAnd
 + (void)authorizationNFC:(HZAuthorizationBlock)handler {
     [self checkInfoPlistKey:kAuthorizationNFCKey];
     
+#if TARGET_IPHONE_SIMULATOR
+    handler(NO, @"模拟器不支持");
+#else
     if (@available(iOS 11.0, *)) {
         if (NFCNDEFReaderSession.readingAvailable) {
             handler(YES, @"");
@@ -122,6 +130,8 @@ NSString *const kAuthorizationLocationAlwaysAndWhenInUse = @"NSLocationAlwaysAnd
     } else {
         handler(NO, @"iOS 11 and later");
     }
+    
+#endif
 }
 
 + (void)authorizationLocation:(HZAuthorizationBlock)handler {
