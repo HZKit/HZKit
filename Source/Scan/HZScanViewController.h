@@ -14,14 +14,14 @@
 @protocol HZScanViewControllerDelegate <NSObject>
 
 @optional
-- (void)scanViewController:(HZScanViewController *)scanViewController stringValue:(NSString *)stringValue;
+- (void)scanViewController:(HZScanViewController *_Nonnull)scanViewController stringValue:(NSString *_Nonnull)stringValue;
 
 @end
 
 
 #pragma mark - HZScanViewController
 
-typedef void(^HZScanViewStringValueBlock)(NSString *stringValue);
+typedef void(^HZScanViewStringValueBlock)(NSString * _Nonnull stringValue);
 
 /**
  // TODO: 编写扫一扫Readme文档，设计和使用
@@ -29,9 +29,9 @@ typedef void(^HZScanViewStringValueBlock)(NSString *stringValue);
 @interface HZScanViewController : UIViewController
 
 @property (nonatomic, weak, nullable) id <HZScanViewControllerDelegate> delegate;
-@property (nonatomic, copy) HZScanViewStringValueBlock stringValueBlock;
+@property (nonatomic, copy) HZScanViewStringValueBlock _Nonnull stringValueBlock;
 
-+ (instancetype)scanViewWithArea:(CGRect)scanArea completion:(nullable HZScanViewStringValueBlock)stringValueBlock;
++ (instancetype _Nonnull )scanViewWithArea:(CGRect)scanArea completion:(nullable HZScanViewStringValueBlock)stringValueBlock;
 
 // TODO: 封装使用，如：设置光柱颜色、设置角标颜色等
 
@@ -39,7 +39,7 @@ typedef void(^HZScanViewStringValueBlock)(NSString *stringValue);
 
 @interface HZScanViewController (Image)
 
-- (NSString *)stringValueFromImage:(UIImage *)image;
+- (NSString *_Nonnull)stringValueFromImage:(UIImage *_Nonnull)image;
 
 @end
 
@@ -47,6 +47,6 @@ typedef void(^HZScanViewStringValueBlock)(NSString *stringValue);
 #pragma mark - HZScanMaskView
 @interface HZScanMaskView : UIView
 
-+ (instancetype)maskViewWithFrame:(CGRect)frame transparentFrame:(CGRect)transparentFrame;
++ (instancetype _Nonnull )maskViewWithFrame:(CGRect)frame transparentFrame:(CGRect)transparentFrame;
 
 @end

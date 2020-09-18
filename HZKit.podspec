@@ -14,14 +14,9 @@ Pod::Spec.new do |s|
   s.source_files  = "Source/**/*.{h,m}"
   s.public_header_files = "Source/**/*.{h}"
   
-  s.subspec 'Authorization' do |auth|
-    auth.source_files = 'Source/Authorization/*.{h,m}'
-    auth.public_header_files = 'Source/Authorization/HZKitAuthorization.h'
-  end
-  
-  s.subspec 'Device' do |device|
-    device.source_files = 'Source/Device/*.{h,m}'
-    device.public_header_files = 'Source/Device/HZKitDevice.h'
+  s.subspec 'Version' do |v|
+  v.source_files = 'Source/Version/*'
+  v.frameworks = 'Foundation'
   end
 
 end
