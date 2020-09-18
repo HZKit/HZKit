@@ -13,52 +13,38 @@
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
-	<string>APPL</string>
+	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>$(MARKETING_VERSION)</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLName</key>
-			<string>hzkit</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>hzkitapp</string>
-				<string>hzkit</string>
-			</array>
-		</dict>
-	</array>
+	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NFCReaderUsageDescription</key>
-	<string>InfoPlist.strings -&gt; NFCReaderUsageDescription</string>
-	<key>NSAppTransportSecurity</key>
+	<key>UIApplicationSceneManifest</key>
 	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
+					<key>UISceneDelegateClassName</key>
+					<string>SceneDelegate</string>
+					<key>UISceneStoryboardFile</key>
+					<string>Main</string>
+				</dict>
+			</array>
+		</dict>
 	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>InfoPlist.strings -&gt; NSCameraUsageDescription</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>InfoPlist.strings -&gt; NSLocationAlwaysAndWhenInUseUsageDescription</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>InfoPlist.strings -&gt; NSLocationAlwaysUsageDescription</string>
-	<key>NSLocationUsageDescription</key>
-	<string>InfoPlist.strings -&gt; NSLocationUsageDescription</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>InfoPlist.strings -&gt; NSLocationWhenInUseUsageDescription</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>InfoPlist.strings -&gt; NSPhotoLibraryAdditionsUsageDescription</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>InfoPlist.strings -&gt; NSPhotoLibraryUsageDescription</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>fontello.ttf</string>
-	</array>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -66,6 +52,8 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

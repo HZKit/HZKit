@@ -9,12 +9,6 @@
 #ifndef HZKitMacro_h
 #define HZKitMacro_h
 
-#if DEBUG
-    #define isDebug (YES)
-#else
-    #define isDebug (NO)
-#endif
-
 // TODO: 完善常用宏
 
 #pragma mark - Queue
