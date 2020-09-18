@@ -9,25 +9,7 @@
 #ifndef HZKitMacro_h
 #define HZKitMacro_h
 
-#if DEBUG
-    #define isDebug (YES)
-#else
-    #define isDebug (NO)
-#endif
-
 // TODO: 完善常用宏
-
-#pragma mark - NLocalized
-#define HZLocalizedString(key, tbl) \
-        [NSBundle.mainBundle localizedStringForKey:(@"" key) value:@"" table:(@"" tbl)]
-#define HZShowLocalizedString(key) \
-        [NSBundle.mainBundle localizedStringForKey:(@"" key) value:@"" table:@"HZShow"]
-#define HZCCLocalizedString(key) \
-        [NSBundle.mainBundle localizedStringForKey:(@"" key) value:@"" table:@"HZCustomControl"]
-#define HZAboutLocalizedString(key) \
-        [NSBundle.mainBundle localizedStringForKey:(@"" key) value:@"" table:@"HZAbout"]
-#define HZAlertLocalizedString(key) \
-        [NSBundle.mainBundle localizedStringForKey:(@"" key) value:@"" table:@"HZAlert"]
 
 #pragma mark - Queue
 #define HZ_MAIN_QUEUE(block) \

@@ -2,15 +2,17 @@
 //  main.m
 //  HZKit
 //
-//  Created by HertzWang on 2018/6/11.
-//  Copyright © 2018年 Hertz Wang. All rights reserved.
+//  Created by Wang, Haizhou on 2020/9/18.
 //
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
 int main(int argc, char * argv[]) {
+    NSString * appDelegateClassName;
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+        // Setup code that might create autoreleased objects goes here.
+        appDelegateClassName = NSStringFromClass([AppDelegate class]);
     }
+    return UIApplicationMain(argc, argv, nil, appDelegateClassName);
 }

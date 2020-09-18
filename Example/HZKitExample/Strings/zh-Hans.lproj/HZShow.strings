@@ -1,0 +1,61 @@
+/* 
+  HZShow.strings
+  HZKit
+
+  Created by HertzWang on 2018/8/3.
+  Copyright © 2018年 Hertz Wang. All rights reserved.
+*/
+
+tabBarTitle = "功能列表";
+
+// 功能列表界面
+title = "功能列表";
+
+checkAppUpdateDesc = "使用时需要修改 App id";
+deviceTitle = "设备相关";
+deviceDesc = "更多设备信息";
+authorizationTitle = "应用授权";
+authorizationDesc = "检查应用授权状态";
+networkTitle = "网络";
+networkDesc = "网络请求封装";
+
+viewControllerSectionTitle = "ViewController";
+viewControllerTitle = "ViewController 相关";
+viewControllerDesc = "ViewController 类别使用";
+
+iconfontSectionTitle = "Iconfont";
+iconfontTitle = "Iconfont";
+iconfontDesc = "Iconfont 的使用";
+
+// 设备界面
+deviceViewTitle = "设备相关";
+deviceCommonSectionTitle = "通用";
+deviceIdentifierTitle = "设备唯一标识符";
+deviceIdentifierDesc = "使用 KeyChain, import <Security/Security.h>";
+deviceNameTitle = "设备名称";
+deviceNameDesc = "需要 import <sys/utsname.h>";
+
+// 授权界面
+authorizationViewTitle = "应用授权";
+authorizationJumpButtonTitle = "授权";
+authorizationNFC = "NFC Reader";
+authorizationMediaLibrary = "Media Library - 媒体库";
+authorizationBluetooth = "Bluetooth Peripheral - 蓝牙外设";
+authorizationCalendars = "Calendars - 日历";
+authorizationCamera = "Camera - 相机";
+authorizationContacts = "Contacts - 通讯录";
+authorizationFaceID = "Face ID";
+authorizationHealth = "Health Share - 健康";
+authorizationHomeKit = "HomeKit";
+authorizationLocation = "Location - 位置";
+authorizationMicrophone = "Microphone - 麦克风";
+authorizationMotion = "Motion - 运动与健身";
+authorizationPhotoLibrary = "Photo Library - 照片";
+authorizationReminders = "Reminders";
+authorizationTV = "TV Provider";
+
+// Network view
+networkViewTitle = "网络请求";
+networkSend = "发送";
+networkClean = "清空";
+networkParams = "参数";
