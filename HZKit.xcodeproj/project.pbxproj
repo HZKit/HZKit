@@ -29,6 +29,9 @@
 		1BD8631A251466DF00BC395C /* HZVersionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD86302251466DF00BC395C /* HZVersionManager.m */; };
 		1BD8631B251466DF00BC395C /* HZLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD86305251466DF00BC395C /* HZLog.m */; };
 		1BD8631C251466DF00BC395C /* HZAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD8630C251466DF00BC395C /* HZAuthorization.m */; };
+		DB01D41E251DE37A0077695D /* UIViewController+PopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = DB01D41D251DE37A0077695D /* UIViewController+PopGesture.m */; };
+		DB3A6232251DCC3700818D1A /* HZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3A6231251DCC3700818D1A /* HZNavigationController.m */; };
+		DB3A6238251DCCD800818D1A /* HZNavigationScreenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3A6237251DCCD800818D1A /* HZNavigationScreenshot.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +88,12 @@
 		1BD8630B251466DF00BC395C /* HZAuthorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZAuthorization.h; sourceTree = "<group>"; };
 		1BD8630C251466DF00BC395C /* HZAuthorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZAuthorization.m; sourceTree = "<group>"; };
 		1BD8630D251466DF00BC395C /* HZKitAuthorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZKitAuthorization.h; sourceTree = "<group>"; };
+		DB01D41C251DE37A0077695D /* UIViewController+PopGesture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PopGesture.h"; sourceTree = "<group>"; };
+		DB01D41D251DE37A0077695D /* UIViewController+PopGesture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PopGesture.m"; sourceTree = "<group>"; };
+		DB3A6230251DCC3700818D1A /* HZNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZNavigationController.h; sourceTree = "<group>"; };
+		DB3A6231251DCC3700818D1A /* HZNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZNavigationController.m; sourceTree = "<group>"; };
+		DB3A6236251DCCD800818D1A /* HZNavigationScreenshot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZNavigationScreenshot.h; sourceTree = "<group>"; };
+		DB3A6237251DCCD800818D1A /* HZNavigationScreenshot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZNavigationScreenshot.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +161,7 @@
 		1BD862D8251466DF00BC395C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DB3A622F251DCC0B00818D1A /* NavigationController */,
 				1BD862D9251466DF00BC395C /* Category */,
 				1BD862F0251466DF00BC395C /* Scan */,
 				1BD862F3251466DF00BC395C /* Iconfont */,
@@ -293,6 +303,19 @@
 			path = Authorization;
 			sourceTree = "<group>";
 		};
+		DB3A622F251DCC0B00818D1A /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				DB3A6230251DCC3700818D1A /* HZNavigationController.h */,
+				DB3A6231251DCC3700818D1A /* HZNavigationController.m */,
+				DB3A6236251DCCD800818D1A /* HZNavigationScreenshot.h */,
+				DB3A6237251DCCD800818D1A /* HZNavigationScreenshot.m */,
+				DB01D41C251DE37A0077695D /* UIViewController+PopGesture.h */,
+				DB01D41D251DE37A0077695D /* UIViewController+PopGesture.m */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -365,16 +388,19 @@
 			files = (
 				1BD8631A251466DF00BC395C /* HZVersionManager.m in Sources */,
 				1BD8631B251466DF00BC395C /* HZLog.m in Sources */,
+				DB3A6232251DCC3700818D1A /* HZNavigationController.m in Sources */,
 				1BD8630F251466DF00BC395C /* UIColor+HZCommon.m in Sources */,
 				1BD86314251466DF00BC395C /* HZScanViewController.m in Sources */,
 				1BD8630E251466DF00BC395C /* UIImage+HZCommon.m in Sources */,
 				1BD86311251466DF00BC395C /* UIDevice+HZCommon.m in Sources */,
+				DB3A6238251DCCD800818D1A /* HZNavigationScreenshot.m in Sources */,
 				1BD862BE2514661100BC395C /* ViewController.m in Sources */,
 				1BD86310251466DF00BC395C /* UIView+HZKitCommon.m in Sources */,
 				1BD86316251466DF00BC395C /* HZFontelloModel.m in Sources */,
 				1BD8631C251466DF00BC395C /* HZAuthorization.m in Sources */,
 				1BD86315251466DF00BC395C /* UIFont+HZIconfont.m in Sources */,
 				1BD86318251466DF00BC395C /* UILabel+HZIconfont.m in Sources */,
+				DB01D41E251DE37A0077695D /* UIViewController+PopGesture.m in Sources */,
 				1BD86313251466DF00BC395C /* UIViewController+HZCommon.m in Sources */,
 				1BD862B82514661100BC395C /* AppDelegate.m in Sources */,
 				1BD86317251466DF00BC395C /* HZIconfont+HZFontello.m in Sources */,

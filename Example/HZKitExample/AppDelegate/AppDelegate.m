@@ -11,6 +11,7 @@
 #import "HZShowViewController.h"
 #import "HZCustomControlViewController.h"
 #import "HZAboutViewController.h"
+#import "HZNavigationController.h"
 
 @implementation AppDelegate
 
@@ -64,8 +65,8 @@
     return tabbar;
 }
 
-- (UIViewController *)_viewControllerWithClass:(Class)vcClass tabbarItemTitle:(NSString *)title image:(NSString *)imageName selectedImage:(NSString *)selectedImageName {
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[(UIViewController *)[vcClass alloc] init]];
+- (HZNavigationController *)_viewControllerWithClass:(Class)vcClass tabbarItemTitle:(NSString *)title image:(NSString *)imageName selectedImage:(NSString *)selectedImageName {
+    HZNavigationController *nav = [[HZNavigationController alloc] initWithRootViewController:[(UIViewController *)[vcClass alloc] init]];
     nav.tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:[UIImage imageNamed:imageName] selectedImage:[UIImage imageNamed:selectedImageName]];
     
     return nav;

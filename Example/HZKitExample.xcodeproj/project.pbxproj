@@ -23,6 +23,9 @@
 		1BD8648D251486AB00BC395C /* HZVersionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD86475251486AB00BC395C /* HZVersionManager.m */; };
 		1BD8648E251486AB00BC395C /* HZLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD86478251486AB00BC395C /* HZLog.m */; };
 		1BD8648F251486AB00BC395C /* HZAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD8647F251486AB00BC395C /* HZAuthorization.m */; };
+		DB01D427251DE6410077695D /* HZNavigationScreenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = DB01D422251DE6410077695D /* HZNavigationScreenshot.m */; };
+		DB01D428251DE6410077695D /* HZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB01D424251DE6410077695D /* HZNavigationController.m */; };
+		DB01D429251DE6410077695D /* UIViewController+PopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = DB01D426251DE6410077695D /* UIViewController+PopGesture.m */; };
 		DB0D8EBF21A3BD2F00176ACB /* HZModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0D8EBE21A3BD2F00176ACB /* HZModel.m */; };
 		DB20A8DB20CFCF8700D7432A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB20A8D120CFCF8700D7432A /* Assets.xcassets */; };
 		DB20A8DF20CFCF8700D7432A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB20A8D720CFCF8700D7432A /* main.m */; };
@@ -147,6 +150,12 @@
 		1BD8647E251486AB00BC395C /* HZAuthorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZAuthorization.h; sourceTree = "<group>"; };
 		1BD8647F251486AB00BC395C /* HZAuthorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZAuthorization.m; sourceTree = "<group>"; };
 		1BD86480251486AB00BC395C /* HZKitAuthorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZKitAuthorization.h; sourceTree = "<group>"; };
+		DB01D421251DE6410077695D /* HZNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZNavigationController.h; sourceTree = "<group>"; };
+		DB01D422251DE6410077695D /* HZNavigationScreenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZNavigationScreenshot.m; sourceTree = "<group>"; };
+		DB01D423251DE6410077695D /* UIViewController+PopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PopGesture.h"; sourceTree = "<group>"; };
+		DB01D424251DE6410077695D /* HZNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZNavigationController.m; sourceTree = "<group>"; };
+		DB01D425251DE6410077695D /* HZNavigationScreenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZNavigationScreenshot.h; sourceTree = "<group>"; };
+		DB01D426251DE6410077695D /* UIViewController+PopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PopGesture.m"; sourceTree = "<group>"; };
 		DB0D8EBD21A3BD2F00176ACB /* HZModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZModel.h; sourceTree = "<group>"; };
 		DB0D8EBE21A3BD2F00176ACB /* HZModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZModel.m; sourceTree = "<group>"; };
 		DB20A82D20CE614B00D7432A /* HZKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HZKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -581,6 +590,7 @@
 		1BD8644B251486AB00BC395C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DB01D420251DE6410077695D /* NavigationController */,
 				1BD8644C251486AB00BC395C /* Category */,
 				1BD86463251486AB00BC395C /* Scan */,
 				1BD86466251486AB00BC395C /* Iconfont */,
@@ -721,6 +731,19 @@
 				1BD86480251486AB00BC395C /* HZKitAuthorization.h */,
 			);
 			path = Authorization;
+			sourceTree = "<group>";
+		};
+		DB01D420251DE6410077695D /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				DB01D421251DE6410077695D /* HZNavigationController.h */,
+				DB01D424251DE6410077695D /* HZNavigationController.m */,
+				DB01D425251DE6410077695D /* HZNavigationScreenshot.h */,
+				DB01D422251DE6410077695D /* HZNavigationScreenshot.m */,
+				DB01D423251DE6410077695D /* UIViewController+PopGesture.h */,
+				DB01D426251DE6410077695D /* UIViewController+PopGesture.m */,
+			);
+			path = NavigationController;
 			sourceTree = "<group>";
 		};
 		DB0D8EBC21A3BD1300176ACB /* HZModel */ = {
@@ -1100,6 +1123,7 @@
 				DB3B78C9215F687F002ED788 /* AFSecurityPolicy.m in Sources */,
 				DB3B78D5215F8226002ED788 /* JSONModelError.m in Sources */,
 				DB3B78DE21605E5E002ED788 /* JSONKeyMapper.m in Sources */,
+				DB01D428251DE6410077695D /* HZNavigationController.m in Sources */,
 				DBACB67C211C400B004FD994 /* FMDatabaseAdditions.m in Sources */,
 				DB3B78C4215F687F002ED788 /* AFURLResponseSerialization.m in Sources */,
 				DB71B27C21085E9D00F8DEB3 /* HZShowViewController.m in Sources */,
@@ -1133,6 +1157,7 @@
 				DB0D8EBF21A3BD2F00176ACB /* HZModel.m in Sources */,
 				DB71B27821085E7700F8DEB3 /* HZAboutViewController.m in Sources */,
 				DB3B78A7215F1716002ED788 /* NSArray+MASAdditions.m in Sources */,
+				DB01D429251DE6410077695D /* UIViewController+PopGesture.m in Sources */,
 				1BD8648A251486AB00BC395C /* HZIconfont+HZFontello.m in Sources */,
 				DB268AC321AFD3020038C753 /* HZGenerateIconModel.m in Sources */,
 				1BD86481251486AB00BC395C /* UIImage+HZCommon.m in Sources */,
@@ -1143,6 +1168,7 @@
 				1BD86486251486AB00BC395C /* UIViewController+HZCommon.m in Sources */,
 				DB3B78A2215F1716002ED788 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				DB3B78A8215F1716002ED788 /* View+MASAdditions.m in Sources */,
+				DB01D427251DE6410077695D /* HZNavigationScreenshot.m in Sources */,
 				1BD86484251486AB00BC395C /* UIDevice+HZCommon.m in Sources */,
 				1BD8648F251486AB00BC395C /* HZAuthorization.m in Sources */,
 				DBACB64B2119A026004FD994 /* HZAuthorizationModel.m in Sources */,
