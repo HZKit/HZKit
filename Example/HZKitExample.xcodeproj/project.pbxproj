@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B22969225206A4800E75DAD /* HZImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B22969125206A4800E75DAD /* HZImagePicker.m */; };
 		1BD0430125134509004A4B17 /* HZShowViewController+Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD0430025134509004A4B17 /* HZShowViewController+Delegate.m */; };
 		1BD86481251486AB00BC395C /* UIImage+HZCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD8644F251486AB00BC395C /* UIImage+HZCommon.m */; };
 		1BD86482251486AB00BC395C /* UIColor+HZCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD86454251486AB00BC395C /* UIColor+HZCommon.m */; };
@@ -103,6 +104,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B22969025206A4800E75DAD /* HZImagePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZImagePicker.h; sourceTree = "<group>"; };
+		1B22969125206A4800E75DAD /* HZImagePicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZImagePicker.m; sourceTree = "<group>"; };
 		1BD042FF25134509004A4B17 /* HZShowViewController+Delegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HZShowViewController+Delegate.h"; sourceTree = "<group>"; };
 		1BD0430025134509004A4B17 /* HZShowViewController+Delegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HZShowViewController+Delegate.m"; sourceTree = "<group>"; };
 		1BD043032513456A004A4B17 /* HZShowViewController+Property.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HZShowViewController+Property.h"; sourceTree = "<group>"; };
@@ -303,6 +306,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B22968C25206A2900E75DAD /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				1B22969025206A4800E75DAD /* HZImagePicker.h */,
+				1B22969125206A4800E75DAD /* HZImagePicker.m */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
 		1B23C041251361EF0049902B /* HUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -581,6 +593,7 @@
 		1BD8644B251486AB00BC395C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				1B22968C25206A2900E75DAD /* ImagePicker */,
 				1BD8644C251486AB00BC395C /* Category */,
 				1BD86463251486AB00BC395C /* Scan */,
 				1BD86466251486AB00BC395C /* Iconfont */,
@@ -1159,6 +1172,7 @@
 				DB463B04210ABAA70018BCC5 /* HZDeviceViewController.m in Sources */,
 				DB71B2832108673B00F8DEB3 /* HZShowModel.m in Sources */,
 				1BD86489251486AB00BC395C /* HZFontelloModel.m in Sources */,
+				1B22969225206A4800E75DAD /* HZImagePicker.m in Sources */,
 				DB8FB30521A6469F0052AE1D /* HZBankModel.m in Sources */,
 				1BD86483251486AB00BC395C /* UIView+HZKitCommon.m in Sources */,
 				DBACB67F211C400B004FD994 /* FMResultSet.m in Sources */,

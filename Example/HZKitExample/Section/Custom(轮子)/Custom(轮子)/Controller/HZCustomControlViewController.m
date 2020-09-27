@@ -13,13 +13,15 @@
 #import "HZScanViewController.h"
 #import "HZGenerateIconViewController.h"
 #import "HZBankModel.h"
+#import "HZImagePicker.h"
 
 NSString *cellIdentifier = @"HZCustomControlCell";
 
-@interface HZCustomControlViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, HZScanViewControllerDelegate>
+@interface HZCustomControlViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, HZScanViewControllerDelegate, HZImagePickerDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) HZImagePicker *imagePicker;
 
 @end
 
@@ -81,6 +83,9 @@ NSString *cellIdentifier = @"HZCustomControlCell";
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)_imagePickerAction {
+    [self.imagePicker show];
+}
 
 #pragma mark - HZScanViewControllerDelegate
 - (void)scanViewController:(HZScanViewController *)scanViewController stringValue:(NSString *)stringValue {
@@ -119,6 +124,16 @@ NSString *cellIdentifier = @"HZCustomControlCell";
     }
 }
 
+#pragma mark - HZImagePickerDelegate
+
+- (void)imagePicker:(HZImagePicker *)picker didFinishPicking:(NSArray<UIImage *> *)results videoPath:(NSString *)videoPath {
+    
+}
+
+- (void)imagePickerDidCancel:(HZImagePicker *)picker {
+    
+}
+
 #pragma mark - Lazy load
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
@@ -144,16 +159,22 @@ NSString *cellIdentifier = @"HZCustomControlCell";
     return _collectionView;
 }
 
+- (HZImagePicker *)imagePicker {
+    if (_imagePicker == nil) {
+        _imagePicker = [[HZImagePicker alloc] init];
+        _imagePicker.delegate = self;
+    }
+    return _imagePicker;
+}
+
 - (NSMutableArray *)dataArray {
     if (!_dataArray) {
         _dataArray = [NSMutableArray arrayWithObjects:
                       [HZCustomControlModel modelWithIcon:@"扫一扫" action:@"_scanQRCodeAction"],
                       [HZCustomControlModel modelWithIcon:@"生成银行卡发卡行数据库" action:@"_generateBankDB"],
                       [HZCustomControlModel modelWithIcon:@"生成 Icon" action:@"_generateIconAction"],
-                      [HZCustomControlModel modelWithIcon:@"Placeholder" action:nil],
+                      [HZCustomControlModel modelWithIcon:@"图片选择" action:@"_imagePickerAction"],
                       nil];
-        
-        
     }
     
     return _dataArray;
