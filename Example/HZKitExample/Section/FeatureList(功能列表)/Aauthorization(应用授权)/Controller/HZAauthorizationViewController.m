@@ -177,7 +177,7 @@
         if ([self respondsToSelector:selector]) {
             HLog(@"call %@", action);
             
-            objc_msgSend(self, selector);
+            ((void (*)(id, SEL))objc_msgSend)(self, selector);
         }
     }
 }

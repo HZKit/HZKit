@@ -60,7 +60,7 @@
     
     // 通过Apple登录 https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple/overview/buttons/
     if (@available(iOS 13.0, *)) {
-        self.appleIDButton.frame = CGRectMake((screenWidth - 140) * 0.5, screenHeight - 60 - self.tabBarController.tabBar.bounds.size.height, 140, 30);
+        self.appleIDButton.frame = CGRectMake((screenWidth - 140) * 0.5, screenHeight - 60 - self.tabBarController.tabBar.bounds.size.height, 140, 44);
         [self.view addSubview:self.appleIDButton];
     }
 }
@@ -78,16 +78,16 @@
 #pragma mark - ASAuthorizationControllerDelegate
 
 - (void)authorizationController:(ASAuthorizationController *)controller didCompleteWithAuthorization:(ASAuthorization *)authorization API_AVAILABLE(ios(13.0)){
-#warning 待验证
-    NSString *userName = nil;
+    NSString *user = nil;
     if ([authorization.credential isKindOfClass:[ASAuthorizationAppleIDCredential class]]) {
         ASAuthorizationAppleIDCredential *credential = (ASAuthorizationAppleIDCredential *)authorization.credential;
-        userName = credential.email;
+        user = credential.user;
     } else if ([authorization.credential isKindOfClass:[ASPasswordCredential class]]) {
         ASPasswordCredential *credential = (ASPasswordCredential *)authorization.credential;
-        userName = credential.user;
+        user = credential.user;
     }
-    self.appleIDButton.hidden = (userName != nil);
+    HZShowHUD(user ?: @"登录异常");
+    self.appleIDButton.hidden = (user != nil);
 }
 
 /// 取消

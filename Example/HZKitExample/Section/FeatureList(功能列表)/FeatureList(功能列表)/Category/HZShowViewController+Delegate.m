@@ -71,7 +71,7 @@
         
         // 方式二
         if ([self respondsToSelector:selector]) {
-            objc_msgSend(self, selector);
+            ((void (*)(id, SEL))objc_msgSend)(self, selector);
         }
         
         // 方式三

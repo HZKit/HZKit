@@ -117,7 +117,7 @@ NSString *cellIdentifier = @"HZCustomControlCell";
     if (model.action) {
         SEL selector = NSSelectorFromString(model.action);
         if ([self respondsToSelector:selector]) {
-            objc_msgSend(self, selector);
+            ((void (*)(id, SEL))objc_msgSend)(self, selector);
         }
         
         return;
