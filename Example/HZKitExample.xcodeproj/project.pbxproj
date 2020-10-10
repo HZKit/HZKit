@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B22969225206A4800E75DAD /* HZImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B22969125206A4800E75DAD /* HZImagePicker.m */; };
+		1BBD1419253196A500B90160 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBD1418253196A500B90160 /* AuthenticationServices.framework */; };
 		1BD0430125134509004A4B17 /* HZShowViewController+Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD0430025134509004A4B17 /* HZShowViewController+Delegate.m */; };
 		1BD86481251486AB00BC395C /* UIImage+HZCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD8644F251486AB00BC395C /* UIImage+HZCommon.m */; };
 		1BD86482251486AB00BC395C /* UIColor+HZCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD86454251486AB00BC395C /* UIColor+HZCommon.m */; };
@@ -106,6 +107,8 @@
 /* Begin PBXFileReference section */
 		1B22969025206A4800E75DAD /* HZImagePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZImagePicker.h; sourceTree = "<group>"; };
 		1B22969125206A4800E75DAD /* HZImagePicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZImagePicker.m; sourceTree = "<group>"; };
+		1BBD14132531960500B90160 /* HZKitExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HZKitExample.entitlements; sourceTree = "<group>"; };
+		1BBD1418253196A500B90160 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		1BD042FF25134509004A4B17 /* HZShowViewController+Delegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HZShowViewController+Delegate.h"; sourceTree = "<group>"; };
 		1BD0430025134509004A4B17 /* HZShowViewController+Delegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HZShowViewController+Delegate.m"; sourceTree = "<group>"; };
 		1BD043032513456A004A4B17 /* HZShowViewController+Property.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HZShowViewController+Property.h"; sourceTree = "<group>"; };
@@ -286,6 +289,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BBD1419253196A500B90160 /* AuthenticationServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +326,14 @@
 				DBACB658211A937B004FD994 /* MBProgressHUD+HZKit.m */,
 			);
 			path = HUD;
+			sourceTree = "<group>";
+		};
+		1BBD1417253196A500B90160 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1BBD1418253196A500B90160 /* AuthenticationServices.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		1BD042F12513124C004A4B17 /* AppDelegate */ = {
@@ -754,6 +766,7 @@
 			children = (
 				DB20A8CF20CFCF8700D7432A /* HZKitExample */,
 				DB20A82E20CE614B00D7432A /* Products */,
+				1BBD1417253196A500B90160 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -770,6 +783,7 @@
 		DB20A8CF20CFCF8700D7432A /* HZKitExample */ = {
 			isa = PBXGroup;
 			children = (
+				1BBD14132531960500B90160 /* HZKitExample.entitlements */,
 				1BD042F12513124C004A4B17 /* AppDelegate */,
 				1BD042F4251313FF004A4B17 /* General */,
 				1BD042F52513144B004A4B17 /* Macro */,
@@ -1269,7 +1283,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1329,7 +1343,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1349,6 +1363,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HZKitExample/HZKitExample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.1.4.2;
 				DEVELOPMENT_TEAM = 64Z9QAXW9D;
@@ -1371,6 +1386,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HZKitExample/HZKitExample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.1.4.2;
 				DEVELOPMENT_TEAM = 64Z9QAXW9D;
